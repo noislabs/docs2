@@ -7,3 +7,5 @@
 - [Networks](./networks.md)
   - [Testnet 004](./testnet_004.md)
   - [Mainnet](./mainnet.md)
+- [Contracts](./contracts.md)
+  - [Testnet 004](./contracts_testnet_004.md)
