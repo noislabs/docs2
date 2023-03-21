@@ -1,0 +1,10 @@
+[book]
+authors = []
+language = "en"
+multilingual = false
+src = "src"
+title = "Nois Documentation"
+
+[output.html]
+git-repository-url = "https://github.com/noislabs/docs2"
+edit-url-template = "https://github.com/noislabs/docs2/edit/main/{path}"
