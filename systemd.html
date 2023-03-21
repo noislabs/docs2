@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Nois Documentation - Nois Documentation</title>
+        <title>Using Systemd - Nois Documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html" class="active">Nois Documentation</a></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">1.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">1.1.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">2.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">2.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">2.2.</strong> Mainnet</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">1.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systemd.html" class="active"><strong aria-hidden="true">1.1.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">2.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">2.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">2.2.</strong> Mainnet</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -121,7 +121,7 @@
                         <a href="https://github.com/noislabs/docs2" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/noislabs/docs2/edit/main/src/title.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/noislabs/docs2/edit/main/src/systemd.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -150,15 +150,52 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="nois-documentation"><a class="header" href="#nois-documentation">Nois Documentation</a></h1>
-<p>Just the docs.</p>
+                        <h1 id="using-systemd"><a class="header" href="#using-systemd">Using systemd</a></h1>
+<p>You can run noisd as a service for systemd.</p>
+<h2 id="creading-the-service-file"><a class="header" href="#creading-the-service-file">Creading the service file</a></h2>
+<p>The following script creates the service file nois.service for systemd. The file was originally provided by Kolot, thank you!.</p>
+<pre><code class="language-sh">sudo tee /etc/systemd/system/nois.service &gt; /dev/null &lt;&lt;EOF
+[Unit]
+Description=Nois blockchain
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which noisd) start --home $HOME/.noisd
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+</code></pre>
+<h2 id="using-the-nois-service"><a class="header" href="#using-the-nois-service">Using the nois service</a></h2>
+<pre><code class="language-sh"># Find the new service file
+sudo systemctl daemon-reload
+
+# Check status (should be loaded, inactive and disabled)
+sudo systemctl status nois
+
+# Enable (i.e. start automatically)
+sudo systemctl enable nois
+
+# Start/Restart
+sudo systemctl restart nois
+
+# Watch logs
+sudo journalctl -u nois -f -o cat
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="run_a_node.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next" href="run_a_node.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="networks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -168,8 +205,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="run_a_node.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next" href="run_a_node.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="networks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

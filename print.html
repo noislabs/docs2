@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">1.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">1.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">1.2.</strong> Mainnet</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">1.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">1.1.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">2.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">2.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">2.2.</strong> Mainnet</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -150,6 +150,82 @@
                     <main>
                         <h1 id="nois-documentation"><a class="header" href="#nois-documentation">Nois Documentation</a></h1>
 <p>Just the docs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="for-node-operators"><a class="header" href="#for-node-operators">For Node Operators</a></h1>
+<p>Here you find information how to run a full node as well as produce blocks. If you want to run a sentry, most of the instructions are the same.</p>
+<h2 id="run-a-full-node"><a class="header" href="#run-a-full-node">Run a full node</a></h2>
+<p>We assume you are on some sort of Ubuntu/Debian Linux. Other Linux distributions and macOS works very similar.</p>
+<h3 id="1-update-your-os-and-install-dependencies"><a class="header" href="#1-update-your-os-and-install-dependencies">1. Update your OS and install dependencies</a></h3>
+<pre><code class="language-sh">sudo apt update
+# Maybe also this if you want: sudo apt upgrade -y &amp;&amp; reboot
+sudo apt install -y make gcc build-essential git jq joe
+</code></pre>
+<h3 id="2-install-go"><a class="header" href="#2-install-go">2. Install Go</a></h3>
+<p>This way: <a href="https://go.dev/doc/install">https://go.dev/doc/install</a>. Both Go 1.20 and 1.19 are supported.</p>
+<h3 id="3-clone-the-noisd-repository"><a class="header" href="#3-clone-the-noisd-repository">3. Clone the noisd repository</a></h3>
+<pre><code class="language-sh">git clone https://github.com/noislabs/noisd.git
+cd noisd
+git checkout v0.6.0
+</code></pre>
+<h3 id="4-build-and-install-the-noisd-binary"><a class="header" href="#4-build-and-install-the-noisd-binary">4. Build and install the noisd binary</a></h3>
+<pre><code class="language-sh">make install
+
+# Add GOPATH to PATH
+export PATH=&quot;$PATH:$(go env GOPATH)/bin&quot;
+# in zsh: rehash
+</code></pre>
+<h3 id="5-check-the-installation-also-creates-folder-homenoisd"><a class="header" href="#5-check-the-installation-also-creates-folder-homenoisd">5. Check the installation (also creates folder $HOME/.noisd)</a></h3>
+<pre><code class="language-sh">noisd version
+# Shows version you checked out above
+</code></pre>
+<h3 id="6-adapt-config"><a class="header" href="#6-adapt-config">6. Adapt config</a></h3>
+<pre><code class="language-sh"># Update p2p setting (config.toml)
+export MY_EXTERNAL_ADDR=&quot;$(curl -sS https://api.ipify.org):26656&quot; # or set explicitely if this API does not return the correct value
+sed -i 's/external_address =.*$/external_address = &quot;'$MY_EXTERNAL_ADDR'&quot;/' $HOME/.noisd/config/config.toml \
+  &amp;&amp; sed -i 's/^max_num_inbound_peers =.*$/max_num_inbound_peers = 80/' $HOME/.noisd/config/config.toml \
+  &amp;&amp; sed -i 's/^max_num_outbound_peers =.*$/max_num_outbound_peers = 40/' $HOME/.noisd/config/config.toml
+</code></pre>
+<h3 id="7-download-the-genesis-file"><a class="header" href="#7-download-the-genesis-file">7. Download the genesis file</a></h3>
+<p>See <a href="./networks.html">Networks</a> for the correct URL.</p>
+<pre><code class="language-sh">wget -O &quot;$HOME/.noisd/config/genesis.json&quot; https://raw.githubusercontent.com/noislabs/networks/nois-testnet-004.final.2/nois-testnet-004/genesis.json
+</code></pre>
+<h3 id="8-draw-the-rest-of-the-fucking-owl"><a class="header" href="#8-draw-the-rest-of-the-fucking-owl">8. Draw the rest of the fucking owl</a></h3>
+<p>The rest is similar to running a standard Cosmos node or validator. You can check the <a href="https://hub.cosmos.network/main/validators/validator-setup.html">Cosmos Hub docs</a> for more details. For the faucet, rpc links, permanent peers and similar details visit.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-systemd"><a class="header" href="#using-systemd">Using systemd</a></h1>
+<p>You can run noisd as a service for systemd.</p>
+<h2 id="creading-the-service-file"><a class="header" href="#creading-the-service-file">Creading the service file</a></h2>
+<p>The following script creates the service file nois.service for systemd. The file was originally provided by Kolot, thank you!.</p>
+<pre><code class="language-sh">sudo tee /etc/systemd/system/nois.service &gt; /dev/null &lt;&lt;EOF
+[Unit]
+Description=Nois blockchain
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which noisd) start --home $HOME/.noisd
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+</code></pre>
+<h2 id="using-the-nois-service"><a class="header" href="#using-the-nois-service">Using the nois service</a></h2>
+<pre><code class="language-sh"># Find the new service file
+sudo systemctl daemon-reload
+
+# Check status (should be loaded, inactive and disabled)
+sudo systemctl status nois
+
+# Enable (i.e. start automatically)
+sudo systemctl enable nois
+
+# Start/Restart
+sudo systemctl restart nois
+
+# Watch logs
+sudo journalctl -u nois -f -o cat
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <p>Nois is launching the following two networks in March:</p>
 <ul>
