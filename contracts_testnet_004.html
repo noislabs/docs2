@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Page not found - Nois Documentation</title>
-        <base href="/">
+        <title>Testnet 004 - Nois Documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -84,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">1.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">1.1.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">2.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">2.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">2.2.</strong> Mainnet</a></li></ol></li><li class="chapter-item expanded "><a href="contracts.html"><strong aria-hidden="true">3.</strong> Contracts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="contracts_testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">1.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">1.1.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">2.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">2.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">2.2.</strong> Mainnet</a></li></ol></li><li class="chapter-item expanded "><a href="contracts.html"><strong aria-hidden="true">3.</strong> Contracts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="contracts_testnet_004.html" class="active"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -122,6 +121,9 @@
                         <a href="https://github.com/noislabs/docs2" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
+                        <a href="https://github.com/noislabs/docs2/edit/main/src/contracts_testnet_004.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
 
                     </div>
                 </div>
@@ -148,13 +150,52 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="testnet-004"><a class="header" href="#testnet-004">Testnet 004</a></h1>
+<h2 id="contracts"><a class="header" href="#contracts">Contracts</a></h2>
+<h4 id="nois-drand"><a class="header" href="#nois-drand">nois-drand</a></h4>
+<pre><code class="language-yaml">- Name: nois-drand
+  Address: nois16peq3sftghumkja7nu32ztjy0ew4vsnshxfhcv6sxq573ta08gwsgldepm
+  Code ID: &quot;11&quot;
+  Git Asset Name: nois_drand
+  Instantiation Message: '{&quot;incentive_point_price&quot;:&quot;25000&quot;,&quot;incentive_denom&quot;:&quot;unois&quot;,&quot;min_round&quot;:,&quot;manager&quot;:&quot;nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk&quot;}'
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.10.0
+</code></pre>
+<h4 id="nois-gateway"><a class="header" href="#nois-gateway">nois-gateway</a></h4>
+<pre><code class="language-yaml">- Name: nois-gateway
+  Address: nois1ze9qajd25ucqnvn2u865uhdtjd6qm5awm3tpl93ure72wgs4d7qsptqc0u
+  Code ID: &quot;12&quot;
+  Git Asset Name: nois_gateway
+  Instantiation Message: &quot;{}&quot;
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.10.0
+</code></pre>
+<h4 id="nois-icecube"><a class="header" href="#nois-icecube">nois-icecube</a></h4>
+<pre><code class="language-yaml">- Name: nois-icecube
+  Address: nois1mdjzz7y7crnjgfkdld4x9ravqymh22jy2c7jpukqnkghhzv5s9ys2a9hu7
+  Code ID: &quot;14&quot;
+  Git Asset Name: nois_icecube
+  Instantiation Message: '{&quot;manager&quot;:&quot;nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk&quot;}'
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.10.0
+</code></pre>
+<h4 id="nois-sink"><a class="header" href="#nois-sink">nois-sink</a></h4>
+<pre><code class="language-yaml">- Name: nois-sink
+  Address: nois16rpxzry8jf06j8htjphf0lnmylh28enwm4xwkfpn3699wvyys2yqgcev3h
+  Code ID: &quot;13&quot;
+  Git Asset Name: nois_sink
+  Instantiation Message: &quot;{}&quot;
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.10.0
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="contracts.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
 
                         <div style="clear: both"></div>
@@ -163,6 +204,9 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="contracts.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
             </nav>
 

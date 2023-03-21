@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">1.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">1.1.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">2.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">2.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">2.2.</strong> Mainnet</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">1.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">1.1.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">2.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">2.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">2.2.</strong> Mainnet</a></li></ol></li><li class="chapter-item expanded "><a href="contracts.html"><strong aria-hidden="true">3.</strong> Contracts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="contracts_testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -268,6 +268,45 @@ sudo journalctl -u nois -f -o cat
 <p>Not yet finalized</p>
 <h2 id="p2p-1"><a class="header" href="#p2p-1">p2p</a></h2>
 <p>Seed nodes: TBD</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contracts"><a class="header" href="#contracts">Contracts</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="testnet-004-1"><a class="header" href="#testnet-004-1">Testnet 004</a></h1>
+<h2 id="contracts-1"><a class="header" href="#contracts-1">Contracts</a></h2>
+<h4 id="nois-drand"><a class="header" href="#nois-drand">nois-drand</a></h4>
+<pre><code class="language-yaml">- Name: nois-drand
+  Address: nois16peq3sftghumkja7nu32ztjy0ew4vsnshxfhcv6sxq573ta08gwsgldepm
+  Code ID: &quot;11&quot;
+  Git Asset Name: nois_drand
+  Instantiation Message: '{&quot;incentive_point_price&quot;:&quot;25000&quot;,&quot;incentive_denom&quot;:&quot;unois&quot;,&quot;min_round&quot;:,&quot;manager&quot;:&quot;nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk&quot;}'
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.10.0
+</code></pre>
+<h4 id="nois-gateway"><a class="header" href="#nois-gateway">nois-gateway</a></h4>
+<pre><code class="language-yaml">- Name: nois-gateway
+  Address: nois1ze9qajd25ucqnvn2u865uhdtjd6qm5awm3tpl93ure72wgs4d7qsptqc0u
+  Code ID: &quot;12&quot;
+  Git Asset Name: nois_gateway
+  Instantiation Message: &quot;{}&quot;
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.10.0
+</code></pre>
+<h4 id="nois-icecube"><a class="header" href="#nois-icecube">nois-icecube</a></h4>
+<pre><code class="language-yaml">- Name: nois-icecube
+  Address: nois1mdjzz7y7crnjgfkdld4x9ravqymh22jy2c7jpukqnkghhzv5s9ys2a9hu7
+  Code ID: &quot;14&quot;
+  Git Asset Name: nois_icecube
+  Instantiation Message: '{&quot;manager&quot;:&quot;nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk&quot;}'
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.10.0
+</code></pre>
+<h4 id="nois-sink"><a class="header" href="#nois-sink">nois-sink</a></h4>
+<pre><code class="language-yaml">- Name: nois-sink
+  Address: nois16rpxzry8jf06j8htjphf0lnmylh28enwm4xwkfpn3699wvyys2yqgcev3h
+  Code ID: &quot;13&quot;
+  Git Asset Name: nois_sink
+  Instantiation Message: &quot;{}&quot;
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.10.0
+</code></pre>
 
                     </main>
 
