@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Contracts - Nois Documentation</title>
+        <title>Status Checks - Nois Documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">1.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">1.1.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">2.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">2.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">2.2.</strong> Mainnet</a></li></ol></li><li class="chapter-item expanded "><a href="contracts.html" class="active"><strong aria-hidden="true">3.</strong> Contracts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="contracts_testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">1.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html" class="active"><strong aria-hidden="true">1.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">1.2.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">2.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">2.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">2.2.</strong> Mainnet</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -121,7 +121,7 @@
                         <a href="https://github.com/noislabs/docs2" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/noislabs/docs2/edit/main/src/contracts.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/noislabs/docs2/edit/main/src/status_checks.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -150,17 +150,32 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="contracts"><a class="header" href="#contracts">Contracts</a></h1>
+                        <h1 id="status-checks"><a class="header" href="#status-checks">Status checks</a></h1>
+<p>On this page you find various ways to check the status of your node.</p>
+<h2 id="p2p"><a class="header" href="#p2p">p2p</a></h2>
+<ol>
+<li>Ensure your external address is set correctly:<br />
+<code>curl -sS http://localhost:26657/status | jq .result.node_info.listen_addr</code></li>
+<li>Ensure you have a few dozen peers here:<br />
+<code>curl -sS http://localhost:26657/net_info | jq .result.n_peers</code></li>
+<li>Ensure you have a mix of outbound and inbound peers (i.e. both outgoing and incoming connections work:<br />
+<code>curl -sS http://localhost:26657/net_info | jq | grep is_outbound</code></li>
+</ol>
+<h2 id="sync"><a class="header" href="#sync">Sync</a></h2>
+<ol>
+<li>Check your height and catching up value:<br />
+<code>curl -sS http://localhost:26657/status | jq .result.sync_info</code></li>
+</ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="mainnet.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="run_a_node.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="contracts_testnet_004.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="systemd.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -170,11 +185,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="mainnet.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="run_a_node.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="contracts_testnet_004.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="systemd.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

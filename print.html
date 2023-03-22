@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">1.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">1.1.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">2.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">2.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">2.2.</strong> Mainnet</a></li></ol></li><li class="chapter-item expanded "><a href="contracts.html"><strong aria-hidden="true">3.</strong> Contracts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="contracts_testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">1.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">1.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">1.2.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">2.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">2.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">2.2.</strong> Mainnet</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -190,6 +190,22 @@ sed -i 's/external_address =.*$/external_address = &quot;'$MY_EXTERNAL_ADDR'&quo
 </code></pre>
 <h3 id="8-draw-the-rest-of-the-fucking-owl"><a class="header" href="#8-draw-the-rest-of-the-fucking-owl">8. Draw the rest of the fucking owl</a></h3>
 <p>The rest is similar to running a standard Cosmos node or validator. You can check the <a href="https://hub.cosmos.network/main/validators/validator-setup.html">Cosmos Hub docs</a> for more details. For the faucet, rpc links, permanent peers and similar details visit.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="status-checks"><a class="header" href="#status-checks">Status checks</a></h1>
+<p>On this page you find various ways to check the status of your node.</p>
+<h2 id="p2p"><a class="header" href="#p2p">p2p</a></h2>
+<ol>
+<li>Ensure your external address is set correctly:<br />
+<code>curl -sS http://localhost:26657/status | jq .result.node_info.listen_addr</code></li>
+<li>Ensure you have a few dozen peers here:<br />
+<code>curl -sS http://localhost:26657/net_info | jq .result.n_peers</code></li>
+<li>Ensure you have a mix of outbound and inbound peers (i.e. both outgoing and incoming connections work:<br />
+<code>curl -sS http://localhost:26657/net_info | jq | grep is_outbound</code></li>
+</ol>
+<h2 id="sync"><a class="header" href="#sync">Sync</a></h2>
+<ol>
+<li>Check your height and catching up value:<br />
+<code>curl -sS http://localhost:26657/status | jq .result.sync_info</code></li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="using-systemd"><a class="header" href="#using-systemd">Using systemd</a></h1>
 <p>You can run noisd as a service for systemd.</p>
 <h2 id="creading-the-service-file"><a class="header" href="#creading-the-service-file">Creading the service file</a></h2>
@@ -250,27 +266,13 @@ sudo journalctl -u nois -f -o cat
 <li>Tag: v0.6.0</li>
 <li><code>noisd version</code> should show 0.6.0</li>
 </ul>
-<h2 id="p2p"><a class="header" href="#p2p">p2p</a></h2>
+<h2 id="p2p-1"><a class="header" href="#p2p-1">p2p</a></h2>
 <p>Seed nodes</p>
 <ul>
 <li><code>ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:17356</code></li>
 <li><code>babc3f3f7804933265ec9c40ad94f4da8e9e0017@testnet-seed.rhinostake.com:17356</code></li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="mainnet"><a class="header" href="#mainnet">Mainnet</a></h1>
-<h2 id="basic-info-1"><a class="header" href="#basic-info-1">Basic info</a></h2>
-<ul>
-<li>Chain ID: <code>nois-1</code></li>
-<li>Demon: <code>unois</code></li>
-<li>Genesis time: March 28th 15:00 UTC</li>
-<li>Genesis file: Not yet finalized</li>
-</ul>
-<h2 id="binary-1"><a class="header" href="#binary-1">Binary</a></h2>
-<p>Not yet finalized</p>
-<h2 id="p2p-1"><a class="header" href="#p2p-1">p2p</a></h2>
-<p>Seed nodes: TBD</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="contracts"><a class="header" href="#contracts">Contracts</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="testnet-004-1"><a class="header" href="#testnet-004-1">Testnet 004</a></h1>
-<h2 id="contracts-1"><a class="header" href="#contracts-1">Contracts</a></h2>
+<h2 id="contracts"><a class="header" href="#contracts">Contracts</a></h2>
 <h4 id="nois-drand"><a class="header" href="#nois-drand">nois-drand</a></h4>
 <pre><code class="language-yaml">- Name: nois-drand
   Address: nois16peq3sftghumkja7nu32ztjy0ew4vsnshxfhcv6sxq573ta08gwsgldepm
@@ -307,6 +309,20 @@ sudo journalctl -u nois -f -o cat
   URL: &quot;https://github.com/noislabs/nois-contracts&quot;
   Version: v0.10.0
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mainnet"><a class="header" href="#mainnet">Mainnet</a></h1>
+<h2 id="basic-info-1"><a class="header" href="#basic-info-1">Basic info</a></h2>
+<ul>
+<li>Chain ID: <code>nois-1</code></li>
+<li>Demon: <code>unois</code></li>
+<li>Genesis time: March 28th 15:00 UTC</li>
+<li>Genesis file: Not yet finalized</li>
+</ul>
+<h2 id="binary-1"><a class="header" href="#binary-1">Binary</a></h2>
+<p>Not yet finalized</p>
+<h2 id="p2p-2"><a class="header" href="#p2p-2">p2p</a></h2>
+<p>Seed nodes: TBD</p>
+<h2 id="contracts-1"><a class="header" href="#contracts-1">Contracts</a></h2>
+<p>TBD</p>
 
                     </main>
 
