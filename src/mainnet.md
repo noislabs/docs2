@@ -14,3 +14,7 @@ Not yet finalized
 ## p2p
 
 Seed nodes: TBD
+
+## Contracts
+
+TBD
