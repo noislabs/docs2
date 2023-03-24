@@ -23,7 +23,7 @@ This way: [https://go.dev/doc/install](https://go.dev/doc/install). Both Go 1.20
 ```sh
 git clone https://github.com/noislabs/noisd.git
 cd noisd
-git checkout v0.6.0
+git checkout v0.6.1
 ```
 
 ### 4. Build and install the noisd binary
@@ -36,11 +36,19 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 # in zsh: rehash
 ```
 
-### 5. Check the installation (also creates folder $HOME/.noisd)
+Check the installation:
 
 ```sh
 noisd version
 # Shows version you checked out above
+```
+
+### 5. Init (creates folder $HOME/.noisd)
+
+Create initial configuration files. The given argument is the moniker (a nickname for the node).
+
+```sh
+noisd init "random node"
 ```
 
 ### 6. Adapt config
@@ -48,9 +56,7 @@ noisd version
 ```sh
 # Update p2p setting (config.toml)
 export MY_EXTERNAL_ADDR="$(curl -sS https://api.ipify.org):26656" # or set explicitely if this API does not return the correct value
-sed -i 's/external_address =.*$/external_address = "'$MY_EXTERNAL_ADDR'"/' $HOME/.noisd/config/config.toml \
-  && sed -i 's/^max_num_inbound_peers =.*$/max_num_inbound_peers = 80/' $HOME/.noisd/config/config.toml \
-  && sed -i 's/^max_num_outbound_peers =.*$/max_num_outbound_peers = 40/' $HOME/.noisd/config/config.toml
+sed -i 's/external_address =.*$/external_address = "'$MY_EXTERNAL_ADDR'"/' $HOME/.noisd/config/config.toml
 ```
 
 ### 7. Download the genesis file
