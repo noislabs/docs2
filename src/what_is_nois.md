@@ -1,6 +1,6 @@
 ## Overview
 
-![Nois](../img/nois-drand-ibc.jpeg)
+![Nois](img/nois-drand-ibc.jpeg)
 
 Nois is a Proof of Stake blockchain protocol that allows developers to use secure, unbiased and cost efficient randomness via IBC.
 Inside this documentation you will find all the instructions in order to:
