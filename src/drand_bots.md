@@ -72,7 +72,7 @@ The bot can also be run without containerization. This requires some Node.js kno
 
 [TODO]
 
-### Performance factors of drand-bots
+### Performance Factors of Drand Bots
 
 the main criteria in running a fast drand-bot is being able to broadcast your tx as fast as possible in order to reach the proposer's node asap before the other drand-bots.
 this will allow your submission tx to be placed among the first 6 bots in the mempool of the proposer's node.
