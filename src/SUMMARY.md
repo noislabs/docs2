@@ -14,3 +14,4 @@
   - [Mainnet](./mainnet.md)
 - [Drand Bots](./drand_bots.md)
 - [Contract checksums](./checksums.md)
+- [Validator Rewards](./validator_rewards.md)
