@@ -29,13 +29,13 @@ The Docker image is probably the most convenient way to run the bot. Install
 Docker as explained [here](https://docs.docker.com/engine/install/ubuntu/).
 Download the latest version of the bot image:
 
-```shell
+```sh
 docker pull noislabs/nois-bot:latest
 ```
 
 Run the bot as follows:
 
-```shell
+```sh
 # Make sure you have tokens in your wallet
 export MNEMONIC='<YOUR_MNEMONICS_HERE>'
 
