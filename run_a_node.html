@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html" class="active"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.3.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.2.</strong> Mainnet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html" class="active"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.3.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.2.</strong> Mainnet</a></li><li class="chapter-item expanded "><a href="faucet.html"><strong aria-hidden="true">3.3.</strong> Faucet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -151,16 +151,19 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="for-node-operators"><a class="header" href="#for-node-operators">For Node Operators</a></h1>
-<p>Here you find information how to run a full node as well as produce blocks. If you want to run a sentry, most of the instructions are the same.</p>
+<p>Here you find information how to run a full node as well as produce blocks. If
+you want to run a sentry, most of the instructions are the same.</p>
 <h2 id="run-a-full-node"><a class="header" href="#run-a-full-node">Run a full node</a></h2>
-<p>We assume you are on some sort of Ubuntu/Debian Linux. Other Linux distributions and macOS works very similar.</p>
+<p>We assume you are on some sort of Ubuntu/Debian Linux. Other Linux distributions
+and macOS works very similar.</p>
 <h3 id="1-update-your-os-and-install-dependencies"><a class="header" href="#1-update-your-os-and-install-dependencies">1. Update your OS and install dependencies</a></h3>
 <pre><code class="language-sh">sudo apt update
 # Maybe also this if you want: sudo apt upgrade -y &amp;&amp; reboot
 sudo apt install -y make gcc build-essential git jq joe
 </code></pre>
 <h3 id="2-install-go"><a class="header" href="#2-install-go">2. Install Go</a></h3>
-<p>This way: <a href="https://go.dev/doc/install">https://go.dev/doc/install</a>. Both Go 1.20 and 1.19 are supported.</p>
+<p>This way: <a href="https://go.dev/doc/install">https://go.dev/doc/install</a>. Both Go 1.20
+and 1.19 are supported.</p>
 <h3 id="3-clone-the-noisd-repository"><a class="header" href="#3-clone-the-noisd-repository">3. Clone the noisd repository</a></h3>
 <pre><code class="language-sh">git clone https://github.com/noislabs/noisd.git
 cd noisd
@@ -179,7 +182,8 @@ export PATH=&quot;$PATH:$(go env GOPATH)/bin&quot;
 # Shows version you checked out above
 </code></pre>
 <h3 id="5-init-creates-folder-homenoisd"><a class="header" href="#5-init-creates-folder-homenoisd">5. Init (creates folder $HOME/.noisd)</a></h3>
-<p>Create initial configuration files. The given argument is the moniker (a nickname for the node).</p>
+<p>Create initial configuration files. The given argument is the moniker (a
+nickname for the node).</p>
 <pre><code class="language-sh">noisd init &quot;random node&quot;
 </code></pre>
 <h3 id="6-adapt-config"><a class="header" href="#6-adapt-config">6. Adapt config</a></h3>
@@ -192,7 +196,11 @@ sed -i 's/external_address =.*$/external_address = &quot;'$MY_EXTERNAL_ADDR'&quo
 <pre><code class="language-sh">wget -O &quot;$HOME/.noisd/config/genesis.json&quot; &lt;GENESIS URL&gt;
 </code></pre>
 <h3 id="8-draw-the-rest-of-the-fucking-owl"><a class="header" href="#8-draw-the-rest-of-the-fucking-owl">8. Draw the rest of the fucking owl</a></h3>
-<p>The rest is similar to running a standard Cosmos node or validator. You can check the <a href="https://hub.cosmos.network/main/validators/validator-setup.html">Cosmos Hub docs</a> for more details. For the faucet, rpc links, permanent peers and similar details visit.</p>
+<p>The rest is similar to running a standard Cosmos node or validator. You can
+check the
+<a href="https://hub.cosmos.network/main/validators/validator-setup.html">Cosmos Hub docs</a>
+for more details. For the faucet, rpc links, permanent peers and similar details
+visit.</p>
 
                     </main>
 

@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.3.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.2.</strong> Mainnet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html" class="active"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.3.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.2.</strong> Mainnet</a></li><li class="chapter-item expanded "><a href="faucet.html"><strong aria-hidden="true">3.3.</strong> Faucet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html" class="active"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -152,23 +152,29 @@
                     <main>
                         <h2 id="drand-bots"><a class="header" href="#drand-bots">Drand Bots</a></h2>
 <h3 id="introduction"><a class="header" href="#introduction">Introduction</a></h3>
-<p>Bots bring randomness from drand to the Nois blockchain. That's the only thing the bot does. Once that randomness is on chain, it will be offered to Dapps across the Cosmos.</p>
+<p>Bots bring randomness from drand to the Nois blockchain. That's the only thing
+the bot does. Once that randomness is on chain, it will be offered to Dapps
+across the Cosmos.</p>
 <blockquote>
-<p><strong>ℹ️ Drand-bots do not and cannot generate randomness. The simply relay it from drand to nois chains.</strong></p>
+<p><strong>ℹ️ Drand-bots do not and cannot generate randomness. The simply relay it
+from drand to nois chains.</strong></p>
 </blockquote>
 <blockquote>
-<p><strong>ℹ️ Drand-bots are never slashed and do not need to put any collateral simply because they cannot cheat.</strong></p>
+<p><strong>ℹ️ Drand-bots are never slashed and do not need to put any collateral simply
+because they cannot cheat.</strong></p>
 </blockquote>
 <blockquote>
-<p><strong>⚠️ Although drand-bots cannot impact the outcome of the randomness, they can impact the availability of the randomness by stopping to work or by failing to submit to the nois chain.
-This is why they are incentivised and constitute a critical piece of Nois.</strong></p>
+<p><strong>⚠️ Although drand-bots cannot impact the outcome of the randomness, they can
+impact the availability of the randomness by stopping to work or by failing to
+submit to the nois chain. This is why they are incentivised and constitute a
+critical piece of Nois.</strong></p>
 </blockquote>
 <h3 id="running-a-drand-bot"><a class="header" href="#running-a-drand-bot">Running a Drand Bot</a></h3>
 <p>There are two available tools available</p>
 <h4 id="drand-bot-1"><a class="header" href="#drand-bot-1">drand-bot-1</a></h4>
 <h5 id="running-using-a-docker-image"><a class="header" href="#running-using-a-docker-image">Running using a Docker image.</a></h5>
-<p>The Docker image is probably the most convenient way to run the bot.
-Install Docker as explained <a href="https://docs.docker.com/engine/install/ubuntu/">here</a>.
+<p>The Docker image is probably the most convenient way to run the bot. Install
+Docker as explained <a href="https://docs.docker.com/engine/install/ubuntu/">here</a>.
 Download the latest version of the bot image:</p>
 <pre><code class="language-shell">docker pull noislabs/nois-bot:latest
 </code></pre>
@@ -202,20 +208,44 @@ docker run \
 </code></pre>
 <p>and re-start the bot as shown above.</p>
 <h5 id="using-a-plain-nodejs-script"><a class="header" href="#using-a-plain-nodejs-script">Using a plain Node.js script</a></h5>
-<p>The bot can also be run without containerization. This requires some Node.js knowledge and is more manual work. But it gives operators more control and is especially useful for debugging. Instructions are maintained <a href="https://github.com/noislabs/nois-bot/blob/main/RUN_ON_SERVER.md">here</a>.</p>
+<p>The bot can also be run without containerization. This requires some Node.js
+knowledge and is more manual work. But it gives operators more control and is
+especially useful for debugging. Instructions are maintained
+<a href="https://github.com/noislabs/nois-bot/blob/main/RUN_ON_SERVER.md">here</a>.</p>
 <h4 id="drand-bot-2"><a class="header" href="#drand-bot-2">drand-bot-2</a></h4>
 <p>[TODO]</p>
 <h3 id="performance-factors-of-drand-bots"><a class="header" href="#performance-factors-of-drand-bots">Performance Factors of Drand Bots</a></h3>
-<p>the main criteria in running a fast drand-bot is being able to broadcast your tx as fast as possible in order to reach the proposer's node asap before the other drand-bots.
-this will allow your submission tx to be placed among the first 6 bots in the mempool of the proposer's node.
-Obviously you need a good cpu and a fast connection that is very close to an rpc node.
-Your rpc node needs to be fast in the network and eventually needs to have fast direct peers so it can reach the proposer before the competitor drand-bot operators.
-Choosing an rpc node that is heavily used or that many other bot operators are using would not be optimal. Using an rpc that has big voting power can slightly increase your chances because that node gets chosen to propose blocks a bit more often than other validator nodes so sometimes you get that small advantage when your RPC is the block proposer. But this is a very small difference and often validator nodes do not offer an rpc endpoint.
-In general if you get like +3 second delay it is not because your bot submitted the tx 3 seconds later than the other drand-bots but because they were few ms before you so the proposer did not choose to select you in the proposed block because there is a consensus blockspace that only allows 4-5 submissions. so your submission becomes leftover for the next block (in 3 seconds) and if you also miss the second block because there are more than 10 operators faster than your drand-bot. then your submission only gets included in the block afterwards so +6seconds.</p>
+<p>the main criteria in running a fast drand-bot is being able to broadcast your tx
+as fast as possible in order to reach the proposer's node asap before the other
+drand-bots. this will allow your submission tx to be placed among the first 6
+bots in the mempool of the proposer's node. Obviously you need a good cpu and a
+fast connection that is very close to an rpc node. Your rpc node needs to be
+fast in the network and eventually needs to have fast direct peers so it can
+reach the proposer before the competitor drand-bot operators. Choosing an rpc
+node that is heavily used or that many other bot operators are using would not
+be optimal. Using an rpc that has big voting power can slightly increase your
+chances because that node gets chosen to propose blocks a bit more often than
+other validator nodes so sometimes you get that small advantage when your RPC is
+the block proposer. But this is a very small difference and often validator
+nodes do not offer an rpc endpoint. In general if you get like +3 second delay
+it is not because your bot submitted the tx 3 seconds later than the other
+drand-bots but because they were few ms before you so the proposer did not
+choose to select you in the proposed block because there is a consensus
+blockspace that only allows 4-5 submissions. so your submission becomes leftover
+for the next block (in 3 seconds) and if you also miss the second block because
+there are more than 10 operators faster than your drand-bot. then your
+submission only gets included in the block afterwards so +6seconds.</p>
 <h3 id="check-submissions"><a class="header" href="#check-submissions">Check Submissions</a></h3>
-<p>In order to check the submissions you can visit this Nois randomness <a href="https://randomness.nois.network/">dashboard</a>
-<img src="img/randomness_dashboard.jpg" alt="Dashboard" />
-This tools shows randomness that was verified on the Nois blockchain. The source of randomness is drand, a decentralized random number generator which produces a so called &quot;random beacon&quot; every 3 seconds. Beacons are submitted as transaction to Nois by off-chain bots. Since beacons are cryptographically signed by drand, bots cannot influence the randomness. A strong and diverse set of bot operator makes the submission of beacons fast and relyable. Bots are incentivised for submissions. They receive a rewards if they are registered and allow-listed.</p>
+<p>In order to check the submissions you can visit this Nois randomness
+<a href="https://randomness.nois.network/">dashboard</a>
+<img src="img/randomness_dashboard.jpg" alt="Dashboard" /> This tools shows randomness that was
+verified on the Nois blockchain. The source of randomness is drand, a
+decentralized random number generator which produces a so called &quot;random beacon&quot;
+every 3 seconds. Beacons are submitted as transaction to Nois by off-chain bots.
+Since beacons are cryptographically signed by drand, bots cannot influence the
+randomness. A strong and diverse set of bot operator makes the submission of
+beacons fast and relyable. Bots are incentivised for submissions. They receive a
+rewards if they are registered and allow-listed.</p>
 <div class="table-wrapper"><table><thead><tr><th>Badge Color</th><th>Description</th></tr></thead><tbody>
 <tr><td>Green</td><td>Bot received a reward</td></tr>
 <tr><td>Red</td><td>Bot is registered but did not receive a reward</td></tr>
@@ -236,7 +266,7 @@ This tools shows randomness that was verified on the Nois blockchain. The source
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="mainnet.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="faucet.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -250,7 +280,7 @@ This tools shows randomness that was verified on the Nois blockchain. The source
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="mainnet.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="faucet.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 

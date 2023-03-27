@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.3.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.2.</strong> Mainnet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.3.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.2.</strong> Mainnet</a></li><li class="chapter-item expanded "><a href="faucet.html"><strong aria-hidden="true">3.3.</strong> Faucet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -152,10 +152,12 @@
 <p>Just the docs.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
 <p><img src="img/nois-drand-ibc.jpeg" alt="Nois" /></p>
-<p>Nois is a Proof of Stake blockchain protocol that allows developers to use secure, unbiased and cost efficient randomness via IBC.
-Inside this documentation you will find all the instructions in order to:</p>
+<p>Nois is a Proof of Stake blockchain protocol that allows developers to use
+secure, unbiased and cost efficient randomness via IBC. Inside this
+documentation you will find all the instructions in order to:</p>
 <ul>
-<li>Setup a full node and become a Nois validator earning $NOIS while sustaining the chain.</li>
+<li>Setup a full node and become a Nois validator earning $NOIS while sustaining
+the chain.</li>
 <li>Fix common validators/full-node problems.</li>
 <li>Use Nois to bring randomness into your decentralised application.</li>
 <li>Run a relayer</li>
@@ -164,29 +166,39 @@ Inside this documentation you will find all the instructions in order to:</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="how-it-works"><a class="header" href="#how-it-works">How it works</a></h2>
 <p>The following steps are taken to get the randomness:</p>
 <ul>
-<li>A Contract on a CosmWasm and IBC-enabled chain (such as Juno or Stargaze) sends a message to a Nois proxy contract on the same chain. A reply with further information regarding the job is sent to the original contract.</li>
-<li>The proxy contract sends an IBC message to its couter-part on the Nois Network where the job is put in the queue.</li>
-<li>Once the drand beacon of the correct round is released, a network of bots sends it to the Nois Network for verification.</li>
-<li>Upon successful verfication, the pending jobs for the round are processed. For every matching job, an IBC response with the beacon is sent.</li>
-<li>The proxy contract receives the beacon and sends a callback to the original contract.</li>
+<li>A Contract on a CosmWasm and IBC-enabled chain (such as Juno or Stargaze)
+sends a message to a Nois proxy contract on the same chain. A reply with
+further information regarding the job is sent to the original contract.</li>
+<li>The proxy contract sends an IBC message to its couter-part on the Nois Network
+where the job is put in the queue.</li>
+<li>Once the drand beacon of the correct round is released, a network of bots
+sends it to the Nois Network for verification.</li>
+<li>Upon successful verfication, the pending jobs for the round are processed. For
+every matching job, an IBC response with the beacon is sent.</li>
+<li>The proxy contract receives the beacon and sends a callback to the original
+contract.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="drand"><a class="header" href="#drand">Drand</a></h2>
 <p>Nois uses drand as a source of secure, unbiased and unpredictable randomness.
-The randomness is generated by drand then it is brought to the nois chain where it is verified.
-Drand is not a blockchain but a decentralised network of institutions and reliable organisations such as cloudflare.
-For more details you can visit the drand website https://drand.love/</p>
+The randomness is generated by drand then it is brought to the nois chain where
+it is verified. Drand is not a blockchain but a decentralised network of
+institutions and reliable organisations such as Cloudflare. For more details you
+can visit the drand website <a href="https://drand.love/">https://drand.love/</a>.</p>
 <p><img src="img/drand-cover.jpeg" alt="Drand" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="for-node-operators"><a class="header" href="#for-node-operators">For Node Operators</a></h1>
-<p>Here you find information how to run a full node as well as produce blocks. If you want to run a sentry, most of the instructions are the same.</p>
+<p>Here you find information how to run a full node as well as produce blocks. If
+you want to run a sentry, most of the instructions are the same.</p>
 <h2 id="run-a-full-node"><a class="header" href="#run-a-full-node">Run a full node</a></h2>
-<p>We assume you are on some sort of Ubuntu/Debian Linux. Other Linux distributions and macOS works very similar.</p>
+<p>We assume you are on some sort of Ubuntu/Debian Linux. Other Linux distributions
+and macOS works very similar.</p>
 <h3 id="1-update-your-os-and-install-dependencies"><a class="header" href="#1-update-your-os-and-install-dependencies">1. Update your OS and install dependencies</a></h3>
 <pre><code class="language-sh">sudo apt update
 # Maybe also this if you want: sudo apt upgrade -y &amp;&amp; reboot
 sudo apt install -y make gcc build-essential git jq joe
 </code></pre>
 <h3 id="2-install-go"><a class="header" href="#2-install-go">2. Install Go</a></h3>
-<p>This way: <a href="https://go.dev/doc/install">https://go.dev/doc/install</a>. Both Go 1.20 and 1.19 are supported.</p>
+<p>This way: <a href="https://go.dev/doc/install">https://go.dev/doc/install</a>. Both Go 1.20
+and 1.19 are supported.</p>
 <h3 id="3-clone-the-noisd-repository"><a class="header" href="#3-clone-the-noisd-repository">3. Clone the noisd repository</a></h3>
 <pre><code class="language-sh">git clone https://github.com/noislabs/noisd.git
 cd noisd
@@ -205,7 +217,8 @@ export PATH=&quot;$PATH:$(go env GOPATH)/bin&quot;
 # Shows version you checked out above
 </code></pre>
 <h3 id="5-init-creates-folder-homenoisd"><a class="header" href="#5-init-creates-folder-homenoisd">5. Init (creates folder $HOME/.noisd)</a></h3>
-<p>Create initial configuration files. The given argument is the moniker (a nickname for the node).</p>
+<p>Create initial configuration files. The given argument is the moniker (a
+nickname for the node).</p>
 <pre><code class="language-sh">noisd init &quot;random node&quot;
 </code></pre>
 <h3 id="6-adapt-config"><a class="header" href="#6-adapt-config">6. Adapt config</a></h3>
@@ -218,7 +231,11 @@ sed -i 's/external_address =.*$/external_address = &quot;'$MY_EXTERNAL_ADDR'&quo
 <pre><code class="language-sh">wget -O &quot;$HOME/.noisd/config/genesis.json&quot; &lt;GENESIS URL&gt;
 </code></pre>
 <h3 id="8-draw-the-rest-of-the-fucking-owl"><a class="header" href="#8-draw-the-rest-of-the-fucking-owl">8. Draw the rest of the fucking owl</a></h3>
-<p>The rest is similar to running a standard Cosmos node or validator. You can check the <a href="https://hub.cosmos.network/main/validators/validator-setup.html">Cosmos Hub docs</a> for more details. For the faucet, rpc links, permanent peers and similar details visit.</p>
+<p>The rest is similar to running a standard Cosmos node or validator. You can
+check the
+<a href="https://hub.cosmos.network/main/validators/validator-setup.html">Cosmos Hub docs</a>
+for more details. For the faucet, rpc links, permanent peers and similar details
+visit.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="status-checks"><a class="header" href="#status-checks">Status checks</a></h1>
 <p>On this page you find various ways to check the status of your node.</p>
 <h2 id="p2p"><a class="header" href="#p2p">p2p</a></h2>
@@ -227,7 +244,8 @@ sed -i 's/external_address =.*$/external_address = &quot;'$MY_EXTERNAL_ADDR'&quo
 <code>curl -sS http://localhost:26657/status | jq .result.node_info.listen_addr</code></li>
 <li>Ensure you have a few dozen peers here:<br />
 <code>curl -sS http://localhost:26657/net_info | jq .result.n_peers</code></li>
-<li>Ensure you have a mix of outbound and inbound peers (i.e. both outgoing and incoming connections work:<br />
+<li>Ensure you have a mix of outbound and inbound peers (i.e. both outgoing and
+incoming connections work:<br />
 <code>curl -sS http://localhost:26657/net_info | jq | grep is_outbound</code></li>
 </ol>
 <h2 id="sync"><a class="header" href="#sync">Sync</a></h2>
@@ -236,17 +254,18 @@ sed -i 's/external_address =.*$/external_address = &quot;'$MY_EXTERNAL_ADDR'&quo
 <code>curl -sS http://localhost:26657/status | jq .result.sync_info</code></li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="history-settings"><a class="header" href="#history-settings">History settings</a></h1>
-<p>There are a few things you might want to set in yout node.
-Different settings are required for different use cases, so don't consider them recommendations.</p>
+<p>There are a few things you might want to set in yout node. Different settings
+are required for different use cases, so don't consider them recommendations.</p>
 <h2 id="1-dont-store-old-state"><a class="header" href="#1-dont-store-old-state">1. Don't store old state</a></h2>
-<p>In order to avoid storing snapshots of the state,
-in <code>$HOME/.noisd/config/app.toml</code> you can set <code>pruning = &quot;default&quot;</code>:</p>
+<p>In order to avoid storing snapshots of the state, in
+<code>$HOME/.noisd/config/app.toml</code> you can set <code>pruning = &quot;default&quot;</code>:</p>
 <pre><code class="language-sh">sed -i 's/pruning =.*$/pruning = &quot;everything&quot;/' $HOME/.noisd/config/app.toml
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="using-systemd"><a class="header" href="#using-systemd">Using systemd</a></h1>
 <p>You can run noisd as a service for systemd.</p>
 <h2 id="creading-the-service-file"><a class="header" href="#creading-the-service-file">Creading the service file</a></h2>
-<p>The following script creates the service file nois.service for systemd. The file was originally provided by Kolot, thank you!.</p>
+<p>The following script creates the service file nois.service for systemd. The file
+was originally provided by Kolot, thank you!.</p>
 <pre><code class="language-sh">sudo tee /etc/systemd/system/nois.service &gt; /dev/null &lt;&lt;EOF
 [Unit]
 Description=Nois blockchain
@@ -294,8 +313,10 @@ sudo journalctl -u nois -f -o cat
 <h2 id="genesis"><a class="header" href="#genesis">Genesis</a></h2>
 <ul>
 <li>Time: March 21st 15:00 UTC</li>
-<li>URL: <a href="https://raw.githubusercontent.com/noislabs/networks/nois-testnet-004.final.2/nois-testnet-004/genesis.json">https://raw.githubusercontent.com/noislabs/networks/nois-testnet-004.final.2/nois-testnet-004/genesis.json</a></li>
-<li>Checksum (sha256): <code>371b29ef51a0f50f882621f3631e7210f78208635f4a1c6877fa6e75366a4d55</code></li>
+<li>URL:
+<a href="https://raw.githubusercontent.com/noislabs/networks/nois-testnet-004.final.2/nois-testnet-004/genesis.json">https://raw.githubusercontent.com/noislabs/networks/nois-testnet-004.final.2/nois-testnet-004/genesis.json</a></li>
+<li>Checksum (sha256):
+<code>371b29ef51a0f50f882621f3631e7210f78208635f4a1c6877fa6e75366a4d55</code></li>
 </ul>
 <h2 id="binary"><a class="header" href="#binary">Binary</a></h2>
 <ul>
@@ -355,8 +376,10 @@ sudo journalctl -u nois -f -o cat
 <h2 id="genesis-1"><a class="header" href="#genesis-1">Genesis</a></h2>
 <ul>
 <li>Time: March 28th 15:00 UTC</li>
-<li>URL: <a href="https://raw.githubusercontent.com/noislabs/networks/nois1.final.1/nois-1/genesis.json">https://raw.githubusercontent.com/noislabs/networks/nois1.final.1/nois-1/genesis.json</a></li>
-<li>Checksum (sha256): <code>5332fb6477a2d273fd7e5a13bceb213e2a9d408a698c49ab34e8b78736e58cac</code></li>
+<li>URL:
+<a href="https://raw.githubusercontent.com/noislabs/networks/nois1.final.1/nois-1/genesis.json">https://raw.githubusercontent.com/noislabs/networks/nois1.final.1/nois-1/genesis.json</a></li>
+<li>Checksum (sha256):
+<code>5332fb6477a2d273fd7e5a13bceb213e2a9d408a698c49ab34e8b78736e58cac</code></li>
 </ul>
 <h2 id="binary-1"><a class="header" href="#binary-1">Binary</a></h2>
 <ul>
@@ -374,25 +397,45 @@ sudo journalctl -u nois -f -o cat
 </ul>
 <h2 id="contracts-1"><a class="header" href="#contracts-1">Contracts</a></h2>
 <p>TBD</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="faucet"><a class="header" href="#faucet">Faucet</a></h1>
+<p>A faucet is a tool to provide small amounts of tokens for onboarding purposes.
+We usually use a faucet channel
+<a href="https://chat.nois.network/">on our Discord server</a>. The following faucets are
+available.</p>
+<h2 id="mainnet-1"><a class="header" href="#mainnet-1">Mainnet</a></h2>
+<p>There is currently no faucet available. If you are nice in chat, some community
+members might be kind enough to gift you some tokens.</p>
+<h2 id="testnet-004-1"><a class="header" href="#testnet-004-1">Testnet 004</a></h2>
+<p>As Testnet 004 is an almost identical replicate of the mainnet tokenomics, no
+faucet is available.</p>
+<h2 id="testnet-005"><a class="header" href="#testnet-005">Testnet 005</a></h2>
+<p>Testnet 005 is scheduled for mid April 2023 (i.e. after mainnet launch) as a
+long living testnet. It will have a faucet.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="drand-bots"><a class="header" href="#drand-bots">Drand Bots</a></h2>
 <h3 id="introduction"><a class="header" href="#introduction">Introduction</a></h3>
-<p>Bots bring randomness from drand to the Nois blockchain. That's the only thing the bot does. Once that randomness is on chain, it will be offered to Dapps across the Cosmos.</p>
+<p>Bots bring randomness from drand to the Nois blockchain. That's the only thing
+the bot does. Once that randomness is on chain, it will be offered to Dapps
+across the Cosmos.</p>
 <blockquote>
-<p><strong>ℹ️ Drand-bots do not and cannot generate randomness. The simply relay it from drand to nois chains.</strong></p>
+<p><strong>ℹ️ Drand-bots do not and cannot generate randomness. The simply relay it
+from drand to nois chains.</strong></p>
 </blockquote>
 <blockquote>
-<p><strong>ℹ️ Drand-bots are never slashed and do not need to put any collateral simply because they cannot cheat.</strong></p>
+<p><strong>ℹ️ Drand-bots are never slashed and do not need to put any collateral simply
+because they cannot cheat.</strong></p>
 </blockquote>
 <blockquote>
-<p><strong>⚠️ Although drand-bots cannot impact the outcome of the randomness, they can impact the availability of the randomness by stopping to work or by failing to submit to the nois chain.
-This is why they are incentivised and constitute a critical piece of Nois.</strong></p>
+<p><strong>⚠️ Although drand-bots cannot impact the outcome of the randomness, they can
+impact the availability of the randomness by stopping to work or by failing to
+submit to the nois chain. This is why they are incentivised and constitute a
+critical piece of Nois.</strong></p>
 </blockquote>
 <h3 id="running-a-drand-bot"><a class="header" href="#running-a-drand-bot">Running a Drand Bot</a></h3>
 <p>There are two available tools available</p>
 <h4 id="drand-bot-1"><a class="header" href="#drand-bot-1">drand-bot-1</a></h4>
 <h5 id="running-using-a-docker-image"><a class="header" href="#running-using-a-docker-image">Running using a Docker image.</a></h5>
-<p>The Docker image is probably the most convenient way to run the bot.
-Install Docker as explained <a href="https://docs.docker.com/engine/install/ubuntu/">here</a>.
+<p>The Docker image is probably the most convenient way to run the bot. Install
+Docker as explained <a href="https://docs.docker.com/engine/install/ubuntu/">here</a>.
 Download the latest version of the bot image:</p>
 <pre><code class="language-shell">docker pull noislabs/nois-bot:latest
 </code></pre>
@@ -426,20 +469,44 @@ docker run \
 </code></pre>
 <p>and re-start the bot as shown above.</p>
 <h5 id="using-a-plain-nodejs-script"><a class="header" href="#using-a-plain-nodejs-script">Using a plain Node.js script</a></h5>
-<p>The bot can also be run without containerization. This requires some Node.js knowledge and is more manual work. But it gives operators more control and is especially useful for debugging. Instructions are maintained <a href="https://github.com/noislabs/nois-bot/blob/main/RUN_ON_SERVER.md">here</a>.</p>
+<p>The bot can also be run without containerization. This requires some Node.js
+knowledge and is more manual work. But it gives operators more control and is
+especially useful for debugging. Instructions are maintained
+<a href="https://github.com/noislabs/nois-bot/blob/main/RUN_ON_SERVER.md">here</a>.</p>
 <h4 id="drand-bot-2"><a class="header" href="#drand-bot-2">drand-bot-2</a></h4>
 <p>[TODO]</p>
 <h3 id="performance-factors-of-drand-bots"><a class="header" href="#performance-factors-of-drand-bots">Performance Factors of Drand Bots</a></h3>
-<p>the main criteria in running a fast drand-bot is being able to broadcast your tx as fast as possible in order to reach the proposer's node asap before the other drand-bots.
-this will allow your submission tx to be placed among the first 6 bots in the mempool of the proposer's node.
-Obviously you need a good cpu and a fast connection that is very close to an rpc node.
-Your rpc node needs to be fast in the network and eventually needs to have fast direct peers so it can reach the proposer before the competitor drand-bot operators.
-Choosing an rpc node that is heavily used or that many other bot operators are using would not be optimal. Using an rpc that has big voting power can slightly increase your chances because that node gets chosen to propose blocks a bit more often than other validator nodes so sometimes you get that small advantage when your RPC is the block proposer. But this is a very small difference and often validator nodes do not offer an rpc endpoint.
-In general if you get like +3 second delay it is not because your bot submitted the tx 3 seconds later than the other drand-bots but because they were few ms before you so the proposer did not choose to select you in the proposed block because there is a consensus blockspace that only allows 4-5 submissions. so your submission becomes leftover for the next block (in 3 seconds) and if you also miss the second block because there are more than 10 operators faster than your drand-bot. then your submission only gets included in the block afterwards so +6seconds.</p>
+<p>the main criteria in running a fast drand-bot is being able to broadcast your tx
+as fast as possible in order to reach the proposer's node asap before the other
+drand-bots. this will allow your submission tx to be placed among the first 6
+bots in the mempool of the proposer's node. Obviously you need a good cpu and a
+fast connection that is very close to an rpc node. Your rpc node needs to be
+fast in the network and eventually needs to have fast direct peers so it can
+reach the proposer before the competitor drand-bot operators. Choosing an rpc
+node that is heavily used or that many other bot operators are using would not
+be optimal. Using an rpc that has big voting power can slightly increase your
+chances because that node gets chosen to propose blocks a bit more often than
+other validator nodes so sometimes you get that small advantage when your RPC is
+the block proposer. But this is a very small difference and often validator
+nodes do not offer an rpc endpoint. In general if you get like +3 second delay
+it is not because your bot submitted the tx 3 seconds later than the other
+drand-bots but because they were few ms before you so the proposer did not
+choose to select you in the proposed block because there is a consensus
+blockspace that only allows 4-5 submissions. so your submission becomes leftover
+for the next block (in 3 seconds) and if you also miss the second block because
+there are more than 10 operators faster than your drand-bot. then your
+submission only gets included in the block afterwards so +6seconds.</p>
 <h3 id="check-submissions"><a class="header" href="#check-submissions">Check Submissions</a></h3>
-<p>In order to check the submissions you can visit this Nois randomness <a href="https://randomness.nois.network/">dashboard</a>
-<img src="img/randomness_dashboard.jpg" alt="Dashboard" />
-This tools shows randomness that was verified on the Nois blockchain. The source of randomness is drand, a decentralized random number generator which produces a so called &quot;random beacon&quot; every 3 seconds. Beacons are submitted as transaction to Nois by off-chain bots. Since beacons are cryptographically signed by drand, bots cannot influence the randomness. A strong and diverse set of bot operator makes the submission of beacons fast and relyable. Bots are incentivised for submissions. They receive a rewards if they are registered and allow-listed.</p>
+<p>In order to check the submissions you can visit this Nois randomness
+<a href="https://randomness.nois.network/">dashboard</a>
+<img src="img/randomness_dashboard.jpg" alt="Dashboard" /> This tools shows randomness that was
+verified on the Nois blockchain. The source of randomness is drand, a
+decentralized random number generator which produces a so called &quot;random beacon&quot;
+every 3 seconds. Beacons are submitted as transaction to Nois by off-chain bots.
+Since beacons are cryptographically signed by drand, bots cannot influence the
+randomness. A strong and diverse set of bot operator makes the submission of
+beacons fast and relyable. Bots are incentivised for submissions. They receive a
+rewards if they are registered and allow-listed.</p>
 <div class="table-wrapper"><table><thead><tr><th>Badge Color</th><th>Description</th></tr></thead><tbody>
 <tr><td>Green</td><td>Bot received a reward</td></tr>
 <tr><td>Red</td><td>Bot is registered but did not receive a reward</td></tr>
@@ -456,12 +523,13 @@ This tools shows randomness that was verified on the Nois blockchain. The source
 <h3 id="incentive-system"><a class="header" href="#incentive-system">Incentive System</a></h3>
 <p>[TODO]</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="checksums"><a class="header" href="#checksums">Checksums</a></h1>
-<p>On this page you find reference checksums for builds of various contract versions.
-The builds are created using cosmwasm/workspace-optimizer in our CI system. They
-can be reproduced using the correct builder version for the tag.</p>
+<p>On this page you find reference checksums for builds of various contract
+versions. The builds are created using cosmwasm/workspace-optimizer in our CI
+system. They can be reproduced using the correct builder version for the tag.</p>
 <!-- BEGIN AUTOGEN -->
 <h3 id="version-0110"><a class="header" href="#version-0110">Version 0.11.0</a></h3>
-<p>Source code: <a href="https://github.com/noislabs/nois-contracts/tree/v0.11.0">nois-contracts@v0.11.0</a></p>
+<p>Source code:
+<a href="https://github.com/noislabs/nois-contracts/tree/v0.11.0">nois-contracts@v0.11.0</a></p>
 <pre><code>c403371a244acce9aaa6f31d01c7bb3518904708da9516d94c73f253202f91a8  nois_demo.wasm
 ddaca2d1887555ebfe07a65ebec09fd3a159e78c3c429de9281187ac1780f5a0  nois_drand.wasm
 9c87c6acf3775329ba7ad47fe6b31309b0b57335009205de7605f911475adfda  nois_gateway.wasm
@@ -472,7 +540,8 @@ e6681c8f55415cc903df29dcce28d484f5f03f65ca9a6c00909043eac76d530b  nois_payment.w
 cb7b021831dd908b673491288b7a76f7ae973b8c1586ce41d9a69cadab5202c7  nois_sink.wasm
 </code></pre>
 <h3 id="version-0102"><a class="header" href="#version-0102">Version 0.10.2</a></h3>
-<p>Source code: <a href="https://github.com/noislabs/nois-contracts/tree/v0.10.2">nois-contracts@v0.10.2</a></p>
+<p>Source code:
+<a href="https://github.com/noislabs/nois-contracts/tree/v0.10.2">nois-contracts@v0.10.2</a></p>
 <pre><code>519a32e0d7fffeccec08c8de75ed59417d84694fd1a3543856750723b575bbc4  nois_demo.wasm
 97eca42191327bf8a2b1c8f55ca3198bf080abcd8a3d0d93814884af26140574  nois_drand.wasm
 f0829c3d1300b1f6e0a46feafeffa55b1b5ec74729d122b7ed37754a8cd5e634  nois_gateway.wasm
@@ -483,7 +552,8 @@ eac87b36309f1cddcf648d2628d6291dd4633bd93229f4bbfd1574d7e6f291a3  nois_proxy.was
 756eafcdfec2902f0b5766d458831d54284402df1bf49d267993d01fd313265e  nois_sink.wasm
 </code></pre>
 <h3 id="version-0101"><a class="header" href="#version-0101">Version 0.10.1</a></h3>
-<p>Source code: <a href="https://github.com/noislabs/nois-contracts/tree/v0.10.1">nois-contracts@v0.10.1</a></p>
+<p>Source code:
+<a href="https://github.com/noislabs/nois-contracts/tree/v0.10.1">nois-contracts@v0.10.1</a></p>
 <pre><code>cf4ae21500e0d74473f496b52fd03f05b537efaf6cf69a68cb41a428cf3d9a9d  nois_demo.wasm
 0d44c4d6b98bf2da8d4891a3236b5bb0ac8f8b8eca28a0f0b49d98236f52a2bf  nois_drand.wasm
 dcb997ef5529d24e9388ae2dfdb3fd8b891275ef01cdb180085da6d92f4ce3a6  nois_gateway.wasm
@@ -494,7 +564,8 @@ eb8829e8e5f3fb571a5faaf555ac7f8cec17e2f7e1875cbe0dee2229c09663f4  nois_proxy.was
 8fb2a58af0ca8ebdde9275c8e68b09623aaa1a005f6de7c2ab01f4611e583ce7  nois_sink.wasm
 </code></pre>
 <h3 id="version-0100"><a class="header" href="#version-0100">Version 0.10.0</a></h3>
-<p>Source code: <a href="https://github.com/noislabs/nois-contracts/tree/v0.10.0">nois-contracts@v0.10.0</a></p>
+<p>Source code:
+<a href="https://github.com/noislabs/nois-contracts/tree/v0.10.0">nois-contracts@v0.10.0</a></p>
 <pre><code>b2b069b49b234e317b3efae163b974759cf0bc746837d2c63fdac00b13da37db  nois_demo.wasm
 1b410b590b9b25599de7bb13624e3abdf705ddd7df8da78d1dcd824316ecd95b  nois_drand.wasm
 6339c243842487401065b14175239e87a2a7380c654fe63cf32ba37851d1a13d  nois_gateway.wasm
@@ -506,9 +577,10 @@ f29ef3687ac154a708c656515dd33b951ed8e37071c90d418c20cafe3fee6d84  nois_proxy.was
 </code></pre>
 <!-- END AUTOGEN -->
 <div style="break-before: page; page-break-before: always;"></div><h1 id="validator-rewards"><a class="header" href="#validator-rewards">Validator Rewards</a></h1>
-<p>Nois rewards the network's validators by allocating a 6% of the inflation to validators in the active set.
-In contrast to staking rewards, every validator receives the same amount and it is not shared with stakers.
-This is an attempt to reduce concentration of voting power in a very few validators.</p>
+<p>Nois rewards the network's validators by allocating a 6% of the inflation to
+validators in the active set. In contrast to staking rewards, every validator
+receives the same amount and it is not shared with stakers. This is an attempt
+to reduce concentration of voting power in a very few validators.</p>
 <p>Learn how to query accumulated rewards and how to claim them.</p>
 <h3 id="querying"><a class="header" href="#querying">Querying</a></h3>
 <pre><code># query by address
