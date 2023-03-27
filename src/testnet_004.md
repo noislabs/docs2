@@ -26,6 +26,17 @@ Seed nodes
 - `ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:17356`
 - `babc3f3f7804933265ec9c40ad94f4da8e9e0017@testnet-seed.rhinostake.com:17356`
 
+## RPCs
+
+An incomplete and unchecked list of community provided TendermintRPC endpoints:
+
+| URL                                | TLS | CORS | tx_index |
+| ---------------------------------- | --- | ---- | -------- |
+| https://testrpc-nois.d-stake.xyz/  | ✅  | ?    | ❌       |
+| https://nois-004.rpc.bccnodes.com/ | ✅  | ✅   | ✅       |
+| https://rpc-t.nois.nodestake.top   | ✅  | ?    | ✅       |
+| https://testrpc-nois.d-stake.xyz/  | ✅  | ?    | ✅       |
+
 ## Contracts
 
 #### nois-drand
