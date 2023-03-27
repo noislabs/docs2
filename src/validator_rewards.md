@@ -1,6 +1,10 @@
 # Validator Rewards
 
-Nois rewards the network's validators by allocating a % of the inflation to validators in the active set. Learn how to query accumulated rewards and how to claim them.
+Nois rewards the network's validators by allocating a 6% of the inflation to validators in the active set.
+In contrast to staking rewards, every validator receives the same amount and it is not shared with stakers.
+This is an attempt to reduce concentration of voting power in a very few validators.
+
+Learn how to query accumulated rewards and how to claim them.
 
 ### Querying
 
