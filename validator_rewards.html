@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Status Checks - Nois Documentation</title>
+        <title>Validator Rewards - Nois Documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html" class="active"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.3.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.2.</strong> Mainnet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.3.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.2.</strong> Mainnet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html" class="active"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -121,7 +121,7 @@
                         <a href="https://github.com/noislabs/docs2" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/noislabs/docs2/edit/main/src/status_checks.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/noislabs/docs2/edit/main/src/validator_rewards.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -150,34 +150,31 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="status-checks"><a class="header" href="#status-checks">Status checks</a></h1>
-<p>On this page you find various ways to check the status of your node.</p>
-<h2 id="p2p"><a class="header" href="#p2p">p2p</a></h2>
-<ol>
-<li>Ensure your external address is set correctly:<br />
-<code>curl -sS http://localhost:26657/status | jq .result.node_info.listen_addr</code></li>
-<li>Ensure you have a few dozen peers here:<br />
-<code>curl -sS http://localhost:26657/net_info | jq .result.n_peers</code></li>
-<li>Ensure you have a mix of outbound and inbound peers (i.e. both outgoing and incoming connections work:<br />
-<code>curl -sS http://localhost:26657/net_info | jq | grep is_outbound</code></li>
-</ol>
-<h2 id="sync"><a class="header" href="#sync">Sync</a></h2>
-<ol>
-<li>Check your height and catching up value:<br />
-<code>curl -sS http://localhost:26657/status | jq .result.sync_info</code></li>
-</ol>
+                        <h1 id="validator-rewards"><a class="header" href="#validator-rewards">Validator Rewards</a></h1>
+<p>Nois rewards the network's validators by allocating a 6% of the inflation to validators in the active set.
+In contrast to staking rewards, every validator receives the same amount and it is not shared with stakers.
+This is an attempt to reduce concentration of voting power in a very few validators.</p>
+<p>Learn how to query accumulated rewards and how to claim them.</p>
+<h3 id="querying"><a class="header" href="#querying">Querying</a></h3>
+<pre><code># query by address
+noisd q allocation claimable-rewards nois1r04t9nm22u2wfwpuffgyr8jgxs85ek0clsytvs
+
+# query by operator address
+noisd q allocation claimable-rewards noisvaloper1r04t9nm22u2wfwpuffgyr8jgxs85ek0c7sk24y
+</code></pre>
+<h3 id="claiming-rewards"><a class="header" href="#claiming-rewards">Claiming Rewards</a></h3>
+<pre><code>noisd tx allocation claim-rewards --from [validator-key] \
+    --chain-id  [chain-id] --gas-prices 0.25unois --gas-adjustment 1.5
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="run_a_node.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="checksums.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="history.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -185,13 +182,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="run_a_node.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="checksums.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="history.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
