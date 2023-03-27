@@ -23,8 +23,10 @@ This way: [https://go.dev/doc/install](https://go.dev/doc/install). Both Go 1.20
 ```sh
 git clone https://github.com/noislabs/noisd.git
 cd noisd
-git checkout v0.6.1
+git checkout <SOME TAG>
 ```
+
+The tag to be checked out is available in the [Networks section](./networks.md).
 
 ### 4. Build and install the noisd binary
 
