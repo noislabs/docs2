@@ -12,6 +12,7 @@
 - [Networks](./networks.md)
   - [Testnet 004](./testnet_004.md)
   - [Mainnet](./mainnet.md)
+  - [Faucet](./faucet.md)
 - [Drand Bots](./drand_bots.md)
 - [Contract checksums](./checksums.md)
 - [Validator Rewards](./validator_rewards.md)
