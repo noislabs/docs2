@@ -215,7 +215,7 @@ sed -i 's/external_address =.*$/external_address = &quot;'$MY_EXTERNAL_ADDR'&quo
 </code></pre>
 <h3 id="7-download-the-genesis-file"><a class="header" href="#7-download-the-genesis-file">7. Download the genesis file</a></h3>
 <p>See <a href="./networks.html">Networks</a> for the correct URL.</p>
-<pre><code class="language-sh">wget -O &quot;$HOME/.noisd/config/genesis.json&quot; https://raw.githubusercontent.com/noislabs/networks/nois-testnet-004.final.2/nois-testnet-004/genesis.json
+<pre><code class="language-sh">wget -O &quot;$HOME/.noisd/config/genesis.json&quot; &lt;GENESIS URL&gt;
 </code></pre>
 <h3 id="8-draw-the-rest-of-the-fucking-owl"><a class="header" href="#8-draw-the-rest-of-the-fucking-owl">8. Draw the rest of the fucking owl</a></h3>
 <p>The rest is similar to running a standard Cosmos node or validator. You can check the <a href="https://hub.cosmos.network/main/validators/validator-setup.html">Cosmos Hub docs</a> for more details. For the faucet, rpc links, permanent peers and similar details visit.</p>
