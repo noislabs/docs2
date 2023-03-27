@@ -66,7 +66,7 @@ sed -i 's/external_address =.*$/external_address = "'$MY_EXTERNAL_ADDR'"/' $HOME
 See [Networks](./networks.md) for the correct URL.
 
 ```sh
-wget -O "$HOME/.noisd/config/genesis.json" https://raw.githubusercontent.com/noislabs/networks/nois-testnet-004.final.2/nois-testnet-004/genesis.json
+wget -O "$HOME/.noisd/config/genesis.json" <GENESIS URL>
 ```
 
 ### 8. Draw the rest of the fucking owl
