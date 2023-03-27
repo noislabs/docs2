@@ -1,10 +1,12 @@
 # For Node Operators
 
-Here you find information how to run a full node as well as produce blocks. If you want to run a sentry, most of the instructions are the same.
+Here you find information how to run a full node as well as produce blocks. If
+you want to run a sentry, most of the instructions are the same.
 
 ## Run a full node
 
-We assume you are on some sort of Ubuntu/Debian Linux. Other Linux distributions and macOS works very similar.
+We assume you are on some sort of Ubuntu/Debian Linux. Other Linux distributions
+and macOS works very similar.
 
 ### 1. Update your OS and install dependencies
 
@@ -16,7 +18,8 @@ sudo apt install -y make gcc build-essential git jq joe
 
 ### 2. Install Go
 
-This way: [https://go.dev/doc/install](https://go.dev/doc/install). Both Go 1.20 and 1.19 are supported.
+This way: [https://go.dev/doc/install](https://go.dev/doc/install). Both Go 1.20
+and 1.19 are supported.
 
 ### 3. Clone the noisd repository
 
@@ -47,7 +50,8 @@ noisd version
 
 ### 5. Init (creates folder $HOME/.noisd)
 
-Create initial configuration files. The given argument is the moniker (a nickname for the node).
+Create initial configuration files. The given argument is the moniker (a
+nickname for the node).
 
 ```sh
 noisd init "random node"
@@ -71,4 +75,8 @@ wget -O "$HOME/.noisd/config/genesis.json" <GENESIS URL>
 
 ### 8. Draw the rest of the fucking owl
 
-The rest is similar to running a standard Cosmos node or validator. You can check the [Cosmos Hub docs](https://hub.cosmos.network/main/validators/validator-setup.html) for more details. For the faucet, rpc links, permanent peers and similar details visit.
+The rest is similar to running a standard Cosmos node or validator. You can
+check the
+[Cosmos Hub docs](https://hub.cosmos.network/main/validators/validator-setup.html)
+for more details. For the faucet, rpc links, permanent peers and similar details
+visit.

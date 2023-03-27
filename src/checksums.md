@@ -1,14 +1,15 @@
 # Checksums
 
-On this page you find reference checksums for builds of various contract versions.
-The builds are created using cosmwasm/workspace-optimizer in our CI system. They
-can be reproduced using the correct builder version for the tag.
+On this page you find reference checksums for builds of various contract
+versions. The builds are created using cosmwasm/workspace-optimizer in our CI
+system. They can be reproduced using the correct builder version for the tag.
 
 <!-- BEGIN AUTOGEN -->
 
 ### Version 0.11.0
 
-Source code: [nois-contracts@v0.11.0](https://github.com/noislabs/nois-contracts/tree/v0.11.0)
+Source code:
+[nois-contracts@v0.11.0](https://github.com/noislabs/nois-contracts/tree/v0.11.0)
 
 ```
 c403371a244acce9aaa6f31d01c7bb3518904708da9516d94c73f253202f91a8  nois_demo.wasm
@@ -23,7 +24,8 @@ cb7b021831dd908b673491288b7a76f7ae973b8c1586ce41d9a69cadab5202c7  nois_sink.wasm
 
 ### Version 0.10.2
 
-Source code: [nois-contracts@v0.10.2](https://github.com/noislabs/nois-contracts/tree/v0.10.2)
+Source code:
+[nois-contracts@v0.10.2](https://github.com/noislabs/nois-contracts/tree/v0.10.2)
 
 ```
 519a32e0d7fffeccec08c8de75ed59417d84694fd1a3543856750723b575bbc4  nois_demo.wasm
@@ -38,7 +40,8 @@ eac87b36309f1cddcf648d2628d6291dd4633bd93229f4bbfd1574d7e6f291a3  nois_proxy.was
 
 ### Version 0.10.1
 
-Source code: [nois-contracts@v0.10.1](https://github.com/noislabs/nois-contracts/tree/v0.10.1)
+Source code:
+[nois-contracts@v0.10.1](https://github.com/noislabs/nois-contracts/tree/v0.10.1)
 
 ```
 cf4ae21500e0d74473f496b52fd03f05b537efaf6cf69a68cb41a428cf3d9a9d  nois_demo.wasm
@@ -53,7 +56,8 @@ eb8829e8e5f3fb571a5faaf555ac7f8cec17e2f7e1875cbe0dee2229c09663f4  nois_proxy.was
 
 ### Version 0.10.0
 
-Source code: [nois-contracts@v0.10.0](https://github.com/noislabs/nois-contracts/tree/v0.10.0)
+Source code:
+[nois-contracts@v0.10.0](https://github.com/noislabs/nois-contracts/tree/v0.10.0)
 
 ```
 b2b069b49b234e317b3efae163b974759cf0bc746837d2c63fdac00b13da37db  nois_demo.wasm

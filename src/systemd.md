@@ -4,7 +4,8 @@ You can run noisd as a service for systemd.
 
 ## Creading the service file
 
-The following script creates the service file nois.service for systemd. The file was originally provided by Kolot, thank you!.
+The following script creates the service file nois.service for systemd. The file
+was originally provided by Kolot, thank you!.
 
 ```sh
 sudo tee /etc/systemd/system/nois.service > /dev/null <<EOF
