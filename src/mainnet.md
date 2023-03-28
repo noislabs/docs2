@@ -32,4 +32,38 @@ Seed nodes
 
 ## Contracts
 
-TBD
+#### nois-drand
+
+```yaml
+- Name: nois-drand
+  Address: nois19w26q6n44xqepduudfz2xls4pc5lltpn6rxu34g0jshxu3rdujzsj7dgu8
+  Code ID: "4"
+  Git Asset Name: nois_drand
+  Instantiation Message: '{"incentive_point_price":"3000","incentive_denom":"unois","min_round":808287,"manager":"nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk"}'
+  URL: "https://github.com/noislabs/nois-contracts"
+  Version: v0.11.0
+```
+
+#### nois-icecube
+
+```yaml
+- Name: nois-icecube
+  Address: nois1gwnfyx82rwgc4y9r8vx6nr9v35dwezw3dadw6h39mad9amg7shnsler5f0
+  Code ID: "6"
+  Git Asset Name: nois_icecube
+  Instantiation Message: '{"manager":"nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk"}'
+  URL: "https://github.com/noislabs/nois-contracts"
+  Version: v0.11.0
+```
+
+#### nois-sink
+
+```yaml
+- Name: nois-sink
+  Address: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
+  Code ID: "5"
+  Git Asset Name: nois_sink
+  Instantiation Message: "{}"
+  URL: "https://github.com/noislabs/nois-contracts"
+  Version: v0.11.0
+```
