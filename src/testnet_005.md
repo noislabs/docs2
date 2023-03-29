@@ -33,3 +33,39 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 | http://139.59.154.47:17357 | ✅  | ?    | ❌       |
 
 ## Contracts
+
+#### nois-drand
+
+```yaml
+- Name: nois-drand
+  Address: nois14xef285hz5cx5q9hh32p9nztu3cct4g44sxjgx3dmftt2tj2rweqkjextk
+  Code ID: "1"
+  Git Asset Name: nois_drand
+  Instantiation Message: '{"incentive_point_price":"3000","incentive_denom":"unois","min_round":,"manager":"nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve"}'
+  URL: "https://github.com/noislabs/nois-contracts"
+  Version: v0.11.0
+```
+
+#### nois-icecube
+
+```yaml
+- Name: nois-icecube
+  Address: nois1gwnfyx82rwgc4y9r8vx6nr9v35dwezw3dadw6h39mad9amg7shnsler5f0
+  Code ID: "6"
+  Git Asset Name: nois_icecube
+  Instantiation Message: '{"manager":"nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve"}'
+  URL: "https://github.com/noislabs/nois-contracts"
+  Version: v0.11.0
+```
+
+#### nois-sink
+
+```yaml
+- Name: nois-sink
+  Address: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
+  Code ID: "5"
+  Git Asset Name: nois_sink
+  Instantiation Message: "{}"
+  URL: "https://github.com/noislabs/nois-contracts"
+  Version: v0.11.0
+```
