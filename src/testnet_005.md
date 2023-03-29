@@ -28,9 +28,12 @@ Seed nodes
 
 An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
-| URL                        | TLS | CORS | tx_index |
-| -------------------------- | --- | ---- | -------- |
-| http://139.59.154.47:17357 | ✅  | ?    | ❌       |
+| URL                                       | TLS | CORS | tx_index |
+| ----------------------------------------- | --- | ---- | -------- |
+| https://nois-testnet-rpc.polkachu.com:443 | ✅  | ?    | ?        |
+| https://nois-testnet.rpc.kjnodes.com:443  | ✅  | ?    | ?        |
+| https://rpc.nois.mcbnode.online:443       | ✅  | ?    | ?        |
+| http://185.198.27.109:26657               | No  | ?    | ?        |
 
 ## Contracts
 
