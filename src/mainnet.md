@@ -30,6 +30,17 @@ Seed nodes
 - `20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:17356`
 - `c8db99691545545402a1c45fa897f3cb1a05aea6@nois-mainnet-seed.itrocket.net:36656`
 
+## RPCs
+
+An incomplete and unchecked list of community provided TendermintRPC endpoints:
+
+| URL                              | TLS | CORS | tx_index |
+| -------------------------------- | --- | ---- | -------- |
+| https://rpc-nois.sr20de.xyz:443  | ✅  | ?    | ✅       |
+| https://rpc.nois.hexnodes.co:443 | ✅  | ?    | ✅       |
+| https://m-nois.rpc.utsa.tech:443 | ✅  | ?    | ✅       |
+| https://rpc-nois.d-stake.xyz:443 | ✅  | ?    | ✅       |
+
 ## Contracts
 
 #### nois-drand
