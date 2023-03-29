@@ -11,6 +11,7 @@
   - [Using Systemd](./systemd.md)
 - [Networks](./networks.md)
   - [Testnet 004](./testnet_004.md)
+  - [Testnet 005](./testnet_005.md)
   - [Mainnet](./mainnet.md)
   - [Faucet](./faucet.md)
 - [Drand Bots](./drand_bots.md)
