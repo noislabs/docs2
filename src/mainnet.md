@@ -41,6 +41,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 | https://m-nois.rpc.utsa.tech:443 | ✅  | ?    | ✅       |
 | https://rpc-nois.d-stake.xyz:443 | ✅  | ?    | ✅       |
 | http://rpc.nois.cumulo.pro:80    | ❌  | ?    | ✅       |
+| https://nois-mainnet-rpc.itrocket.net:443    | ✅  | ✅    | ✅       |
 
 ## Contracts
 
