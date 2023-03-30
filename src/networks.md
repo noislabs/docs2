@@ -1,6 +1,11 @@
 # Networks
 
-Nois is launching the following two networks in March:
+Active networks:
 
-- Tuesday, March 21st 15:00 UTC: [nois-testnet-004](./testnet_004.md)
-- Tuesday, March 28th 15:00 UTC: [nois-1](./mainnet.md) (mainnet)
+- Mainnet: [nois-1](./mainnet.md)
+- Testnet: [nois-testnet-005](./testnet_005.md)
+
+Discontinued:
+
+- [nois-testnet-004](./testnet_004.md), a short living pre-mainnet testnet with
+  mainnet addresses and token distribution
