@@ -15,8 +15,8 @@
 ## Binary
 
 - Build `noisd` from <https://github.com/noislabs/noisd>
-- Tag: v1.0.0
-- `noisd version` should show 1.0.0
+- Tag: v1.0.1
+- `noisd version` should show 1.0.1
 
 ## p2p
 
