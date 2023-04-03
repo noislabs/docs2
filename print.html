@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.3.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="testnet_005.html"><strong aria-hidden="true">3.2.</strong> Testnet 005</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.3.</strong> Mainnet</a></li><li class="chapter-item expanded "><a href="faucet.html"><strong aria-hidden="true">3.4.</strong> Faucet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="cors.html"><strong aria-hidden="true">2.3.</strong> CORS</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.4.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="testnet_005.html"><strong aria-hidden="true">3.2.</strong> Testnet 005</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.3.</strong> Mainnet</a></li><li class="chapter-item expanded "><a href="faucet.html"><strong aria-hidden="true">3.4.</strong> Faucet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -260,6 +260,35 @@ are required for different use cases, so don't consider them recommendations.</p
 <p>In order to avoid storing snapshots of the state, in
 <code>$HOME/.noisd/config/app.toml</code> you can set <code>pruning = &quot;default&quot;</code>:</p>
 <pre><code class="language-sh">sed -i 's/pruning =.*$/pruning = &quot;everything&quot;/' $HOME/.noisd/config/app.toml
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="checking-cors"><a class="header" href="#checking-cors">Checking CORS</a></h1>
+<p>Enabling CORS is important to allow browser-based apps to access the APIs the
+same way as non-browser based apps.</p>
+<h2 id="check-cors-with-curl"><a class="header" href="#check-cors-with-curl">Check CORS with curl</a></h2>
+<p>The origin <code>https://randomness.nois.network/</code> serves as an example app using the
+endpoint here.</p>
+<pre><code class="language-sh">export ENDPOINT=&quot;https://rpc-nois.d-stake.xyz:443&quot;
+
+# Regular CORS request
+curl -sS -I -H &quot;Origin: https://randomness.nois.network/&quot; \
+  &quot;$ENDPOINT/status&quot; | grep -i &quot;access-control-&quot;
+
+# Should return status 200 and include the response header:
+# - Access-Control-Allow-Origin
+
+# Preflight request
+curl -sS -I -H &quot;Origin: https://randomness.nois.network/&quot; \
+  -H &quot;Access-Control-Request-Method: POST&quot; \
+  -H &quot;Access-Control-Request-Headers: X-Requested-With&quot; \
+  -X OPTIONS \
+  &quot;$ENDPOINT/status&quot; | grep -i &quot;access-control-&quot;
+
+# Should return status 200 and include the response headers:
+# - Access-Control-Allow-Origin
+# - Access-Control-Allow-Methods
+# - Access-Control-Allow-Headers
+
+
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="using-systemd"><a class="header" href="#using-systemd">Using systemd</a></h1>
 <p>You can run noisd as a service for systemd.</p>
@@ -477,12 +506,14 @@ mainnet addresses and token distribution</li>
 <h2 id="rpcs-2"><a class="header" href="#rpcs-2">RPCs</a></h2>
 <p>An incomplete and unchecked list of community provided TendermintRPC endpoints:</p>
 <div class="table-wrapper"><table><thead><tr><th>URL</th><th>TLS</th><th>CORS</th><th>tx_index</th></tr></thead><tbody>
-<tr><td>https://rpc-nois.sr20de.xyz:443</td><td>✅</td><td>?</td><td>✅</td></tr>
-<tr><td>https://rpc.nois.hexnodes.co:443</td><td>✅</td><td>?</td><td>✅</td></tr>
-<tr><td>https://m-nois.rpc.utsa.tech:443</td><td>✅</td><td>?</td><td>✅</td></tr>
-<tr><td>https://rpc-nois.d-stake.xyz:443</td><td>✅</td><td>?</td><td>✅</td></tr>
+<tr><td>https://rpc-nois.sr20de.xyz:443</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td>https://rpc.nois.hexnodes.co:443</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td>https://m-nois.rpc.utsa.tech:443</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td>https://rpc-nois.d-stake.xyz:443</td><td>✅</td><td>✅</td><td>✅</td></tr>
 <tr><td>http://rpc.nois.cumulo.pro:80</td><td>❌</td><td>?</td><td>✅</td></tr>
 <tr><td>https://nois-mainnet-rpc.itrocket.net:443</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td>https://nois-rpc.nysa.network:443</td><td>✅</td><td>❌</td><td>✅</td></tr>
+<tr><td>https://rpc.nois.chaintools.tech/</td><td>✅</td><td>✅</td><td>❌</td></tr>
 </tbody></table>
 </div>
 <h2 id="contracts-2"><a class="header" href="#contracts-2">Contracts</a></h2>
