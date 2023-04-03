@@ -36,12 +36,14 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 | URL                                       | TLS | CORS | tx_index |
 | ----------------------------------------- | --- | ---- | -------- |
-| https://rpc-nois.sr20de.xyz:443           | ✅  | ?    | ✅       |
-| https://rpc.nois.hexnodes.co:443          | ✅  | ?    | ✅       |
-| https://m-nois.rpc.utsa.tech:443          | ✅  | ?    | ✅       |
-| https://rpc-nois.d-stake.xyz:443          | ✅  | ?    | ✅       |
+| https://rpc-nois.sr20de.xyz:443           | ✅  | ✅   | ✅       |
+| https://rpc.nois.hexnodes.co:443          | ✅  | ✅   | ✅       |
+| https://m-nois.rpc.utsa.tech:443          | ✅  | ✅   | ✅       |
+| https://rpc-nois.d-stake.xyz:443          | ✅  | ✅   | ✅       |
 | http://rpc.nois.cumulo.pro:80             | ❌  | ?    | ✅       |
 | https://nois-mainnet-rpc.itrocket.net:443 | ✅  | ✅   | ✅       |
+| https://nois-rpc.nysa.network:443         | ✅  | ❌   | ✅       |
+| https://rpc.nois.chaintools.tech/         | ✅  | ✅   | ❌       |
 
 ## Contracts
 
