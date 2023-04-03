@@ -262,8 +262,9 @@ are required for different use cases, so don't consider them recommendations.</p
 <pre><code class="language-sh">sed -i 's/pruning =.*$/pruning = &quot;everything&quot;/' $HOME/.noisd/config/app.toml
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="checking-cors"><a class="header" href="#checking-cors">Checking CORS</a></h1>
-<p>Enabling CORS is important to allow browser-based apps to access the APIs the
-same way as non-browser based apps.</p>
+<p>Enabling <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a> is
+important to allow browser-based apps to access the APIs the same way as
+non-browser based apps.</p>
 <h2 id="check-cors-with-curl"><a class="header" href="#check-cors-with-curl">Check CORS with curl</a></h2>
 <p>The origin <code>https://randomness.nois.network/</code> serves as an example app using the
 endpoint here.</p>
