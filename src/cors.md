@@ -1,7 +1,8 @@
 # Checking CORS
 
-Enabling CORS is important to allow browser-based apps to access the APIs the
-same way as non-browser based apps.
+Enabling [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) is
+important to allow browser-based apps to access the APIs the same way as
+non-browser based apps.
 
 ## Check CORS with curl
 
