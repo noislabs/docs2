@@ -82,3 +82,25 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.11.0
 ```
+
+## IBC channels
+
+Right now the following IBC channels are supported:
+
+|  Protocol | Other chain           | Channel (nois-1) | Channel (other chain) |
+| --------- | --------------------- | ---------------- | --------------------- |
+| ICS-20    | Stargaze (stargaze-1) | channel-0        | channel-137           |
+| ICS-20    | Juno (juno-1)         | channel-1        | channel-225           |
+
+## IBC denoms
+
+On Nois:
+
+- ustars: ?
+- ujuno: ?
+
+unois on:
+
+- Stargaze (stargaze-1):
+  `ibc/0F181D9F5BB18A8496153C1666E934169515592C135E8E9FCCC355889858EAF9`
+- Juno (juno-1): ?
