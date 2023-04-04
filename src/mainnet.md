@@ -96,8 +96,8 @@ Right now the following IBC channels are supported:
 
 On Nois:
 
-- ustars: ?
-- ujuno: ?
+- ustars: `ibc/49BAE4CD2172833F14000627DA87ED8024AD46A38D6ED33F6239F22B5832F958`
+- ujuno: `ibc/EFF323CC632EC4F747C61BCE238A758EFDB7699C3226565F7C20DA06509D59A5`
 
 unois on:
 
