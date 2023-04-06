@@ -3,6 +3,8 @@
 Double dice game example
 [​https://github.com/noislabs/nois-dapp-examples](​https://github.com/noislabs/nois-dapp-examples)
 
+---
+
 #### Import the nois packages
 
 First thing is to import the packages. Add this to your cargo.toml under

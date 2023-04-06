@@ -23,3 +23,4 @@
   - [Nois Toolbox](./nois_toolbox.md)
     - [Toolbox in Rust](./toolbox_in_rust.md)
     - [Toolbox in js](./toolbox_in_js.md)
+- [Links](./links.md)
