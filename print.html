@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="cors.html"><strong aria-hidden="true">2.3.</strong> CORS</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.4.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="testnet_005.html"><strong aria-hidden="true">3.2.</strong> Testnet 005</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.3.</strong> Mainnet</a></li><li class="chapter-item expanded "><a href="faucet.html"><strong aria-hidden="true">3.4.</strong> Faucet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="cors.html"><strong aria-hidden="true">2.3.</strong> CORS</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.4.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="testnet_005.html"><strong aria-hidden="true">3.2.</strong> Testnet 005</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.3.</strong> Mainnet</a></li><li class="chapter-item expanded "><a href="faucet.html"><strong aria-hidden="true">3.4.</strong> Faucet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li><li class="chapter-item expanded "><a href="use_nois_randomness.html"><strong aria-hidden="true">7.</strong> Use Nois randomness</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="contract_implementation.html"><strong aria-hidden="true">7.1.</strong> Contract Implementation</a></li><li class="chapter-item expanded "><a href="interacting_with_a_dapp.html"><strong aria-hidden="true">7.2.</strong> Interacting with a Dapp</a></li><li class="chapter-item expanded "><a href="nois_toolbox.html"><strong aria-hidden="true">7.3.</strong> Nois Toolbox</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -761,7 +761,224 @@ noisd q allocation claimable-rewards noisvaloper1r04t9nm22u2wfwpuffgyr8jgxs85ek0
 <pre><code>noisd tx allocation claim-rewards --from [validator-key] \
     --chain-id  [chain-id] --gas-prices 0.25unois --gas-adjustment 1.5
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="use-nois-randomness-beacon---for-dapp-developers"><a class="header" href="#use-nois-randomness-beacon---for-dapp-developers">Use Nois Randomness Beacon - For DAPP Developers</a></h1>
+<p>Good to know:</p>
+<blockquote>
+<p>ℹ️ This section is intended for developers who are building applications that
+consume the randomness. If you are looking on the documentation to contribute
+to Nois then check The Nois Developement section (Under construction).</p>
+</blockquote>
+<p>​ From a DAPP developer's perspective, getting randomness is as simple as 2
+handlers in the contract. The first handler is <strong>GetNextRandomness(job_id)</strong> and
+the second handler is <strong>receive(randomness,job_id)</strong> <strong>job_id:</strong> This is an
+internal identifier within the dapp to know what the randomness is going to be
+used for. Imagine you have multiple players, and each one of them is rolling the
+dice. when player Bob rolls the dice, your DAPP chooses a <strong>job_id</strong> of type
+string to reference the randomness that will hold the randomness of the dice
+roll of Bob. In another use case you can have on the same contract rounds of
+lottery A and rounds of lottery B. You can set one <strong>job_id</strong> per lottery so
+that the contract knows what randomness matches what game.</p>
+<blockquote>
+<p>ℹ️ You can choose whichever string you like for the <strong>job_id</strong>. The <strong>job_id</strong>
+is not about routing the randomness back to your contract. The routing
+callback will simply go to the contract that called the nois-proxy.</p>
+</blockquote>
+<p><strong>randomness</strong>: This is the raw randomness hexadecimal data. Example of
+randomness:</p>
+<pre><code>ba17f71e631b9c3f6ad32ab44f6031ef885f2c3021c58edaa853b539f0225ea3
+</code></pre>
+<p><img src="img/use_nois_randomness_img.jpeg" alt="use_nois_randomness" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contract-implementation"><a class="header" href="#contract-implementation">Contract implementation</a></h1>
+<p>Double dice game example
+<a href="%E2%80%8Bhttps://github.com/noislabs/nois-dapp-examples">​https://github.com/noislabs/nois-dapp-examples</a></p>
+<h4 id="import-the-nois-packages"><a class="header" href="#import-the-nois-packages">Import the nois packages</a></h4>
+<p>First thing is to import the packages. Add this to your cargo.toml under
+dependencies.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// in cargo.toml
+[dependencies]
+nois = &quot;0.6.0&quot;
+<span class="boring">}</span></code></pre></pre>
+<h4 id="configure-the-proxy-address"><a class="header" href="#configure-the-proxy-address">Configure the proxy address</a></h4>
+<p>We need to add the address of the nois-proxy. One common way to do it is during
+the instantiation of the contract.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// in state.rs
+pub const NOIS_PROXY: Item&lt;Addr&gt; = Item::new(&quot;nois_proxy&quot;);
+<span class="boring">}</span></code></pre></pre>
+<p>import the <strong>nois-proxy</strong>.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// in contract.rs
+use crate::state::{NOIS_PROXY};
+<span class="boring">}</span></code></pre></pre>
+<p>Still in the contract.rs add the instantiation msg which validates the
+nois-proxy address and stores it</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// in contract.rs
+pub fn instantiate(
+    deps: DepsMut,
+    _env: Env,
+    info: MessageInfo,
+    msg: InstantiateMsg,
+) -&gt; Result&lt;Response, ContractError&gt; {
+    // The nois-proxy abstracts the IBC and nois chain away from this application
+    let nois_proxy_addr = deps
+        .api
+        .addr_validate(&amp;msg.nois_proxy)
+        .map_err(|_| ContractError::InvalidProxyAddress)?;
+    set_contract_version(deps.storage, CONTRACT_NAME, CONTRACT_VERSION)?;
+    NOIS_PROXY.save(deps.storage, &amp;nois_proxy_addr)?;
+​
+    Ok(Response::new()
+        .add_attribute(&quot;method&quot;, &quot;instantiate&quot;)
+        .add_attribute(&quot;owner&quot;, info.sender))
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Declare the instantiation msg</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// in msg.rs
+pub struct InstantiateMsg {
+   pub nois_proxy: String,
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Add the InvalidProxyError in error.rs</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// in errors.rs
+#[error(&quot;Proxy address is not valid&quot;)]
+InvalidProxyAddress,T
+<span class="boring">}</span></code></pre></pre>
+<h4 id="triggering-the-randomness-request"><a class="header" href="#triggering-the-randomness-request">Triggering the randomness request</a></h4>
+<p>In order to request the randomness we need a function whether internal or
+publicly called. For this tutorial we can make a roll dice msg that will in turn
+call the getNextRandomness(id) handler. So the RollDice message gets the id as a
+parameter</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// in contract.rs
+match msg {
+        //RollDice should be called by a player who wants to roll the dice
+        ExecuteMsg::RollDice { job_id } =&gt; execute_roll_dice(deps, env, info, job_id),
+    }
+<span class="boring">}</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// in msg.rs
+pub enum ExecuteMsg {
+   RollDice {
+       /// An ID for this job which allows for gathering the results.
+       job_id: String,
+   },
+}
+<span class="boring">}</span></code></pre></pre>
+<p>Call the GetNextRandomness(id) from the triggering function</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>//execute_roll_dice is the function that will trigger the process of requesting randomness.
+//The request from randomness happens by calling the nois-proxy contract
+pub fn execute_roll_dice(
+    deps: DepsMut,
+    _env: Env,
+    _info: MessageInfo,
+    job_id: String,
+) -&gt; Result&lt;Response, ContractError&gt; {
+    let nois_proxy = NOIS_PROXY.load(deps.storage)?;
 
+    let response = Response::new().add_message(WasmMsg::Execute {
+        contract_addr: nois_proxy.into(),
+        //GetNextRandomness requests the randomness from the proxy
+        //The job id is needed to know what randomness we are referring to upon reception in the callback
+        //In this example, the job_id represents one round of dice rolling.
+        msg: to_binary(&amp;ProxyExecuteMsg::GetNextRandomness { job_id })?,
+        //In this example the randomness is sent from the gambler, but you may also send the funds from the contract balance
+        funds: info.funds, // Just pass on all funds we got
+    });
+    Ok(response)
+}
+<span class="boring">}</span></code></pre></pre>
+<h4 id="receiving-the-randomness"><a class="header" href="#receiving-the-randomness">Receiving the randomness</a></h4>
+<p>The nois-proxy contract sends the callback on the NoisReceive entrypoint.
+Therefore, you should add the Receive handler on your ExecuteMsg.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// in contract.rs
+ //NoisReceive
+should be called by the proxy contract. The proxy is forwarding the randomness
+from the nois chain to this contract. ExecuteMsg::NoisReceive { callback } =&gt;
+execute*nois_receive(deps, env, info, callback),
+<span class="boring">}</span></code></pre></pre>
+<p>and in msg.rs</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// in msg.rs
+use nois::NoisCallback;
+
+pub enum ExecuteMsg {
+    // job_id for this job which allows for gathering the results.
+    RollDice { job_id: String },
+    //callback contains the randomness from drand (HexBinary) and job_id
+    //callback should only be allowed to be called by the proxy contract
+    Receive { callback: NoisCallback },
+}
+<span class="boring">}</span></code></pre></pre>
+<p>In the receive function you can implement whatever you would like to do with the
+randomness. You directly use the randomness as a raw hexadecimal or you can
+apply some common randomness functionalities that you get from the Nois toolbox
+crate.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// in contract.rs
+pub fn execute_nois_receive(
+    deps: DepsMut,
+    _env: Env,
+    _info: MessageInfo,
+    callback_id: String,
+    randomness: Data,
+) -&gt; Result&lt;Response, ContractError&gt; {
+    let randomness: [u8; 32] = randomness
+        .to_array()
+        .map_err(|_| ContractError::InvalidRandomness)?;
+
+   //Congrats, you have access to
+   // a publicly-verifiable, unbiasable and decentralised randomness
+
+    Ok(Response::default())
+}
+//The execute_receive function is triggered upon reception of the randomness from the proxy contract
+//The callback contains the randomness from drand (HexBinary) and the job_id
+pub fn execute_receive(
+    deps: DepsMut,
+    _env: Env,
+    info: MessageInfo,
+    callback: NoisCallback,
+) -&gt; Result&lt;Response, ContractError&gt; {
+    //load proxy address from store
+    let proxy = NOIS_PROXY.load(deps.storage)?;
+    //callback should only be allowed to be called by the proxy contract
+    //otherwise anyone can cut the randomness workflow and cheat the randomness by sending the randomness directly to this contract
+    ensure_eq!(info.sender, proxy, ContractError::UnauthorizedReceive);
+    let randomness: [u8; 32] = callback
+        .randomness
+        .to_array()
+        .map_err(|_| ContractError::InvalidRandomness)?;
+    //ints_in_range provides a list of random numbers following a uniform distribution within a range.
+    //in this case it will provide 2 uniformly randomized numbers between 1 and 6
+    let double_dice_outcome = ints_in_range(randomness, 2, 1, 6);
+    //summing the dice to fit the real double dice probability distribution from 2 to 12
+    let double_dice_outcome = double_dice_outcome.iter().sum();
+
+    //Congrats, you have access to
+    // a publicly-verifiable, unbiasable and decentralised randomness
+
+    Ok(Response::default())
+}
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
