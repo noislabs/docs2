@@ -2,6 +2,8 @@
 
 > To safely transform and manipulate your randomness, onchain and offchain.
 
+---
+
 Next to providing the randomness, Nois offers a set of tooling to help
 developers reshape the received randomness in order to apply it to their custom
 use case.
