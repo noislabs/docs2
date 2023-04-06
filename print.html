@@ -978,7 +978,61 @@ pub fn execute_receive(
     Ok(Response::default())
 }
 <span class="boring">}</span></code></pre></pre>
-<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="interacting-with-a-dapp"><a class="header" href="#interacting-with-a-dapp">Interacting with a DAPP</a></h1>
+<p>This document intends to help developers test the example contracts that are
+provided by nois Clone the double-dice game code</p>
+<pre><code class="language-shell">git clone https://github.com/noislabs/nois-dapp-examples.git
+cd nois-dapp-examples
+</code></pre>
+<p>Compile and optimise the code</p>
+<pre><code class="language-shell">RUSTFLAGS=&quot;-C link-arg=-s&quot; cargo build --release --target=wasm32-unknown-unknownStoring the contract:
+</code></pre>
+<p>Store the contract</p>
+<pre><code class="language-shell">export CODE_ID=$(junod tx wasm store \
+       target/wasm32-unknown-unknown/release/double_dice_roll.wasm \
+       --from &lt;your-key&gt; \
+       --chain-id uni-5 \
+       --gas=auto \
+       --gas-adjustment 1.4  \
+       --gas-prices 0.025ujunox \
+       --broadcast-mode=block \
+       --node=https://rpc.uni.juno.deuslabs.fi:443 -y \
+       |yq -r &quot;.logs[0].events[1].attributes[1].value&quot; )
+</code></pre>
+<p>Instantiate the contract</p>
+<pre><code class="language-shell">export NOIS_PROXY=juno1tquqqdvlv3fwu5u6evpt7e4ss47zczug8tq4czjucgx8dulkhjxsegfuds
+export DOUBLE_DICE_ROLL_CONTRACT=$(junod \
+       tx wasm instantiate $CODE_ID \
+       '{&quot;nois_proxy&quot;: &quot;'&quot;$NOIS_PROXY&quot;'&quot;}' \
+       --label=double-dice \
+       --no-admin \
+       --from &lt;your-key&gt; \
+       --chain-id uni-3 \
+       --gas=auto \
+       --gas-adjustment 1.4 \
+       --fees=1000000ujunox \
+       --broadcast-mode=block \
+       --node=https://rpc.uni.juno.deuslabs.fi:443 -y \
+       |yq -r '.logs[0].events[0].attributes[0].value' )
+</code></pre>
+<p>Request randomness (ie. roll the dice)</p>
+<pre><code class="language-shell">export DOUBLE_DICE_ROLL_CONTRACT=juno1e7p6k4c0l52zperyhd6nfx053yrdgjw4k6kunszhk9j0smedgtzs27nrkh
+
+junod tx wasm execute $DOUBLE_DICE_ROLL_CONTRACT \
+            '{&quot;roll_dice&quot;: {&quot;job_id&quot;: &quot;&lt;your-job-id&gt;&quot;}}' \
+            --from &lt;your-key&gt; \
+            --gas-prices 0.025ujunox \
+            --gas=auto \
+            --gas-adjustment 1.3 \
+            --amount 100ujunox -y
+</code></pre>
+<p>Query the randomness</p>
+<pre><code class="language-shell">junod query wasm  contract-state  smart \
+            $DOUBLE_DICE_ROLL_CONTRACT  \
+            '{&quot;get_history_of_rounds&quot;: {}}' \
+            --node=https://rpc.uni.juno.deuslabs.fi:443
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
