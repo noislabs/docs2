@@ -158,20 +158,65 @@ The nois-proxy's role when deployed to your chain is to abstract the IBC
 complexity out of the randomness consumer DAPP.</p>
 <h4 id="steps-to-integrate-nois-to-your-chain"><a class="header" href="#steps-to-integrate-nois-to-your-chain">Steps to integrate Nois to your chain</a></h4>
 <h5 id="install-the-binary-of-your-chain"><a class="header" href="#install-the-binary-of-your-chain">Install the binary of your chain</a></h5>
-<p>For this step you can</p>
-<h5 id="navigate-to-the-contract-releases-link"><a class="header" href="#navigate-to-the-contract-releases-link">Navigate to the contract releases link</a></h5>
+<p>For this step you can check the docs for your IBC chain. and atthe end of this
+step you should be able to run the chain binary. Example:</p>
+<pre><code class="language-shell">junod version
+</code></pre>
+<h5 id="navigate-to-the-nois-contract-releases-link"><a class="header" href="#navigate-to-the-nois-contract-releases-link">Navigate to the Nois contract releases link</a></h5>
 <p>navigate to this <a href="https://github.com/noislabs/nois-contracts/releases">link</a> and
 you should find a list of releases. scroll to the latest version and expand the
-list of artifacts then click to download <strong>nois_proxy.wasm</strong></p>
+list of artifacts/assets then click and download <strong>nois_proxy.wasm</strong></p>
 <h5 id="store-the-nois-proxy-contract-code"><a class="header" href="#store-the-nois-proxy-contract-code">Store the nois-proxy contract code</a></h5>
-<pre><code class="language-shell">
+<pre><code class="language-shell">junod tx wasm store \
+       nois_proxy.wasm* \
+       --from &lt;your-key&gt; \
+       --chain-id uni-6 \
+       --gas=auto \
+       --gas-adjustment 1.4  \
+       --gas-prices 0.025ujunox \
+       --broadcast-mode=block \
+       --node=https://rpc.uni.juno.deuslabs.fi:443 -y
 </code></pre>
 <h5 id="instantiate-the-nois-proxy-contract-code"><a class="header" href="#instantiate-the-nois-proxy-contract-code">instantiate the nois-proxy contract code</a></h5>
-<pre><code class="language-shell">
+<pre><code class="language-shell">junod tx wasm instantiate &lt;CODE_ID&gt; \
+       '{&quot;prices&quot;:[{&quot;denom&quot;:&quot;ujunox&quot;,&quot;amount&quot;:&quot;1000000&quot;}],&quot;withdrawal_address&quot;:&quot;juno1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t&quot;,&quot;callback_gas_limit&quot;:500000,&quot;test_mode&quot;:false}' \
+       --label=nois-proxy \
+       --no-admin \
+       --from &lt;your-key&gt; \
+       --chain-id uni-6 \
+       --gas=auto \
+       --gas-adjustment 1.4 \
+       --gas-prices 0.025ujunox \
+       --broadcast-mode=block \
+       --node=https://rpc.uni.juno.deuslabs.fi:443 -y
 </code></pre>
 <h5 id="setup-the-ibc-channel"><a class="header" href="#setup-the-ibc-channel">Setup the IBC channel</a></h5>
-<pre><code class="language-shell">
-</code></pre>
+<ul>
+<li>choose your relayer software (ts-relayer or hermes or go-relayer).</li>
+<li>get some NOIS tokens and your chain's native tokens.</li>
+<li>create an IBC client and connection.</li>
+<li>Create an IBC channel where the source is the nois-proxy on your chain and the
+destination is the nois-gateway on the Nois chain (the direction is
+important). When creating the channel Make sure to use the wasm port.
+<blockquote>
+<p>ℹ️ If the nois-gateway address is
+nois1x55xhexprdwfl6nfju53hfxj77nsxlj5c9jzyvjuastl9f3dt6jsx6l9yg then the
+port will be
+<strong>wasm</strong>.nois1x55xhexprdwfl6nfju53hfxj77nsxlj5c9jzyvjuastl9f3dt6jsx6l9yg</p>
+</blockquote>
+</li>
+<li>Upon channel connection/creation the nois-gateway factory creates a payment
+contract for your proxy on the Nois chain. This payment contract will be your
+balance sheet. So long as the payment contract has enough balance your proxy
+will be able to request randomness beacon. So make sure the payment contract
+is well fed with $NOIS</li>
+<li>Check that the channel has been created. You can do so in this IBC
+<a href="https://ibc.nois.network/connections">mainnet dashboard</a> or
+<a href="https://testnet.ibc.nois.network/">testnet dashboard</a></li>
+<li>Run the relayer and ask others to run their relayers aswell.</li>
+<li>Congrats 🎉 you can use the proxy on your Dapp to get randomness. You can
+follow <em>use_nois_randomness</em> page for more details.</li>
+</ul>
 
                     </main>
 
