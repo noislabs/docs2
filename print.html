@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="cors.html"><strong aria-hidden="true">2.3.</strong> CORS</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.4.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_004.html"><strong aria-hidden="true">3.1.</strong> Testnet 004</a></li><li class="chapter-item expanded "><a href="testnet_005.html"><strong aria-hidden="true">3.2.</strong> Testnet 005</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.3.</strong> Mainnet</a></li><li class="chapter-item expanded "><a href="faucet.html"><strong aria-hidden="true">3.4.</strong> Faucet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li><li class="chapter-item expanded "><a href="use_nois_randomness.html"><strong aria-hidden="true">7.</strong> Use Nois randomness</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="contract_implementation.html"><strong aria-hidden="true">7.1.</strong> Contract Implementation</a></li><li class="chapter-item expanded "><a href="interacting_with_a_dapp.html"><strong aria-hidden="true">7.2.</strong> Interacting with a Dapp</a></li><li class="chapter-item expanded "><a href="nois_toolbox.html"><strong aria-hidden="true">7.3.</strong> Nois Toolbox</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title.html">Nois Documentation</a></li><li class="chapter-item expanded "><a href="what_is_nois.html"><strong aria-hidden="true">1.</strong> What is Nois</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="how_it_works.html"><strong aria-hidden="true">1.1.</strong> How it works</a></li><li class="chapter-item expanded "><a href="drand.html"><strong aria-hidden="true">1.2.</strong> Drand</a></li></ol></li><li class="chapter-item expanded "><a href="run_a_node.html"><strong aria-hidden="true">2.</strong> Run a node</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="status_checks.html"><strong aria-hidden="true">2.1.</strong> Status Checks</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.2.</strong> History settings</a></li><li class="chapter-item expanded "><a href="cors.html"><strong aria-hidden="true">2.3.</strong> CORS</a></li><li class="chapter-item expanded "><a href="systemd.html"><strong aria-hidden="true">2.4.</strong> Using Systemd</a></li></ol></li><li class="chapter-item expanded "><a href="networks.html"><strong aria-hidden="true">3.</strong> Networks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="testnet_005.html"><strong aria-hidden="true">3.1.</strong> Testnet 005</a></li><li class="chapter-item expanded "><a href="mainnet.html"><strong aria-hidden="true">3.2.</strong> Mainnet</a></li><li class="chapter-item expanded "><a href="faucet.html"><strong aria-hidden="true">3.3.</strong> Faucet</a></li></ol></li><li class="chapter-item expanded "><a href="drand_bots.html"><strong aria-hidden="true">4.</strong> Drand Bots</a></li><li class="chapter-item expanded "><a href="checksums.html"><strong aria-hidden="true">5.</strong> Contract checksums</a></li><li class="chapter-item expanded "><a href="validator_rewards.html"><strong aria-hidden="true">6.</strong> Validator Rewards</a></li><li class="chapter-item expanded "><a href="use_nois_randomness.html"><strong aria-hidden="true">7.</strong> Use Nois randomness</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="contract_implementation.html"><strong aria-hidden="true">7.1.</strong> Contract Implementation</a></li><li class="chapter-item expanded "><a href="interacting_with_a_dapp.html"><strong aria-hidden="true">7.2.</strong> Interacting with a Dapp</a></li><li class="chapter-item expanded "><a href="nois_toolbox.html"><strong aria-hidden="true">7.3.</strong> Nois Toolbox</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="toolbox_in_rust.html"><strong aria-hidden="true">7.3.1.</strong> Toolbox in Rust</a></li><li class="chapter-item expanded "><a href="toolbox_in_js.html"><strong aria-hidden="true">7.3.2.</strong> Toolbox in js</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -339,90 +339,82 @@ sudo journalctl -u nois -f -o cat
 <li><a href="./testnet_004.html">nois-testnet-004</a>, a short living pre-mainnet testnet with
 mainnet addresses and token distribution</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="testnet-004"><a class="header" href="#testnet-004">Testnet 004</a></h1>
-<h2 id="basic-info"><a class="header" href="#basic-info">Basic info</a></h2>
-<ul>
-<li>Chain ID: <code>nois-testnet-004</code></li>
-<li>Demon: <code>unois</code></li>
-</ul>
-<h2 id="genesis"><a class="header" href="#genesis">Genesis</a></h2>
-<ul>
-<li>Time: March 21st 15:00 UTC</li>
-<li>URL:
-<a href="https://raw.githubusercontent.com/noislabs/networks/nois-testnet-004.final.2/nois-testnet-004/genesis.json">https://raw.githubusercontent.com/noislabs/networks/nois-testnet-004.final.2/nois-testnet-004/genesis.json</a></li>
-<li>Checksum (sha256):
-<code>371b29ef51a0f50f882621f3631e7210f78208635f4a1c6877fa6e75366a4d55</code></li>
-</ul>
-<h2 id="binary"><a class="header" href="#binary">Binary</a></h2>
-<ul>
-<li>Build <code>noisd</code> from <a href="https://github.com/noislabs/noisd">https://github.com/noislabs/noisd</a></li>
-<li>Tag: v0.6.0</li>
-<li><code>noisd version</code> should show 0.6.0</li>
-</ul>
-<h2 id="p2p-1"><a class="header" href="#p2p-1">p2p</a></h2>
-<p>Seed nodes</p>
-<ul>
-<li><code>ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:17356</code></li>
-<li><code>babc3f3f7804933265ec9c40ad94f4da8e9e0017@testnet-seed.rhinostake.com:17356</code></li>
-</ul>
-<h2 id="rpcs"><a class="header" href="#rpcs">RPCs</a></h2>
-<p>An incomplete and unchecked list of community provided TendermintRPC endpoints:</p>
-<div class="table-wrapper"><table><thead><tr><th>URL</th><th>TLS</th><th>CORS</th><th>tx_index</th></tr></thead><tbody>
-<tr><td>https://testrpc-nois.d-stake.xyz/</td><td>✅</td><td>?</td><td>❌</td></tr>
-<tr><td>https://nois-004.rpc.bccnodes.com/</td><td>✅</td><td>✅</td><td>✅</td></tr>
-<tr><td>https://rpc-t.nois.nodestake.top</td><td>✅</td><td>?</td><td>✅</td></tr>
-<tr><td>https://testrpc-nois.d-stake.xyz/</td><td>✅</td><td>?</td><td>✅</td></tr>
-</tbody></table>
-</div>
-<h2 id="contracts"><a class="header" href="#contracts">Contracts</a></h2>
-<h4 id="nois-drand"><a class="header" href="#nois-drand">nois-drand</a></h4>
-<pre><code class="language-yaml">- Name: nois-drand
-  Address: nois16peq3sftghumkja7nu32ztjy0ew4vsnshxfhcv6sxq573ta08gwsgldepm
-  Code ID: &quot;11&quot;
-  Git Asset Name: nois_drand
-  Instantiation Message: '{&quot;incentive_point_price&quot;:&quot;25000&quot;,&quot;incentive_denom&quot;:&quot;unois&quot;,&quot;min_round&quot;:,&quot;manager&quot;:&quot;nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk&quot;}'
-  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
-  Version: v0.10.0
-</code></pre>
-<h4 id="nois-gateway"><a class="header" href="#nois-gateway">nois-gateway</a></h4>
-<pre><code class="language-yaml">- Name: nois-gateway
-  Address: nois1ze9qajd25ucqnvn2u865uhdtjd6qm5awm3tpl93ure72wgs4d7qsptqc0u
-  Code ID: &quot;12&quot;
-  Git Asset Name: nois_gateway
-  Instantiation Message: &quot;{}&quot;
-  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
-  Version: v0.10.0
-</code></pre>
-<h4 id="nois-icecube"><a class="header" href="#nois-icecube">nois-icecube</a></h4>
-<pre><code class="language-yaml">- Name: nois-icecube
-  Address: nois1mdjzz7y7crnjgfkdld4x9ravqymh22jy2c7jpukqnkghhzv5s9ys2a9hu7
-  Code ID: &quot;14&quot;
-  Git Asset Name: nois_icecube
-  Instantiation Message: '{&quot;manager&quot;:&quot;nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk&quot;}'
-  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
-  Version: v0.10.0
-</code></pre>
-<h4 id="nois-sink"><a class="header" href="#nois-sink">nois-sink</a></h4>
-<pre><code class="language-yaml">- Name: nois-sink
-  Address: nois16rpxzry8jf06j8htjphf0lnmylh28enwm4xwkfpn3699wvyys2yqgcev3h
-  Code ID: &quot;13&quot;
-  Git Asset Name: nois_sink
-  Instantiation Message: &quot;{}&quot;
-  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
-  Version: v0.10.0
-</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="testnet-005"><a class="header" href="#testnet-005">Testnet 005</a></h1>
-<h2 id="basic-info-1"><a class="header" href="#basic-info-1">Basic info</a></h2>
+<h2 id="basic-info"><a class="header" href="#basic-info">Basic info</a></h2>
 <ul>
 <li>Chain ID: <code>nois-testnet-005</code></li>
 <li>Demon: <code>unois</code></li>
 </ul>
-<h2 id="genesis-1"><a class="header" href="#genesis-1">Genesis</a></h2>
+<h2 id="genesis"><a class="header" href="#genesis">Genesis</a></h2>
 <ul>
 <li>URL:
 <a href="https://raw.githubusercontent.com/noislabs/networks/nois-testnet-005/nois-testnet-005/genesis.json">https://raw.githubusercontent.com/noislabs/networks/nois-testnet-005/nois-testnet-005/genesis.json</a></li>
 <li>Checksum (sha256):
 <code>1647cabd044110d6beda2fc4a32fb50dfbb5babff74bdf41503c58123ded3389</code></li>
+</ul>
+<h2 id="binary"><a class="header" href="#binary">Binary</a></h2>
+<ul>
+<li>Build <code>noisd</code> from <a href="https://github.com/noislabs/noisd">https://github.com/noislabs/noisd</a></li>
+<li>Tag: v1.0.1</li>
+<li><code>noisd version</code> should show 1.0.1</li>
+</ul>
+<h2 id="p2p-1"><a class="header" href="#p2p-1">p2p</a></h2>
+<p>Seed nodes</p>
+<ul>
+<li><code>bf07906c7cf0f23606c83be15624be2c67b3929c@139.59.154.47:17356</code></li>
+<li><code>da81dd66bca4bba509163dbd06b4a6b2e05c2e12@nois-testnet-seed.itrocket.net:21656</code></li>
+</ul>
+<h2 id="rpcs"><a class="header" href="#rpcs">RPCs</a></h2>
+<p>An incomplete and unchecked list of community provided TendermintRPC endpoints:</p>
+<div class="table-wrapper"><table><thead><tr><th>URL</th><th>TLS</th><th>CORS</th><th>tx_index</th></tr></thead><tbody>
+<tr><td>https://nois-testnet-rpc.polkachu.com:443</td><td>✅</td><td>✅</td><td>✅</td></tr>
+<tr><td>https://nois-testnet.rpc.kjnodes.com:443</td><td>✅</td><td>?</td><td>?</td></tr>
+<tr><td>https://rpc.nois.mcbnode.online:443</td><td>✅</td><td>?</td><td>?</td></tr>
+<tr><td>http://185.198.27.109:26657</td><td>No</td><td>?</td><td>?</td></tr>
+<tr><td>https://nois-testnet-rpc.itrocket.net:443</td><td>✅</td><td>✅</td><td>✅</td></tr>
+</tbody></table>
+</div>
+<h2 id="contracts"><a class="header" href="#contracts">Contracts</a></h2>
+<h4 id="nois-drand"><a class="header" href="#nois-drand">nois-drand</a></h4>
+<pre><code class="language-yaml">- Name: nois-drand
+  Address: nois14xef285hz5cx5q9hh32p9nztu3cct4g44sxjgx3dmftt2tj2rweqkjextk
+  Code ID: &quot;1&quot;
+  Git Asset Name: nois_drand
+  Instantiation Message: '{&quot;incentive_point_price&quot;:&quot;3000&quot;,&quot;incentive_denom&quot;:&quot;unois&quot;,&quot;min_round&quot;:,&quot;manager&quot;:&quot;nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve&quot;}'
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.11.0
+</code></pre>
+<h4 id="nois-icecube"><a class="header" href="#nois-icecube">nois-icecube</a></h4>
+<pre><code class="language-yaml">- Name: nois-icecube
+  Address: nois1gwnfyx82rwgc4y9r8vx6nr9v35dwezw3dadw6h39mad9amg7shnsler5f0
+  Code ID: &quot;6&quot;
+  Git Asset Name: nois_icecube
+  Instantiation Message: '{&quot;manager&quot;:&quot;nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve&quot;}'
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.11.0
+</code></pre>
+<h4 id="nois-sink"><a class="header" href="#nois-sink">nois-sink</a></h4>
+<pre><code class="language-yaml">- Name: nois-sink
+  Address: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
+  Code ID: &quot;5&quot;
+  Git Asset Name: nois_sink
+  Instantiation Message: &quot;{}&quot;
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.11.0
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mainnet"><a class="header" href="#mainnet">Mainnet</a></h1>
+<h2 id="basic-info-1"><a class="header" href="#basic-info-1">Basic info</a></h2>
+<ul>
+<li>Chain ID: <code>nois-1</code></li>
+<li>Demon: <code>unois</code></li>
+</ul>
+<h2 id="genesis-1"><a class="header" href="#genesis-1">Genesis</a></h2>
+<ul>
+<li>Time: March 28th 15:00 UTC</li>
+<li>URL:
+<a href="https://raw.githubusercontent.com/noislabs/networks/nois1.final.1/nois-1/genesis.json">https://raw.githubusercontent.com/noislabs/networks/nois1.final.1/nois-1/genesis.json</a></li>
+<li>Checksum (sha256):
+<code>5332fb6477a2d273fd7e5a13bceb213e2a9d408a698c49ab34e8b78736e58cac</code></li>
 </ul>
 <h2 id="binary-1"><a class="header" href="#binary-1">Binary</a></h2>
 <ul>
@@ -433,70 +425,6 @@ mainnet addresses and token distribution</li>
 <h2 id="p2p-2"><a class="header" href="#p2p-2">p2p</a></h2>
 <p>Seed nodes</p>
 <ul>
-<li><code>bf07906c7cf0f23606c83be15624be2c67b3929c@139.59.154.47:17356</code></li>
-<li><code>da81dd66bca4bba509163dbd06b4a6b2e05c2e12@nois-testnet-seed.itrocket.net:21656</code></li>
-</ul>
-<h2 id="rpcs-1"><a class="header" href="#rpcs-1">RPCs</a></h2>
-<p>An incomplete and unchecked list of community provided TendermintRPC endpoints:</p>
-<div class="table-wrapper"><table><thead><tr><th>URL</th><th>TLS</th><th>CORS</th><th>tx_index</th></tr></thead><tbody>
-<tr><td>https://nois-testnet-rpc.polkachu.com:443</td><td>✅</td><td>✅</td><td>✅</td></tr>
-<tr><td>https://nois-testnet.rpc.kjnodes.com:443</td><td>✅</td><td>?</td><td>?</td></tr>
-<tr><td>https://rpc.nois.mcbnode.online:443</td><td>✅</td><td>?</td><td>?</td></tr>
-<tr><td>http://185.198.27.109:26657</td><td>No</td><td>?</td><td>?</td></tr>
-<tr><td>https://nois-testnet-rpc.itrocket.net:443</td><td>✅</td><td>✅</td><td>✅</td></tr>
-</tbody></table>
-</div>
-<h2 id="contracts-1"><a class="header" href="#contracts-1">Contracts</a></h2>
-<h4 id="nois-drand-1"><a class="header" href="#nois-drand-1">nois-drand</a></h4>
-<pre><code class="language-yaml">- Name: nois-drand
-  Address: nois14xef285hz5cx5q9hh32p9nztu3cct4g44sxjgx3dmftt2tj2rweqkjextk
-  Code ID: &quot;1&quot;
-  Git Asset Name: nois_drand
-  Instantiation Message: '{&quot;incentive_point_price&quot;:&quot;3000&quot;,&quot;incentive_denom&quot;:&quot;unois&quot;,&quot;min_round&quot;:,&quot;manager&quot;:&quot;nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve&quot;}'
-  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
-  Version: v0.11.0
-</code></pre>
-<h4 id="nois-icecube-1"><a class="header" href="#nois-icecube-1">nois-icecube</a></h4>
-<pre><code class="language-yaml">- Name: nois-icecube
-  Address: nois1gwnfyx82rwgc4y9r8vx6nr9v35dwezw3dadw6h39mad9amg7shnsler5f0
-  Code ID: &quot;6&quot;
-  Git Asset Name: nois_icecube
-  Instantiation Message: '{&quot;manager&quot;:&quot;nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve&quot;}'
-  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
-  Version: v0.11.0
-</code></pre>
-<h4 id="nois-sink-1"><a class="header" href="#nois-sink-1">nois-sink</a></h4>
-<pre><code class="language-yaml">- Name: nois-sink
-  Address: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
-  Code ID: &quot;5&quot;
-  Git Asset Name: nois_sink
-  Instantiation Message: &quot;{}&quot;
-  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
-  Version: v0.11.0
-</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="mainnet"><a class="header" href="#mainnet">Mainnet</a></h1>
-<h2 id="basic-info-2"><a class="header" href="#basic-info-2">Basic info</a></h2>
-<ul>
-<li>Chain ID: <code>nois-1</code></li>
-<li>Demon: <code>unois</code></li>
-</ul>
-<h2 id="genesis-2"><a class="header" href="#genesis-2">Genesis</a></h2>
-<ul>
-<li>Time: March 28th 15:00 UTC</li>
-<li>URL:
-<a href="https://raw.githubusercontent.com/noislabs/networks/nois1.final.1/nois-1/genesis.json">https://raw.githubusercontent.com/noislabs/networks/nois1.final.1/nois-1/genesis.json</a></li>
-<li>Checksum (sha256):
-<code>5332fb6477a2d273fd7e5a13bceb213e2a9d408a698c49ab34e8b78736e58cac</code></li>
-</ul>
-<h2 id="binary-2"><a class="header" href="#binary-2">Binary</a></h2>
-<ul>
-<li>Build <code>noisd</code> from <a href="https://github.com/noislabs/noisd">https://github.com/noislabs/noisd</a></li>
-<li>Tag: v1.0.1</li>
-<li><code>noisd version</code> should show 1.0.1</li>
-</ul>
-<h2 id="p2p-3"><a class="header" href="#p2p-3">p2p</a></h2>
-<p>Seed nodes</p>
-<ul>
 <li><code>b3e3bd436ee34c39055a4c9946a02feec232988c@seeds.cros-nest.com:56656</code></li>
 <li><code>babc3f3f7804933265ec9c40ad94f4da8e9e0017@seed.rhinostake.com:17356</code></li>
 <li><code>ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:17356</code></li>
@@ -504,7 +432,7 @@ mainnet addresses and token distribution</li>
 <li><code>20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:17356</code></li>
 <li><code>c8db99691545545402a1c45fa897f3cb1a05aea6@nois-mainnet-seed.itrocket.net:36656</code></li>
 </ul>
-<h2 id="rpcs-2"><a class="header" href="#rpcs-2">RPCs</a></h2>
+<h2 id="rpcs-1"><a class="header" href="#rpcs-1">RPCs</a></h2>
 <p>An incomplete and unchecked list of community provided TendermintRPC endpoints:</p>
 <div class="table-wrapper"><table><thead><tr><th>URL</th><th>TLS</th><th>CORS</th><th>tx_index</th></tr></thead><tbody>
 <tr><td>https://rpc-nois.sr20de.xyz:443</td><td>✅</td><td>✅</td><td>✅</td></tr>
@@ -517,8 +445,8 @@ mainnet addresses and token distribution</li>
 <tr><td>https://rpc.nois.chaintools.tech/</td><td>✅</td><td>✅</td><td>❌</td></tr>
 </tbody></table>
 </div>
-<h2 id="contracts-2"><a class="header" href="#contracts-2">Contracts</a></h2>
-<h4 id="nois-drand-2"><a class="header" href="#nois-drand-2">nois-drand</a></h4>
+<h2 id="contracts-1"><a class="header" href="#contracts-1">Contracts</a></h2>
+<h4 id="nois-drand-1"><a class="header" href="#nois-drand-1">nois-drand</a></h4>
 <pre><code class="language-yaml">- Name: nois-drand
   Address: nois19w26q6n44xqepduudfz2xls4pc5lltpn6rxu34g0jshxu3rdujzsj7dgu8
   Code ID: &quot;4&quot;
@@ -527,7 +455,7 @@ mainnet addresses and token distribution</li>
   URL: &quot;https://github.com/noislabs/nois-contracts&quot;
   Version: v0.11.0
 </code></pre>
-<h4 id="nois-icecube-2"><a class="header" href="#nois-icecube-2">nois-icecube</a></h4>
+<h4 id="nois-icecube-1"><a class="header" href="#nois-icecube-1">nois-icecube</a></h4>
 <pre><code class="language-yaml">- Name: nois-icecube
   Address: nois1gwnfyx82rwgc4y9r8vx6nr9v35dwezw3dadw6h39mad9amg7shnsler5f0
   Code ID: &quot;6&quot;
@@ -536,7 +464,7 @@ mainnet addresses and token distribution</li>
   URL: &quot;https://github.com/noislabs/nois-contracts&quot;
   Version: v0.11.0
 </code></pre>
-<h4 id="nois-sink-2"><a class="header" href="#nois-sink-2">nois-sink</a></h4>
+<h4 id="nois-sink-1"><a class="header" href="#nois-sink-1">nois-sink</a></h4>
 <pre><code class="language-yaml">- Name: nois-sink
   Address: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
   Code ID: &quot;5&quot;
@@ -573,7 +501,7 @@ available.</p>
 <h2 id="mainnet-1"><a class="header" href="#mainnet-1">Mainnet</a></h2>
 <p>There is currently no faucet available. If you are nice in chat, some community
 members might be kind enough to gift you some tokens.</p>
-<h2 id="testnet-004-1"><a class="header" href="#testnet-004-1">Testnet 004</a></h2>
+<h2 id="testnet-004"><a class="header" href="#testnet-004">Testnet 004</a></h2>
 <p>As Testnet 004 is an almost identical replicate of the mainnet tokenomics, no
 faucet is available.</p>
 <h2 id="testnet-005-1"><a class="header" href="#testnet-005-1">Testnet 005</a></h2>
@@ -1032,7 +960,164 @@ junod tx wasm execute $DOUBLE_DICE_ROLL_CONTRACT \
             '{&quot;get_history_of_rounds&quot;: {}}' \
             --node=https://rpc.uni.juno.deuslabs.fi:443
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="nois-toolbox"><a class="header" href="#nois-toolbox">Nois Toolbox</a></h1>
+<blockquote>
+<p>To safely transform and manipulate your randomness, onchain and offchain.</p>
+</blockquote>
+<p>Next to providing the randomness, Nois offers a set of tooling to help
+developers reshape the received randomness in order to apply it to their custom
+use case.</p>
+<h4 id="why-use-the-nois-toolbox-instead-of-transforming-the-randomness-yourself"><a class="header" href="#why-use-the-nois-toolbox-instead-of-transforming-the-randomness-yourself">Why use the nois-toolbox instead of transforming the randomness yourself?</a></h4>
+<p>Sometimes it can be challenging to manipulate randomness and you can end up with
+a randomness that follows a different distribution from what is intended or you
+can also unintentionally lower the entropy of the original randomness. This is
+why Nois provides this well tested, standard and opensource toolbox that
+everyone can contribute to and maintain. This way it is in the interest of all
+that any bug is quickly fixed and the efforts of 1 project contribute to the
+common good.</p>
+<hr />
+<p>The Nois Toolbox can be compiled to JavaScript via WebAssembly. This way you can
+simulate the outputs for every randomness value. The results match exactly those
+of CosmWasm contracts using the same tools. The toolbox is available in this
+github <a href="https://github.com/noislabs/nois">repository</a> and two artifacts are
+published.</p>
+<ul>
+<li>The rust <a href="https://crates.io/crates/nois">crate</a></li>
+<li>The npm <a href="https://www.npmjs.com/package/nois">package</a></li>
+</ul>
+<p>If you want to use the nois-toolbox in your contract all you have to do is
+import the nois crate. If you want to verify, play or simulate the randomness
+offchain on a script or a UI on a browser instead you can use the nois npm
+package. ​ This table provides an overview of the functions that the toolbox
+provides</p>
+<div class="table-wrapper"><table><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody>
+<tr><td>coinflip</td><td>Returns heads or tails.</td></tr>
+<tr><td>roll_dice</td><td>returns a random int between 1-6. For a double(or multi) dice you can use ints_in_range or sub_randomness instead.</td></tr>
+<tr><td>decimal</td><td>Returns a random decimal between 0 and 1 (uniform distribution).</td></tr>
+<tr><td>ints_in_range</td><td>Provides a list of integers between two numbers. Can be used for a double dice throw</td></tr>
+<tr><td>int_in_range</td><td>Provides one integer between two numbers. Can be used for a single dice</td></tr>
+<tr><td>shuffle</td><td>Shuffles a vector using the Fisher-Yates algorithm. Can be used for an NFT hero creation with many objects/items/skills to randomly shuffle</td></tr>
+<tr><td>sub_randomness</td><td>Generates more more random numbers out of a single round of drand round. This can be needed if for example you want to run many lotteries in parallel using the same randomness round without sacrificing the high entropy.</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="using-the-nois-toolbox-in-a-cosmwasm-smart-contract"><a class="header" href="#using-the-nois-toolbox-in-a-cosmwasm-smart-contract">Using the Nois Toolbox in a CosmWasm smart-contract</a></h1>
+<h4 id="coinflip"><a class="header" href="#coinflip">coinflip</a></h4>
+<p>Takes a randomness and returns the result of a coinflip (heads or tails)</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use nois::coinflip;
+
+let side = coinflip(randomness);
+if side.is_heads(){
+    println!(&quot;heads&quot;)
+}
+if side.is_tails(){
+    println!(&quot;tails&quot;)
+}
+<span class="boring">}</span></code></pre></pre>
+<h4 id="int_in_range"><a class="header" href="#int_in_range">int_in_range</a></h4>
+<p>Derives a random integer in the given range. Use this method to avoid a modulo
+bias.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use nois::int_in_range;
+
+// Half-open interval [1, 7)
+let dice1 = int_in_range(randomness, 1..7);
+assert!(dice1 &gt;= 1);
+assert!(dice1 &lt; 7);
+
+// Closed interval [1, 6]
+let dice2 = int_in_range(randomness, 1..=6);
+assert!(dice2 &gt;= 1);
+assert!(dice2 &lt;= 6);
+<span class="boring">}</span></code></pre></pre>
+<h4 id="ints_in_range"><a class="header" href="#ints_in_range">ints_in_range</a></h4>
+<p>Derives random integers in the given range. Use this method to avoid a modulo
+bias. Using this is potentially more efficient than multiple calls of
+<em>int_in_range</em>.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use nois::ints_in_range;
+
+
+let [dice1, dice2] = ints_in_range(randomness, 1..=6);
+assert!(dice1 &gt;= 1 &amp;&amp; dice1 &lt;= 6);
+assert!(dice2 &gt;= 1 &amp;&amp; dice2 &lt;= 6);
+<span class="boring">}</span></code></pre></pre>
+<h4 id="random_decimal"><a class="header" href="#random_decimal">random_decimal</a></h4>
+<p>Returns a Decimal d with 0 &lt;= d &lt; 1</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use nois::random_decimal;
+
+let d = random_decimal(randomness);
+<span class="boring">}</span></code></pre></pre>
+<h4 id="shuffle"><a class="header" href="#shuffle">shuffle</a></h4>
+<p>Shuffles a vector using the Fisher-Yates algorithm</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use nois::shuffle;
+
+//We are randomly shuffling a vector of integers [1,2,3,4]
+let mut data = vec![1, 2, 3, 4];
+shuffle(randomness, &amp;mut data);
+// The length of the vector is the same but the order of the elements has changed
+assert_eq!(data.len(), 4);
+assert_ne!(data, vec![1, 2, 3, 4]);
+<span class="boring">}</span></code></pre></pre>
+<h4 id="sub_randomness_with_key"><a class="header" href="#sub_randomness_with_key">sub_randomness_with_key</a></h4>
+<p>Takes a randomness and a key. Returns an arbitrary number of sub-randomnesses.
+The key is mixed into the randomness such that calling this function with
+different keys leads to different outputs. Calling it with the same key and
+randomness leads to the same outputs.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use nois::{sub_randomness_with_key, int_in_range};
+
+
+let mut provider = sub_randomness_with_key(randomness, &quot;Key&quot;);
+
+let dice1_subrandomness = provider.provide();
+let dice2_subrandomness = provider.provide();
+
+let dice1_result = int_in_range(dice1_subrandomness, 1..7);
+let dice2_result = int_in_range(dice2_subrandomness, 1..7);
+<span class="boring">}</span></code></pre></pre>
+<h4 id="sub_randomness"><a class="header" href="#sub_randomness">sub_randomness</a></h4>
+<p>Takes a randomness and a key. Returns an arbitrary number of sub-randomnesses.
+This is equivalent to calling <em>sub_randomness_with_key</em> with key b&quot;<em>^default^</em>&quot;.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>use nois::{sub_randomness, int_in_range};
+
+let mut provider = sub_randomness(randomness);
+
+let dice1_subrandomness = provider.provide();
+let dice2_subrandomness = provider.provide();
+
+let dice1_result = int_in_range(dice1_subrandomness, 1..7);
+let dice2_result = int_in_range(dice2_subrandomness, 1..7);
+<span class="boring">}</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-the-nois-toolbox-in-js"><a class="header" href="#using-the-nois-toolbox-in-js">Using the Nois Toolbox in js</a></h1>
+<p>The Nois Toolbox can be compiled to JavaScript via WebAssembly. This way you can
+simulate the outputs for every randomness value. The results match those of
+CosmWasm contracts using the same tools. The Nois
+<a href="https://simulator.nois.network/">Simulator</a> is a good example for such a
+usecase. In order to keep the JS/Wasm interface simple, there is a wrapper in
+the module lib/js which takes the randomness inputs in hex format and uses types
+and error handling that plays well with JS. JS/Wasm bindings are created using
+wasm-bindgen. The JS does not match 100% the contract implementation. The
+differences are documented here.</p>
+<div class="table-wrapper"><table><thead><tr><th>Contract function</th><th>JS function</th><th>Status</th><th>Note</th></tr></thead><tbody>
+<tr><td><a href="https://docs.rs/nois/latest/nois/fn.coinflip.html">nois::coinflip</a></td><td>coinflip</td><td>✅ Ready</td><td>Returns string instead of enum</td></tr>
+<tr><td><a href="https://docs.rs/nois/latest/nois/fn.roll_dice.html">nois::roll_dice</a></td><td>roll_dice</td><td>✅ Ready</td><td>----</td></tr>
+<tr><td><a href="https://docs.rs/nois/latest/nois/fn.int_in_range.html">nois::int_in_range</a></td><td>int_in_range</td><td>✅ Ready</td><td>Only supports half-oen range, i.e. the end value is always exluded</td></tr>
+<tr><td><a href="https://docs.rs/nois/latest/nois/fn.ints_in_range.html">nois::ints_in_range</a></td><td>ints_in_range</td><td>🚫 Missing</td><td>----</td></tr>
+<tr><td><a href="https://docs.rs/nois/latest/nois/fn.random_decimal.html">nois::random_decimal</a></td><td>random_decimal</td><td>✅ Ready</td><td>Encodes result Decimal as string</td></tr>
+<tr><td><a href="https://docs.rs/nois/latest/nois/fn.sub_randomness.html">nois::sub_randomness</a></td><td>sub_randomness</td><td>✅ Ready</td><td>Takes a count argument and returns an Array instead of an iterator</td></tr>
+<tr><td><a href="nois::shuffle">nois::shuffle</a></td><td>shuffle</td><td>🚫 Missing</td><td>----</td></tr>
+</tbody></table>
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
