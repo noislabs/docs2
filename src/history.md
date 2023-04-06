@@ -6,7 +6,7 @@ are required for different use cases, so don't consider them recommendations.
 ## 1. Don't store old state
 
 In order to avoid storing snapshots of the state, in
-`$HOME/.noisd/config/app.toml` you can set `pruning = "default"`:
+`$HOME/.noisd/config/app.toml` you can set `pruning = "everything"`:
 
 ```sh
 sed -i 's/pruning =.*$/pruning = "everything"/' $HOME/.noisd/config/app.toml
