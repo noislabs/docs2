@@ -99,3 +99,17 @@ free money... Oh wait you look like a random dude... if you are random enough
 you might be eligible to get one."
 
 ---
+
+##### Why does Nois only have 45 active validators? Any plans to increase that?
+
+You can read this blog
+[article](https://scripta.network/@desmos1mvwy0d9kerz6yp9gj0u3alge9jjyjdu5m0hkpe/e97dbc98-40b8-4ab0-8a07-2bba685ff276)
+to answer your questions
+
+---
+
+##### I know a chain that could use Nois, who can integrate Nois with that chain?
+
+Anyone can do that. Nois is fully permissionless and any IBC enabled blockchain
+can integrate Nois to it. Formore info follow the docs section _Integrate Nois
+to your Chain_
