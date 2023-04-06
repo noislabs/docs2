@@ -258,7 +258,7 @@ incoming connections work:<br />
 are required for different use cases, so don't consider them recommendations.</p>
 <h2 id="1-dont-store-old-state"><a class="header" href="#1-dont-store-old-state">1. Don't store old state</a></h2>
 <p>In order to avoid storing snapshots of the state, in
-<code>$HOME/.noisd/config/app.toml</code> you can set <code>pruning = &quot;default&quot;</code>:</p>
+<code>$HOME/.noisd/config/app.toml</code> you can set <code>pruning = &quot;everything&quot;</code>:</p>
 <pre><code class="language-sh">sed -i 's/pruning =.*$/pruning = &quot;everything&quot;/' $HOME/.noisd/config/app.toml
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="checking-cors"><a class="header" href="#checking-cors">Checking CORS</a></h1>
