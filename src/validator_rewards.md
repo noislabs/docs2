@@ -9,7 +9,7 @@ Learn how to query accumulated rewards and how to claim them.
 
 ### Querying
 
-```
+```shell
 # query by address
 noisd q allocation claimable-rewards nois1r04t9nm22u2wfwpuffgyr8jgxs85ek0clsytvs
 
@@ -19,7 +19,7 @@ noisd q allocation claimable-rewards noisvaloper1r04t9nm22u2wfwpuffgyr8jgxs85ek0
 
 ### Claiming Rewards
 
-```
+```shell
 noisd tx allocation claim-rewards --from [validator-key] \
     --chain-id  [chain-id] --gas-prices 0.25unois --gas-adjustment 1.5
 ```
