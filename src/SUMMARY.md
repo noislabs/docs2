@@ -18,3 +18,7 @@
 - [Drand Bots](./drand_bots.md)
 - [Contract checksums](./checksums.md)
 - [Validator Rewards](./validator_rewards.md)
+- [Use Nois randomness](./use_nois_randomness.md)
+  - [Contract Implementation](./contract_implementation.md)
+  - [Interacting with a Dapp](./interacting_with_a_dapp.md)
+  - [Nois Toolbox](./nois_toolbox.md)
