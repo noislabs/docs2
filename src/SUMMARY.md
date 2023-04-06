@@ -11,7 +11,6 @@
   - [CORS](./cors.md)
   - [Using Systemd](./systemd.md)
 - [Networks](./networks.md)
-  - [Testnet 004](./testnet_004.md)
   - [Testnet 005](./testnet_005.md)
   - [Mainnet](./mainnet.md)
   - [Faucet](./faucet.md)
@@ -22,3 +21,5 @@
   - [Contract Implementation](./contract_implementation.md)
   - [Interacting with a Dapp](./interacting_with_a_dapp.md)
   - [Nois Toolbox](./nois_toolbox.md)
+    - [Toolbox in Rust](./toolbox_in_rust.md)
+    - [Toolbox in js](./toolbox_in_js.md)
