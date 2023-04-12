@@ -42,4 +42,7 @@ sudo systemctl restart nois
 
 # Watch logs
 sudo journalctl -u nois -f -o cat
+
+# Watch filtered logs
+sudo journalctl -u nois -f -o cat --grep "Ensure peers"
 ```
