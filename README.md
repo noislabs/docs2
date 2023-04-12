@@ -1,7 +1,7 @@
 # Nois Documentation (v2)
 
 This repository is the source code of the Nois Documentation published at
-https://docs2.nois.network/.
+https://docs.nois.network/.
 
 ## Building
 
