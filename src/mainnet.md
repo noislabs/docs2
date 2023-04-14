@@ -44,6 +44,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 | https://nois-mainnet-rpc.itrocket.net:443 | ✅  | ✅   | ✅       |
 | https://nois-rpc.nysa.network:443         | ✅  | ❌   | ✅       |
 | https://rpc.nois.chaintools.tech/         | ✅  | ✅   | ❌       |
+| https://nois.rpc.m.stavr.tech:443         | ✅  | ✅   | ✅       |
 
 ## Contracts
 
