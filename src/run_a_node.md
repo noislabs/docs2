@@ -11,9 +11,11 @@ and macOS works very similar.
 ### 1. Update your OS and install dependencies
 
 ```sh
-sudo apt update
-# Maybe also this if you want: sudo apt upgrade -y && reboot
-sudo apt install -y make gcc build-essential git jq joe
+# Update, upgrade, reboot ‼️
+sudo apt update && sudo apt upgrade -y && reboot
+
+# Install dependencies
+sudo apt install -y make gcc build-essential git jq joe unzip
 ```
 
 ### 2. Install Go
