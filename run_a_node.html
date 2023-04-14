@@ -157,9 +157,11 @@ you want to run a sentry, most of the instructions are the same.</p>
 <p>We assume you are on some sort of Ubuntu/Debian Linux. Other Linux distributions
 and macOS works very similar.</p>
 <h3 id="1-update-your-os-and-install-dependencies"><a class="header" href="#1-update-your-os-and-install-dependencies">1. Update your OS and install dependencies</a></h3>
-<pre><code class="language-sh">sudo apt update
-# Maybe also this if you want: sudo apt upgrade -y &amp;&amp; reboot
-sudo apt install -y make gcc build-essential git jq joe
+<pre><code class="language-sh"># Update, upgrade, reboot ‼️
+sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp; reboot
+
+# Install dependencies
+sudo apt install -y make gcc build-essential git jq joe unzip
 </code></pre>
 <h3 id="2-install-go"><a class="header" href="#2-install-go">2. Install Go</a></h3>
 <p>This way: <a href="https://go.dev/doc/install">https://go.dev/doc/install</a>. Both Go 1.20
