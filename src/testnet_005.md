@@ -113,4 +113,19 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   Instantiation Message: '{"prices":[{"denom":"ujunox","amount":"100"}],"withdrawal_address":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-175","denom":"ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B"}}}}'
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.12.0
+  Config:
+    callback_gas_limit: 500000
+    mode:
+      ibc_pay:
+        unois_denom:
+          denom: ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B
+          ics20_channel: channel-175
+    nois_beacon_price: "50000000"
+    nois_beacon_price_updated: "1681429972250483962"
+    payment: nois19t4nr0sdv3sl45aa85nljegrh6dk2q7207xypv2jmyp4y9dt4f8s35x2cd
+    prices:
+    - amount: "100"
+      denom: ujunox
+    test_mode: false
+    withdrawal_address: juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2
 ```
