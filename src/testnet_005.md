@@ -76,7 +76,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   Address: nois1c9l6qcl82u7zkgjduj2snfuv5rz6jzwsumw4nktgytzclazujc6qc05p5j
   Code ID: "44"
   Git Asset Name: nois_gateway
-  Instantiation Message:  '{"manager":"nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve","price":{"denom":"unois","amount":"50000000"},"payment_code_id":45,"sink":"nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty"}'
+  Instantiation Message: '{"manager":"nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve","price":{"denom":"unois","amount":"50000000"},"payment_code_id":45,"sink":"nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty"}'
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.12.0
   Config:
@@ -124,8 +124,21 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
     nois_beacon_price_updated: "1681429972250483962"
     payment: nois19t4nr0sdv3sl45aa85nljegrh6dk2q7207xypv2jmyp4y9dt4f8s35x2cd
     prices:
-    - amount: "100"
-      denom: ujunox
+      - amount: "100"
+        denom: ujunox
     test_mode: false
     withdrawal_address: juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2
 ```
+
+## IBC denoms
+
+On Nois:
+
+unois on:
+
+- Juno (uni-6):
+  `ibc/717352A5277F3DE916E8FD6B87F4CA6A51F2FBA9CF04ABCFF2DF7202F8A8BC50`
+- Aura (euphoria-2):
+  `ibc/70D9353E4D43D860BF051ECE427C427687EDED77E61EFEF2CFF2839D28E6AE43`
+- Injective (injective-888):
+  `ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B`
