@@ -86,3 +86,16 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.11.0
 ```
+
+### Proxies
+
+#### nois-sink
+
+```yaml
+- Chain-id: uni-6
+  Address: juno17ux7ttvateffn206mp470ue8tajlxmwu3qqghp9kd8zmsgle7szsfrsu4f
+  Git Asset Name: nois_proxy
+  Instantiation Message: '{"prices":[{"denom":"ujunox","amount":"100"}],"withdrawal_address":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-175","denom":"ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B"}}}}'
+  URL: "https://github.com/noislabs/nois-contracts"
+  Version: v0.12.0
+```
