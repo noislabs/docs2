@@ -89,7 +89,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 ### Proxies
 
-#### nois-sink
+#### uni-6
 
 ```yaml
 - Chain-id: uni-6
