@@ -7,9 +7,9 @@
 
 At Nois we have two kind of relaying:
 
-- ICS20 relaying: This is for token transfer between chains
-- wasmrelaying: This is where the randomness beacon gets requested and sent to
-  consumer chains
+- ICS20 relaying: This is for token transfer between chains. (Relayers don't recevice incentives here yet)
+- wasm relaying: This is where the randomness beacon gets requested and sent to
+  consumer chains. Relayers will get incentives by relaying this traffic.
 
 You can check the current IBC clients, connections and channels on
 [mainnet dashboard](https://ibc.nois.network/connections) or on the
