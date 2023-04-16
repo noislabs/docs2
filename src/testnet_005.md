@@ -37,6 +37,8 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 | http://185.198.27.109:26657               | No  | ?    | ?        |
 | https://nois-testnet-rpc.itrocket.net:443 | ✅  | ✅   | ✅       |
 
+---
+
 ## Contracts
 
 #### nois-drand
@@ -101,6 +103,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.11.0
 ```
+---
 
 ### Proxies
 
@@ -129,6 +132,8 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
     test_mode: false
     withdrawal_address: juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2
 ```
+
+---
 
 ## IBC denoms
 
