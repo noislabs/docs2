@@ -20,4 +20,4 @@ differences are documented here.
 | [nois::ints_in_range](https://docs.rs/nois/latest/nois/fn.ints_in_range.html)   | ints_in_range  | ✅ Ready  | ----                                                               |
 | [nois::random_decimal](https://docs.rs/nois/latest/nois/fn.random_decimal.html) | random_decimal | ✅ Ready   | Encodes result Decimal as string                                   |
 | [nois::sub_randomness](https://docs.rs/nois/latest/nois/fn.sub_randomness.html) | sub_randomness | ✅ Ready   | Takes a count argument and returns an Array instead of an iterator |
-| [nois_shuffle](https://docs.rs/nois/latest/nois/fn.shuffle.html)                | shuffle    |  ✅ Ready  | ----      |
+| [nois::nois_shuffle](https://docs.rs/nois/latest/nois/fn.shuffle.html)                | shuffle    |  ✅ Ready  | ----      |
