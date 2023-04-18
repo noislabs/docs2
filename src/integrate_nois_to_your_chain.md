@@ -62,17 +62,31 @@ instantiation paramaters description:
 | mode               | This defines the operational mode of the proxy:<br>two modes are available:<br>- Funded: In this mode. The is no need to make sure that the proxy is sending the NOIS to pay for randomness because someone already filled the payment contract (on Nois chain) of the proxy on behalf of the proxy.<br>  This can happen onchain or offchain, automated or manually.<br>- IbcPay: In this mode the proxy contract sends IBCed NOIS to the gateway for each beacon request. Whether you need to prefill this contract with NOIS or make sure you add that fee on the prices so that DAPPs will send the fee upon request. |  Enum         |
 
 ```shell
-junod tx wasm instantiate <CODE_ID> \
-       '{"manager":YOUR_ADDRESS_HERE,"prices":[{"denom":"ujunox","amount":"1000000"},{"denom":"ibc/..ibc_NOIS_you_noted_in_a_previous_step","amount":"50000000"}],"withdrawal_address":"YOUR_ADDRESS_HERE","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-xx","denom":"ibc/..ibc/..ibc_NOIS_you_noted_in_a_previous_step"}}}}' \
-       --label=nois-proxy \
-       --no-admin \
-       --from <your-key> \
-       --chain-id uni-6 \
-       --gas=auto \
-       --gas-adjustment 1.4 \
-       --gas-prices 0.025ujunox \
-       --broadcast-mode=block \
-       --node=https://rpc.uni.juno.deuslabs.fi:443 -y
+junod tx wasm instantiate <CODE_ID>
+  '{"manager":YOUR_ADDRESS_HERE,
+  "prices":
+         [
+             {"denom":"ujunox","amount":"1000000"},
+             {"denom":"ibc/..ibc_NOIS_you_noted_in_a_previous_step","amount":"50000000"}
+         ],
+  "withdrawal_address":"YOUR_ADDRESS_HERE",
+  "callback_gas_limit":500000,
+  "test_mode":false,
+  "mode":{"ibc_pay":{
+         "unois_denom":{
+               "ics20_channel":"channel-xx",
+               "denom":"ibc/..ibc_NOIS_you_noted_in_a_previous_step"
+               }
+ }}}'
+--label=nois-proxy
+--no-admin
+--from <your-key>
+--chain-id uni-6
+--gas=auto
+--gas-adjustment 1.4
+--gas-prices 0.025ujunox
+--broadcast-mode=block
+--node=https://rpc.uni.juno.deuslabs.fi:443 -y
 ```
 
 ##### Setup the IBC channel for the wasm relay - Transferring the randomness beacon not the tokens
