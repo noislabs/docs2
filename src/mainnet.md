@@ -36,6 +36,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 | URL                                       | TLS | CORS | tx_index |
 | ----------------------------------------- | --- | ---- | -------- |
+| https://rpc.cosmos.directory/nois (load balancer) |     |      |          |
 | https://rpc-nois.sr20de.xyz:443           | ✅  | ✅   | ✅       |
 | https://rpc.nois.hexnodes.co:443          | ✅  | ✅   | ✅       |
 | https://m-nois.rpc.utsa.tech:443          | ✅  | ✅   | ✅       |
