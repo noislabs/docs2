@@ -13,9 +13,11 @@ differences are documented here.
 | Contract function                                                               | JS function    | Status     | Note                                                               |
 | ------------------------------------------------------------------------------- | -------------- | ---------- | ------------------------------------------------------------------ |
 | [nois::coinflip](https://docs.rs/nois/latest/nois/fn.coinflip.html)             | coinflip       | ✅ Ready   | Returns string instead of enum                                     |
-| [nois::roll_dice](https://docs.rs/nois/latest/nois/fn.roll_dice.html)           | roll_dice      | ✅ Ready   | ----                                                               |
+| [nois::roll_dice](https://docs.rs/nois/latest/nois/fn.roll_dice.html)           | roll_dice      | ✅ Ready   | ----           
+| https://docs.rs/nois/latest/nois/fn.pick.html                                   | pick           | ✅ Ready   | ----           |
+| [nois::select_from_weighted](https://docs.rs/nois/latest/nois/fn.select_from_weighted.html)   | select_from_weighted   | ✅ Ready   |---- |
 | [nois::int_in_range](https://docs.rs/nois/latest/nois/fn.int_in_range.html)     | int_in_range   | ✅ Ready   | Only supports half-oen range, i.e. the end value is always exluded |
-| [nois::ints_in_range](https://docs.rs/nois/latest/nois/fn.ints_in_range.html)   | ints_in_range  | 🚫 Missing | ----                                                               |
+| [nois::ints_in_range](https://docs.rs/nois/latest/nois/fn.ints_in_range.html)   | ints_in_range  | ✅ Ready  | ----                                                               |
 | [nois::random_decimal](https://docs.rs/nois/latest/nois/fn.random_decimal.html) | random_decimal | ✅ Ready   | Encodes result Decimal as string                                   |
 | [nois::sub_randomness](https://docs.rs/nois/latest/nois/fn.sub_randomness.html) | sub_randomness | ✅ Ready   | Takes a count argument and returns an Array instead of an iterator |
-| [nois::shuffle](nois::shuffle)                                                  | shuffle        | 🚫 Missing | ----                                                               |
+| [nois::shuffle](nois::shuffle)                                                  | shuffle        | ✅ Ready  | ----                                                               |
