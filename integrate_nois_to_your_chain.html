@@ -197,17 +197,31 @@ list of artifacts/assets then click and download <strong>nois_proxy.wasm</strong
 | test_mode          | Just set this to false.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Boolean   |
 | callback_gas_limit | The amount of gas that the callback to the dapp can consume. 500000 is a good value if you are not sure.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | number    |
 | mode               | This defines the operational mode of the proxy:<br>two modes are available:<br>- Funded: In this mode. The is no need to make sure that the proxy is sending the NOIS to pay for randomness because someone already filled the payment contract (on Nois chain) of the proxy on behalf of the proxy.<br>  This can happen onchain or offchain, automated or manually.<br>- IbcPay: In this mode the proxy contract sends IBCed NOIS to the gateway for each beacon request. Whether you need to prefill this contract with NOIS or make sure you add that fee on the prices so that DAPPs will send the fee upon request. |  Enum         |</p>
-<pre><code class="language-shell">junod tx wasm instantiate &lt;CODE_ID&gt; \
-       '{&quot;manager&quot;:YOUR_ADDRESS_HERE,&quot;prices&quot;:[{&quot;denom&quot;:&quot;ujunox&quot;,&quot;amount&quot;:&quot;1000000&quot;},{&quot;denom&quot;:&quot;ibc/..ibc_NOIS_you_noted_in_a_previous_step&quot;,&quot;amount&quot;:&quot;50000000&quot;}],&quot;withdrawal_address&quot;:&quot;YOUR_ADDRESS_HERE&quot;,&quot;callback_gas_limit&quot;:500000,&quot;test_mode&quot;:false,&quot;mode&quot;:{&quot;ibc_pay&quot;:{&quot;unois_denom&quot;:{&quot;ics20_channel&quot;:&quot;channel-xx&quot;,&quot;denom&quot;:&quot;ibc/..ibc/..ibc_NOIS_you_noted_in_a_previous_step&quot;}}}}' \
-       --label=nois-proxy \
-       --no-admin \
-       --from &lt;your-key&gt; \
-       --chain-id uni-6 \
-       --gas=auto \
-       --gas-adjustment 1.4 \
-       --gas-prices 0.025ujunox \
-       --broadcast-mode=block \
-       --node=https://rpc.uni.juno.deuslabs.fi:443 -y
+<pre><code class="language-shell">junod tx wasm instantiate &lt;CODE_ID&gt;
+  '{&quot;manager&quot;:YOUR_ADDRESS_HERE,
+  &quot;prices&quot;:
+         [
+             {&quot;denom&quot;:&quot;ujunox&quot;,&quot;amount&quot;:&quot;1000000&quot;},
+             {&quot;denom&quot;:&quot;ibc/..ibc_NOIS_you_noted_in_a_previous_step&quot;,&quot;amount&quot;:&quot;50000000&quot;}
+         ],
+  &quot;withdrawal_address&quot;:&quot;YOUR_ADDRESS_HERE&quot;,
+  &quot;callback_gas_limit&quot;:500000,
+  &quot;test_mode&quot;:false,
+  &quot;mode&quot;:{&quot;ibc_pay&quot;:{
+         &quot;unois_denom&quot;:{
+               &quot;ics20_channel&quot;:&quot;channel-xx&quot;,
+               &quot;denom&quot;:&quot;ibc/..ibc_NOIS_you_noted_in_a_previous_step&quot;
+               }
+ }}}'
+--label=nois-proxy
+--no-admin
+--from &lt;your-key&gt;
+--chain-id uni-6
+--gas=auto
+--gas-adjustment 1.4
+--gas-prices 0.025ujunox
+--broadcast-mode=block
+--node=https://rpc.uni.juno.deuslabs.fi:443 -y
 </code></pre>
 <h5 id="setup-the-ibc-channel-for-the-wasm-relay---transferring-the-randomness-beacon-not-the-tokens"><a class="header" href="#setup-the-ibc-channel-for-the-wasm-relay---transferring-the-randomness-beacon-not-the-tokens">Setup the IBC channel for the wasm relay - Transferring the randomness beacon not the tokens</a></h5>
 <ul>
