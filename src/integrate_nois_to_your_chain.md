@@ -14,7 +14,7 @@ By the end of this step you should have an IBC transfer channel between your
 Chain and Nois, so that you can pay for randomness with NOIS.
 
 - Configure your relayer software (hermes, go-relayer, ts-relayer) to have Nois
-  and your chain (Check the chain-registry for the details)
+  and your chain (Check the [chain-registry](https://github.com/cosmos/chain-registry/tree/master/nois) for the details)
 - Create a Client, a connection, and a transfer channel between both chains.
 - Check that the channel has been created. You can do so in this IBC
   [mainnet dashboard](https://ibc.nois.network/connections) or
