@@ -13,7 +13,10 @@ complexity out of the randomness consumer DAPP.
 By the end of this step you should have an IBC transfer channel between your Chain and Nois, so that you can pay for randomness with NOIS.
 
 - Configure your relayer software (hermes, go-relayer, ts-relayer) to have Nois and your chain (Check the chain-registry for the details)
-- Create a Client, a connection, and a transfer channel between both chains. You can check that the channels have been created for Nois mainnet here https://ibc.nois.network/ or for testnet here https://testnet.ibc.nois.network/
+- Create a Client, a connection, and a transfer channel between both chains. 
+- Check that the channel has been created. You can do so in this IBC
+  [mainnet dashboard](https://ibc.nois.network/connections) or
+  [testnet dashboard](https://testnet.ibc.nois.network/)
 - Start the relayer and IBC transfer 1 NOIS from Nois chain to your chain and check the balance (on destination account) in order to get the IBCed NOIS denom. write down the IBC denom as you will need this for a later step.
 
 
@@ -56,11 +59,11 @@ instantiation paramaters description:
 | withdrawal_address | This is the address to which the proxy funds are sent whenever the manager requests a withdrawal.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | String    |
 | test_mode          | Just set this to false.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Boolean   |
 | callback_gas_limit | The amount of gas that the callback to the dapp can consume. 500000 is a good value if you are not sure.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | number    |
-| mode               | This defines the operational mode of the proxy:<br>two modes are available:<br>- Funded: In this mode. The is no need to make sure that the proxy is sending the NOIS to pay for randomness because someone already filled the payment contract (on Nois chain) of the proxy on behalf of the proxy.<br>  This can happen onchain or offchain, automated or manually.<br>- IbcPay: In this mode the proxy contract sends IBCed NOIS to the gateway for each beacon request. Whether you need to prefill this contract with NOIS or make sure you add that fee on the prices so that DAPPs will send the fee upon request. |           |
+| mode               | This defines the operational mode of the proxy:<br>two modes are available:<br>- Funded: In this mode. The is no need to make sure that the proxy is sending the NOIS to pay for randomness because someone already filled the payment contract (on Nois chain) of the proxy on behalf of the proxy.<br>  This can happen onchain or offchain, automated or manually.<br>- IbcPay: In this mode the proxy contract sends IBCed NOIS to the gateway for each beacon request. Whether you need to prefill this contract with NOIS or make sure you add that fee on the prices so that DAPPs will send the fee upon request. |  Enum         |
 
 ```shell
 junod tx wasm instantiate <CODE_ID> \
-       '{"prices":[{"denom":"ujunox","amount":"1000000"}],"withdrawal_address":"juno1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t","callback_gas_limit":500000,"test_mode":false}' \
+       '{"manager":YOUR_ADDRESS_HERE,"prices":[{"denom":"ujunox","amount":"1000000"},{"denom":"ibc/..ibc_NOIS_you_noted_in_a_previous_step","amount":"50000000"}],"withdrawal_address":"YOUR_ADDRESS_HERE","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-xx","denom":"ibc/..ibc/..ibc_NOIS_you_noted_in_a_previous_step"}}}}' \
        --label=nois-proxy \
        --no-admin \
        --from <your-key> \
@@ -72,12 +75,11 @@ junod tx wasm instantiate <CODE_ID> \
        --node=https://rpc.uni.juno.deuslabs.fi:443 -y
 ```
 
-##### Setup the IBC channel
+##### Setup the IBC channel for the wasm relay - Transferring the randomness beacon not the tokens
 
 - choose your relayer software (ts-relayer or hermes or go-relayer).
-- get some NOIS tokens and your chain's native tokens.
-- create an IBC client and connection.
-- Create an IBC channel where the source is the nois-proxy on your chain and the
+- You can create a new IBC client and connection or skip if you want to use the existing connection (the one that has been created for the token transfer).
+- Create an IBC channel where the source is the nois-proxy you have just instantiated on your chain and the
   destination is the nois-gateway on the Nois chain (the direction is
   important). When creating the channel Make sure to use the wasm port.
   > ℹ️ If the nois-gateway address is
@@ -88,7 +90,7 @@ junod tx wasm instantiate <CODE_ID> \
   contract for your proxy on the Nois chain. This payment contract will be your
   balance sheet. So long as the payment contract has enough balance your proxy
   will be able to request randomness beacon. So make sure the payment contract
-  is well fed with $NOIS
+  does not run out of $NOIS.
 - Check that the channel has been created. You can do so in this IBC
   [mainnet dashboard](https://ibc.nois.network/connections) or
   [testnet dashboard](https://testnet.ibc.nois.network/)
