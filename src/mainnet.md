@@ -29,6 +29,7 @@ Seed nodes
 - `72cd4222818d25da5206092c3efc2c0dd0ec34fe@161.97.96.91:36656` (AM Solutions)
 - `20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:17356`
 - `c8db99691545545402a1c45fa897f3cb1a05aea6@nois-mainnet-seed.itrocket.net:36656`
+- `400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@nois.rpc.kjnodes.com:51659`
 
 ## RPCs
 
@@ -46,6 +47,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 | https://nois-rpc.nysa.network:443         | ✅  | ❌   | ✅       |
 | https://rpc.nois.chaintools.tech/         | ✅  | ✅   | ❌       |
 | https://nois.rpc.m.stavr.tech:443         | ✅  | ✅   | ✅       |
+| https://nois.rpc.kjnodes.com:443          | ✅  | ✅   | ✅       |
 
 ## Contracts
 
