@@ -13,6 +13,6 @@ distributed.
 
 You can use one of these websites to stake NOIS
 
-- https://restake.app/nois
-- https://quickstake.io/nois-1/staking
-- https://nois-stake.d-stake.xyz/stake
+- [Restake](https://restake.app/nois)
+- [QuickStake](https://quickstake.io/nois-1/staking)
+- [nois-stake.d-stake.xyz](https://nois-stake.d-stake.xyz/stake)
