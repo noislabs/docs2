@@ -5,6 +5,7 @@
 - [What is Nois](./what_is_nois.md)
   - [How it works](./how_it_works.md)
   - [Drand](./drand.md)
+- [How to stake NOIS](./how_to_stake.md)
 - [Run a node](./run_a_node.md)
   - [Status Checks](./status_checks.md)
   - [History settings](./history.md)
