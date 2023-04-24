@@ -61,6 +61,12 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   Instantiation Message: '{"incentive_point_price":"3000","incentive_denom":"unois","min_round":808287,"manager":"nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk"}'
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.11.0
+  Config:
+    gateway: nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp
+    incentive_denom: unois
+    incentive_point_price: "3000"
+    manager: nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk
+    min_round: 808287
 ```
 
 #### nois-icecube
@@ -85,6 +91,27 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   Instantiation Message: "{}"
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.11.0
+```
+
+#### nois-gateway
+
+```yaml
+- Name: nois-gateway
+  Address: nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp
+  Code ID: "8"
+  Git Asset Name: nois_gateway
+  Instantiation Message: '{"manager":"nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk","price":{"denom":"unois","amount":"50000000"},"payment_code_id":7,"sink":"nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty"}'
+  URL: "https://github.com/noislabs/nois-contracts"
+  Version: v0.13.0
+  Config:
+      drand: nois19w26q6n44xqepduudfz2xls4pc5lltpn6rxu34g0jshxu3rdujzsj7dgu8
+      manager: nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk
+      payment_code_id: 7
+      payment_initial_funds: null
+      price:
+        amount: "50000000"
+        denom: unois
+      sink: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
 ```
 
 ## IBC channels
