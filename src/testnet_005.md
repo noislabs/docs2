@@ -144,21 +144,21 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   Version: v0.13.0
   Config:
     callback_gas_limit: 500000
+    manager: inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t
     mode:
       ibc_pay:
         unois_denom:
           denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
           ics20_channel: channel-46
     nois_beacon_price: "50000000"
-    nois_beacon_price_updated: "1681699865946443384"
-    payment: nois17k4z23rsq6nuf9hqqtskdwqfedc5afjrxmjkmnltaxa28wd38f9snruyqq
+    nois_beacon_price_updated: "1682297627977789371"
+    payment: nois1y9hngs5f2gzvwepz5gxhmsehlytaf6n045vnhmxh27rdq44cg56std3zde
     prices:
     - amount: "100"
       denom: inj
-    - amount: "50000000"
+    - amount: "1000000"
       denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
     test_mode: false
-    withdrawal_address: inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t
 ```
 
 ---
