@@ -206,6 +206,12 @@
   Instantiation Message: '{&quot;incentive_point_price&quot;:&quot;3000&quot;,&quot;incentive_denom&quot;:&quot;unois&quot;,&quot;min_round&quot;:808287,&quot;manager&quot;:&quot;nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk&quot;}'
   URL: &quot;https://github.com/noislabs/nois-contracts&quot;
   Version: v0.11.0
+  Config:
+    gateway: nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp
+    incentive_denom: unois
+    incentive_point_price: &quot;3000&quot;
+    manager: nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk
+    min_round: 808287
 </code></pre>
 <h4 id="nois-icecube"><a class="header" href="#nois-icecube">nois-icecube</a></h4>
 <pre><code class="language-yaml">- Name: nois-icecube
@@ -224,6 +230,24 @@
   Instantiation Message: &quot;{}&quot;
   URL: &quot;https://github.com/noislabs/nois-contracts&quot;
   Version: v0.11.0
+</code></pre>
+<h4 id="nois-gateway"><a class="header" href="#nois-gateway">nois-gateway</a></h4>
+<pre><code class="language-yaml">- Name: nois-gateway
+  Address: nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp
+  Code ID: &quot;8&quot;
+  Git Asset Name: nois_gateway
+  Instantiation Message: '{&quot;manager&quot;:&quot;nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk&quot;,&quot;price&quot;:{&quot;denom&quot;:&quot;unois&quot;,&quot;amount&quot;:&quot;50000000&quot;},&quot;payment_code_id&quot;:7,&quot;sink&quot;:&quot;nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty&quot;}'
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.13.0
+  Config:
+      drand: nois19w26q6n44xqepduudfz2xls4pc5lltpn6rxu34g0jshxu3rdujzsj7dgu8
+      manager: nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk
+      payment_code_id: 7
+      payment_initial_funds: null
+      price:
+        amount: &quot;50000000&quot;
+        denom: unois
+      sink: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
 </code></pre>
 <h2 id="ibc-channels"><a class="header" href="#ibc-channels">IBC channels</a></h2>
 <p>Right now the following IBC channels are supported:</p>
