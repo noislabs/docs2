@@ -1,12 +1,21 @@
 ## Add Randomness to your Chain
 
-In order to be able to integrate Nois wihtin your blockchain you need to deploy
+In order to be able to integrate Nois within your blockchain you need to deploy
 a nois-proxy which plays the role of an outpost contract. Good news, Nois can be
 integrated with any IBC enabled chain and the process is fully permissionless.
 The nois-proxy's role when deployed to your chain is to abstract the IBC
 complexity out of the randomness consumer DAPP.
 
 #### Steps to integrate Nois to your chain
+
+#### Decide on a nois-proxy strategy
+The nois-proxy that you will deploy belongs to you and not to the Nois chain.
+Your nois-proxy will have a nois-payment contract at the Nois chain so it can pay for randomness.
+You need to decide how much dapps need to pay your proxy in prder for the proxy to forward the request to Nois.
+You can set this price in IBCed NOIS or you can even set the native token of your chain, or even Bitcoin or you can set it for free.
+Just remember that if you set the price too low some people/dapps can request the randomness from your proxy for a cheap price and end up consuming you $NOIS tokens at the other side (from you nois-payment contract on Nois chain)
+You are the manager of your proxy so you can at any point in time withdraw  part or all the funds that your proxy has accumulated.
+You can make your proxy part of governance and withdraw the funds to the community pool if you wish.
 
 ##### Connect your chain to Nois
 
