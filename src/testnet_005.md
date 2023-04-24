@@ -111,26 +111,26 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 ```yaml
 - Chain-id: uni-6
-  Address: juno13atw6x2vlvckz7fx89dc8zz7e83ysj3m8rs5dazcwj8scdwugn8s89wwqc
+  Address: juno1pjpntyvkxeuxd709jlupuea3xzxlzsfq574kqefv77fr2kcg4mcqvwqedq
   Git Asset Name: nois_proxy
-  Instantiation Message: '{"prices":[{"denom":"ujunox","amount":"100"}],"withdrawal_address":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-175","denom":"ibc/717352A5277F3DE916E8FD6B87F4CA6A51F2FBA9CF04ABCFF2DF7202F8A8BC50"}}}}'
+  Instantiation Message: '{"prices":[{"denom":"ujunox","amount":"100"}],"manager":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-175","denom":"ibc/717352A5277F3DE916E8FD6B87F4CA6A51F2FBA9CF04ABCFF2DF7202F8A8BC50"}}}}'
   URL: "https://github.com/noislabs/nois-contracts"
-  Version: v0.12.0
+  Version: v0.13.0
   Config:
     callback_gas_limit: 500000
+    manager: juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2
     mode:
       ibc_pay:
         unois_denom:
           denom: ibc/717352A5277F3DE916E8FD6B87F4CA6A51F2FBA9CF04ABCFF2DF7202F8A8BC50
           ics20_channel: channel-175
     nois_beacon_price: "50000000"
-    nois_beacon_price_updated: "1681597699262712630"
-    payment: nois1jh3tteg4cgq8850urwkahxhqazzhq2lgs4q6jkt7ayxgkphvllkqxk4v4r
+    nois_beacon_price_updated: "1682353695404898784"
+    payment: nois1xgnpkzr86cl7d2mjwdhalyt9md3vyfk5d66r9j4lfvsgkjc6wthse2q53d
     prices:
     - amount: "100"
       denom: ujunox
     test_mode: false
-    withdrawal_address: juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2
 ```
 
 #### injective-888
