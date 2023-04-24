@@ -75,16 +75,16 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 ```yaml
 - Name: nois-gateway
-  Address: nois1c9l6qcl82u7zkgjduj2snfuv5rz6jzwsumw4nktgytzclazujc6qc05p5j
+  Address: nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc
   Code ID: "44"
   Git Asset Name: nois_gateway
-  Instantiation Message: '{"manager":"nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve","price":{"denom":"unois","amount":"50000000"},"payment_code_id":45,"sink":"nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty"}'
+  Instantiation Message: '{"manager":"nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve","price":{"denom":"unois","amount":"50000000"},"payment_code_id":57,"sink":"nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty"}'
   URL: "https://github.com/noislabs/nois-contracts"
-  Version: v0.12.0
+  Version: v0.13.0
   Config:
     drand: nois14xef285hz5cx5q9hh32p9nztu3cct4g44sxjgx3dmftt2tj2rweqkjextk
     manager: nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve
-    payment_code_id: 43
+    payment_code_id: 58
     payment_initial_funds: null
     price:
       amount: "50000000"
@@ -137,11 +137,11 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 ```yaml
 - Chain-id: injective-888
-  Address: inj179wtd73tmhmjnr62m3s58crn73mr437js0na0y
+  Address: inj1492g0dmg4l7dm6nppsy5zhuwh8q350j2wfrxrd
   Git Asset Name: nois_proxy
-  Instantiation Message: '{"prices":[{"denom":"inj","amount":"100"},{"denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B","amount":"50000000"}],"withdrawal_address":"inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-46","denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B"}}}}'
+  Instantiation Message: '{"prices":[{"denom":"inj","amount":"100"},{"denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B","amount":"50000000"}],"manager":"inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t","callback_gas_limit":10000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-46","denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B"}}}}'
   URL: "https://github.com/noislabs/nois-contracts"
-  Version: v0.12.0
+  Version: v0.13.0
   Config:
     callback_gas_limit: 500000
     mode:
