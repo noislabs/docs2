@@ -155,13 +155,21 @@
 <a href="%E2%80%8Bhttps://github.com/noislabs/nois-dapp-examples">​https://github.com/noislabs/nois-dapp-examples</a></p>
 <hr />
 <h4 id="import-the-nois-packages"><a class="header" href="#import-the-nois-packages">Import the nois packages</a></h4>
-<p>First thing is to import the packages. Add this to your cargo.toml under
+<p>First thing is to import the packages. Add this to your Cargo.toml under
 dependencies.</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// in cargo.toml
 [dependencies]
 nois = &quot;0.6.0&quot;
+<span class="boring">}</span></code></pre></pre>
+<p>Note that Rust editions prior to &quot;2021&quot; may require the addition of the 
+following option to the <code>package</code> section of your Cargo.toml for a 
+successful build:</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>[package]
+resolver = &quot;2&quot;
 <span class="boring">}</span></code></pre></pre>
 <h4 id="configure-the-proxy-address"><a class="header" href="#configure-the-proxy-address">Configure the proxy address</a></h4>
 <p>We need to add the address of the nois-proxy. One common way to do it is during
