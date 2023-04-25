@@ -24,6 +24,7 @@
   - [Nois Toolbox](./nois_toolbox.md)
     - [Toolbox in Rust](./toolbox_in_rust.md)
     - [Toolbox in js](./toolbox_in_js.md)
+  - [Developer Questions](./dev_faq.md)
 - [Integrate Nois in your Chain](./integrate_nois_to_your_chain.md)
 - [Relayer](./relayer.md)
   - [wasm-Relayer](./wasm_relayer.md)
