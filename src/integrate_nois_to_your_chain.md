@@ -94,7 +94,6 @@ junod tx wasm instantiate <CODE_ID>
              {"denom":"ujunox","amount":"1000000"},
              {"denom":"ibc/..ibc_NOIS_you_noted_in_a_previous_step","amount":"50000000"}
          ],
-  "withdrawal_address":"YOUR_ADDRESS_HERE",
   "callback_gas_limit":500000,
   "test_mode":false,
   "mode":{"ibc_pay":{
