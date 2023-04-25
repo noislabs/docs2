@@ -9,13 +9,23 @@ complexity out of the randomness consumer DAPP.
 #### Steps to integrate Nois to your chain
 
 #### Decide on a nois-proxy strategy
+
 The nois-proxy that you will deploy belongs to you and not to the Nois chain.
-Your nois-proxy will have a nois-payment contract at the Nois chain so it can pay for randomness.
-You need to decide how much dapps need to pay your proxy in prder for the proxy to forward the request to Nois.
-You can set this price in IBCed NOIS or you can even set the native token of your chain, or even Bitcoin. You cannot set the price of the proxy for free but you can set it extremely low like 1ujuno. If you still want to offer it for free you can fork the proxy code and make it free.
-Just remember that if you set the price too low some people/dapps can request the randomness from your proxy for a cheap price and end up consuming you $NOIS tokens at the other side (from you nois-payment contract on Nois chain)
-You are the manager of your proxy so you can at any point in time withdraw  part or all the funds that your proxy has accumulated.
-You can make your proxy part of governance and withdraw the funds to the community pool if you wish.
+Your nois-proxy will have a nois-payment contract at the Nois chain so it can
+pay for randomness. You need to decide how much dapps need to pay your proxy in
+prder for the proxy to forward the request to Nois. You can set this price in
+IBCed NOIS or you can even set the native token of your chain, or even Bitcoin.
+You cannot set the price of the proxy for free but you can set it extremely low
+like 1ujuno. If you still want to offer it for free you can fork the proxy code
+and make it free. Just remember that if you set the price too low some
+people/dapps can request the randomness from your proxy for a cheap price and
+end up consuming you $NOIS tokens at the other side (from you nois-payment
+contract on Nois chain) You are the manager of your proxy so you can at any
+point in time withdraw part or all the funds that your proxy has accumulated.
+You can make your proxy part of governance and withdraw the funds to the
+community pool if you wish.
+
+![Proxy](img/nois-proxy.png)
 
 ##### Connect your chain to Nois
 
@@ -23,7 +33,9 @@ By the end of this step you should have an IBC transfer channel between your
 Chain and Nois, so that you can pay for randomness with NOIS.
 
 - Configure your relayer software (hermes, go-relayer, ts-relayer) to have Nois
-  and your chain (Check the [chain-registry](https://github.com/cosmos/chain-registry/tree/master/nois) for the details)
+  and your chain (Check the
+  [chain-registry](https://github.com/cosmos/chain-registry/tree/master/nois)
+  for the details)
 - Create a Client, a connection, and a transfer channel between both chains.
 - Check that the channel has been created. You can do so in this IBC
   [mainnet dashboard](https://ibc.nois.network/connections) or
@@ -67,9 +79,9 @@ instantiation paramaters description:
 
 | Parameter          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Type       |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- |
-| manager            | You can put your address here. <br>It will allow you to set the proxy config parameters and withdraw any funds held/made by the proxy                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | String     |
-| prices             | These are the prices that any Dapp needs to pay the proxy.<br>You can set this in IBCed $NOIS or in any Coin you like.<br>You can even leave this to very little if you want to allow Dapps to request randomness for very cheap.<br>Setting this to an empty list will not make the proxy price free but will stop the contract from accepting incoming beacon requests. It can be a way to stop the proxy from serving randomness  <br>Please note that these are not the funds that will be sent over to Nois but only the proxy for the fee.                                                                                                                                                                                                                                                                                                             | Vec\<Coin> |
-| test_mode          | Just set this to false.  This is only set to true for integration testing                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Boolean    |
+| manager            | You can put your address here. <br>It will allow you to set the proxy config parameters and withdraw any funds held/made by the proxy                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | String     |
+| prices             | These are the prices that any Dapp needs to pay the proxy.<br>You can set this in IBCed $NOIS or in any Coin you like.<br>You can even leave this to very little if you want to allow Dapps to request randomness for very cheap.<br>Setting this to an empty list will not make the proxy price free but will stop the contract from accepting incoming beacon requests. It can be a way to stop the proxy from serving randomness <br>Please note that these are not the funds that will be sent over to Nois but only the proxy for the fee.                                                                                            | Vec\<Coin> |
+| test_mode          | Just set this to false. This is only set to true for integration testing                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Boolean    |
 | callback_gas_limit | The amount of gas that the callback to the dapp can consume. <br>500000 is a good value if you are not sure.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | number     |
 | mode               | This defines the operational mode of the proxy:<br>two modes are available: <br> - **Funded**: In this mode There is no need to make sure that the proxy is sending the NOIS to pay for randomness because someone already filled the payment contract (on Nois chain) of the proxy on behalf of the proxy. This can happen onchain or offchain, automated or manually.<br> - **IbcPay**: In this mode the proxy contract sends IBCed NOIS to the gateway for each beacon request. You need to whether prefill this contract with NOIS or make sure you set the Nois fee on the prices field so that DAPPs will send the fee upon request. | Enum       |
 
