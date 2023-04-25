@@ -1295,15 +1295,9 @@ differences are documented here.</p>
 <p>In this page we would like to list some relevant questions developers have asked
 in an attempt to gather some good knowledge</p>
 <hr />
-<h2>-- I have funds in NOIS. I am about to deploy a nois-proxy on my chain, How does
-the payment work? When we instantiate the proxy, should I send you the
-&quot;manager&quot; or contract address? How will the proxy know to debit our account on
-the Nois side, if that makes sense?
--- So as soon as you open a channel between your proxy and the gateway, the
-gateway will instantiate a nois-payment contract for your proxy. the proxy
-will know by itself from IBC its nois-payment address. because it receives a
-welcome packet from the gateway that will update it with the nois price and
-the nois-payment contract that the gateway has instantiated for it.</h2>
+<p>- &quot;I have funds in NOIS. I am about to deploy a nois-proxy on my chain, How does the payment work? When we instantiate the proxy, should I send you the &quot;manager&quot; or contract address? How will the proxy know to debit our account on the Nois side, if that makes sense?&quot;</p>
+<p>- So as soon as you open a channel between your proxy and the gateway, the gateway will instantiate a nois-payment contract for your proxy. the proxy will know by itself from IBC its nois-payment address. because it receives a welcome packet from the gateway that will update it with the nois price and the nois-payment contract that the gateway has instantiated for it.</p>
+<hr />
 <div style="break-before: page; page-break-before: always;"></div><h2 id="add-randomness-to-your-chain"><a class="header" href="#add-randomness-to-your-chain">Add Randomness to your Chain</a></h2>
 <p>In order to be able to integrate Nois within your blockchain you need to deploy
 a nois-proxy which plays the role of an outpost contract. Good news, Nois can be
