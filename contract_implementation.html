@@ -161,7 +161,7 @@ dependencies.</p>
 </span><span class="boring">fn main() {
 </span>// in cargo.toml
 [dependencies]
-nois = &quot;0.6.0&quot;
+nois = &quot;0.7.0&quot;
 <span class="boring">}</span></code></pre></pre>
 <p>Note that Rust editions prior to &quot;2021&quot; may require the addition of the 
 following option to the <code>package</code> section of your Cargo.toml for a 
@@ -278,10 +278,13 @@ Therefore, you should add the Receive handler on your ExecuteMsg.</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// in contract.rs
- //NoisReceive
-should be called by the proxy contract. The proxy is forwarding the randomness
-from the nois chain to this contract. ExecuteMsg::NoisReceive { callback } =&gt;
-execute*nois_receive(deps, env, info, callback),
+// Adding ExecuteMsg::NoisReceive
+ match msg {
+        //RollDice should be called by a player who wants to roll the dice
+        ExecuteMsg::RollDice { job_id } =&gt; execute_roll_dice(deps, env, info, job_id),
+        //NoisReceive should be called by the proxy contract. The proxy is forwarding the randomness from the nois chain to this contract.
+        ExecuteMsg::NoisReceive { callback } =&gt; execute_receive(deps, env, info, callback),
+    }
 <span class="boring">}</span></code></pre></pre>
 <p>and in msg.rs</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
@@ -289,12 +292,14 @@ execute*nois_receive(deps, env, info, callback),
 </span>// in msg.rs
 use nois::NoisCallback;
 
+#[derive(Serialize, Deserialize, Clone, Debug, JsonSchema)]
+#[serde(rename_all = &quot;snake_case&quot;)]
 pub enum ExecuteMsg {
     // job_id for this job which allows for gathering the results.
     RollDice { job_id: String },
     //callback contains the randomness from drand (HexBinary) and job_id
     //callback should only be allowed to be called by the proxy contract
-    Receive { callback: NoisCallback },
+    NoisReceive { callback: NoisCallback },
 }
 <span class="boring">}</span></code></pre></pre>
 <p>In the receive function you can implement whatever you would like to do with the
@@ -304,22 +309,7 @@ crate.</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// in contract.rs
-pub fn execute_nois_receive(
-    deps: DepsMut,
-    _env: Env,
-    _info: MessageInfo,
-    callback_id: String,
-    randomness: Data,
-) -&gt; Result&lt;Response, ContractError&gt; {
-    let randomness: [u8; 32] = randomness
-        .to_array()
-        .map_err(|_| ContractError::InvalidRandomness)?;
 
-   //Congrats, you have access to
-   // a publicly-verifiable, unbiasable and decentralised randomness
-
-    Ok(Response::default())
-}
 //The execute_receive function is triggered upon reception of the randomness from the proxy contract
 //The callback contains the randomness from drand (HexBinary) and the job_id
 pub fn execute_receive(
@@ -333,20 +323,30 @@ pub fn execute_receive(
     //callback should only be allowed to be called by the proxy contract
     //otherwise anyone can cut the randomness workflow and cheat the randomness by sending the randomness directly to this contract
     ensure_eq!(info.sender, proxy, ContractError::UnauthorizedReceive);
-    let randomness: [u8; 32] = callback
-        .randomness
+
+    // In this Dapp we don't need the drand publish time. so we skip it with ..
+    let NoisCallback {
+        job_id, randomness, ..
+    } = callback;
+
+    let randomness: [u8; 32] = randomness
         .to_array()
         .map_err(|_| ContractError::InvalidRandomness)?;
     //ints_in_range provides a list of random numbers following a uniform distribution within a range.
-    //in this case it will provide 2 uniformly randomized numbers between 1 and 6
+    //in this case it will provide uniformly randomized numbers between 1 and 6
     let double_dice_outcome = ints_in_range(randomness, 2, 1, 6);
     //summing the dice to fit the real double dice probability distribution from 2 to 12
     let double_dice_outcome = double_dice_outcome.iter().sum();
 
-    //Congrats, you have access to
-    // a publicly-verifiable, unbiasable and decentralised randomness
+    //Preserve the immutability of the previous rounds.
+    //So that the player cannot retry and change history.
+    let response = match DOUBLE_DICE_OUTCOME.may_load(deps.storage, &amp;job_id)? {
+        None =&gt; Response::default(),
+        Some(_randomness) =&gt; return Err(ContractError::JobIdAlreadyPresent),
+    };
+    DOUBLE_DICE_OUTCOME.save(deps.storage, &amp;job_id, &amp;double_dice_outcome)?;
 
-    Ok(Response::default())
+    Ok(response)
 }
 <span class="boring">}</span></code></pre></pre>
 
