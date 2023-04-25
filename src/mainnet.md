@@ -114,6 +114,36 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
       sink: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
 ```
 
+### Proxies
+
+#### juno-1
+
+```yaml
+- Chain-id: juno-1
+  Address: juno1qr84ktm57q5t02u04ddk5r8s79axdzglad6tfdd9g2xgt4hkh6jsgeq9x2
+  Git Asset Name: nois_proxy
+  Instantiation Message: '{"prices":[{"denom":"ujuno","amount":"1500000"}],"manager":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-225","denom":"ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B"}}}}'
+  URL: "https://github.com/noislabs/nois-contracts"
+  Version: v0.13.1
+  Config:
+    callback_gas_limit: 500000
+    manager: juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2
+    mode:
+      ibc_pay:
+        unois_denom:
+          denom: ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B
+          ics20_channel: channel-225
+    nois_beacon_price: "50000000"
+    nois_beacon_price_updated: "1682391456466934559"
+    payment: nois1k7a00gmhj450qa83xq2v3rlmfcp8nj8t2wc653maq9p5csv4q5jq5pwfm0
+    prices:
+    - amount: "1500000"
+      denom: ujuno
+    - amount: "50000000"
+      denom: ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B
+    test_mode: false
+```
+
 ## IBC channels
 
 Right now the following IBC channels are supported:
@@ -122,6 +152,7 @@ Right now the following IBC channels are supported:
 | --------- | --------------------- | ---------------- | --------------------- |
 | ICS-20    | Stargaze (stargaze-1) | channel-0        | channel-137           |
 | ICS-20    | Juno (juno-1)         | channel-1        | channel-225           |
+| nois-v7   | Juno (juno-1)         | channel-2        | channel-243           |
 
 ## IBC denoms
 
