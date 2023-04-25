@@ -7,13 +7,22 @@ Double dice game example
 
 #### Import the nois packages
 
-First thing is to import the packages. Add this to your cargo.toml under
+First thing is to import the packages. Add this to your Cargo.toml under
 dependencies.
 
 ```rust
 // in cargo.toml
 [dependencies]
 nois = "0.6.0"
+```
+
+Note that Rust editions prior to "2021" may require the addition of the 
+following option to the `package` section of your Cargo.toml for a 
+successful build:
+
+```rust
+[package]
+resolver = "2"
 ```
 
 #### Configure the proxy address
