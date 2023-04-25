@@ -103,7 +103,6 @@ junod tx wasm instantiate <CODE_ID>
                }
  }}}'
 --label=nois-proxy
---no-admin
 --from <your-key>
 --chain-id uni-6
 --gas=auto
