@@ -122,7 +122,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 - Chain-id: juno-1
   Address: juno1qr84ktm57q5t02u04ddk5r8s79axdzglad6tfdd9g2xgt4hkh6jsgeq9x2
   Git Asset Name: nois_proxy
-  Instantiation Message: '{"prices":[{"denom":"ujuno","amount":"1500000"}],"manager":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-225","denom":"ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B"}}}}'
+  Instantiation Message: '{"prices":[{"denom":"ujuno","amount":"1500000"},{"denom":"ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B","amount":"50000000"}],"manager":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-225","denom":"ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B"}}}}'
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.13.1
   Config:
