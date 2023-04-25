@@ -249,11 +249,38 @@
         denom: unois
       sink: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
 </code></pre>
+<h3 id="proxies"><a class="header" href="#proxies">Proxies</a></h3>
+<h4 id="juno-1"><a class="header" href="#juno-1">juno-1</a></h4>
+<pre><code class="language-yaml">- Chain-id: juno-1
+  Address: juno1qr84ktm57q5t02u04ddk5r8s79axdzglad6tfdd9g2xgt4hkh6jsgeq9x2
+  Git Asset Name: nois_proxy
+  Instantiation Message: '{&quot;prices&quot;:[{&quot;denom&quot;:&quot;ujuno&quot;,&quot;amount&quot;:&quot;1500000&quot;}],&quot;manager&quot;:&quot;juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2&quot;,&quot;callback_gas_limit&quot;:500000,&quot;test_mode&quot;:false,&quot;mode&quot;:{&quot;ibc_pay&quot;:{&quot;unois_denom&quot;:{&quot;ics20_channel&quot;:&quot;channel-225&quot;,&quot;denom&quot;:&quot;ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B&quot;}}}}'
+  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
+  Version: v0.13.1
+  Config:
+    callback_gas_limit: 500000
+    manager: juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2
+    mode:
+      ibc_pay:
+        unois_denom:
+          denom: ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B
+          ics20_channel: channel-225
+    nois_beacon_price: &quot;50000000&quot;
+    nois_beacon_price_updated: &quot;1682391456466934559&quot;
+    payment: nois1k7a00gmhj450qa83xq2v3rlmfcp8nj8t2wc653maq9p5csv4q5jq5pwfm0
+    prices:
+    - amount: &quot;1500000&quot;
+      denom: ujuno
+    - amount: &quot;50000000&quot;
+      denom: ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B
+    test_mode: false
+</code></pre>
 <h2 id="ibc-channels"><a class="header" href="#ibc-channels">IBC channels</a></h2>
 <p>Right now the following IBC channels are supported:</p>
 <div class="table-wrapper"><table><thead><tr><th> Protocol</th><th>Other chain</th><th>Channel (nois-1)</th><th>Channel (other chain)</th></tr></thead><tbody>
 <tr><td>ICS-20</td><td>Stargaze (stargaze-1)</td><td>channel-0</td><td>channel-137</td></tr>
 <tr><td>ICS-20</td><td>Juno (juno-1)</td><td>channel-1</td><td>channel-225</td></tr>
+<tr><td>nois-v7</td><td>Juno (juno-1)</td><td>channel-2</td><td>channel-243</td></tr>
 </tbody></table>
 </div>
 <h2 id="ibc-denoms"><a class="header" href="#ibc-denoms">IBC denoms</a></h2>
