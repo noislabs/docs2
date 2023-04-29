@@ -257,13 +257,24 @@ visit.</p>
 <p>On this page you find various ways to check the status of your node.</p>
 <h2 id="p2p"><a class="header" href="#p2p">p2p</a></h2>
 <ol>
-<li>Ensure your external address is set correctly:<br />
-<code>curl -sS http://localhost:26657/status | jq .result.node_info.listen_addr</code></li>
-<li>Ensure you have a few dozen peers here:<br />
-<code>curl -sS http://localhost:26657/net_info | jq .result.n_peers</code></li>
-<li>Ensure you have a mix of outbound and inbound peers (i.e. both outgoing and
-incoming connections work:<br />
-<code>curl -sS http://localhost:26657/net_info | jq | grep is_outbound</code></li>
+<li>
+<p>Ensure your external address is set correctly:<br />
+<code>curl -sS http://localhost:26657/status | jq .result.node_info.listen_addr</code></p>
+</li>
+<li>
+<p>Ensure you have a few dozen peers here:<br />
+<code>curl -sS http://localhost:26657/net_info | jq .result.n_peers</code></p>
+</li>
+<li>
+<p>Ensure you have a mix of outbound and inbound peers (i.e. both outgoing and
+incoming connections work:</p>
+<pre><code class="language-sh"># Outbound peers
+curl -sS http://localhost:26657/net_info | jq '.result.peers | map(select(.is_outbound == true)) | length'
+
+# Inbound peers
+curl -sS http://localhost:26657/net_info | jq '.result.peers | map(select(.is_outbound == false)) | length'
+</code></pre>
+</li>
 </ol>
 <h2 id="sync"><a class="header" href="#sync">Sync</a></h2>
 <ol>
@@ -375,8 +386,8 @@ mainnet addresses and token distribution</li>
 <h2 id="binary"><a class="header" href="#binary">Binary</a></h2>
 <ul>
 <li>Build <code>noisd</code> from <a href="https://github.com/noislabs/noisd">https://github.com/noislabs/noisd</a></li>
-<li>Tag: v1.0.1</li>
-<li><code>noisd version</code> should show 1.0.1</li>
+<li>Tag: v1.0.2</li>
+<li><code>noisd version</code> should show 1.0.2</li>
 </ul>
 <h2 id="p2p-1"><a class="header" href="#p2p-1">p2p</a></h2>
 <p>Seed nodes</p>
@@ -468,8 +479,8 @@ mainnet addresses and token distribution</li>
     nois_beacon_price_updated: &quot;1682353695404898784&quot;
     payment: nois1xgnpkzr86cl7d2mjwdhalyt9md3vyfk5d66r9j4lfvsgkjc6wthse2q53d
     prices:
-    - amount: &quot;100&quot;
-      denom: ujunox
+      - amount: &quot;100&quot;
+        denom: ujunox
     test_mode: false
 </code></pre>
 <h4 id="injective-888"><a class="header" href="#injective-888">injective-888</a></h4>
@@ -491,10 +502,10 @@ mainnet addresses and token distribution</li>
     nois_beacon_price_updated: &quot;1682297627977789371&quot;
     payment: nois1y9hngs5f2gzvwepz5gxhmsehlytaf6n045vnhmxh27rdq44cg56std3zde
     prices:
-    - amount: &quot;100&quot;
-      denom: inj
-    - amount: &quot;1000000&quot;
-      denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
+      - amount: &quot;100&quot;
+        denom: inj
+      - amount: &quot;1000000&quot;
+        denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
     test_mode: false
 </code></pre>
 <hr />
@@ -528,8 +539,8 @@ mainnet addresses and token distribution</li>
 <h2 id="binary-1"><a class="header" href="#binary-1">Binary</a></h2>
 <ul>
 <li>Build <code>noisd</code> from <a href="https://github.com/noislabs/noisd">https://github.com/noislabs/noisd</a></li>
-<li>Tag: v1.0.1</li>
-<li><code>noisd version</code> should show 1.0.1</li>
+<li>Tag: v1.0.2</li>
+<li><code>noisd version</code> should show 1.0.2</li>
 </ul>
 <h2 id="p2p-2"><a class="header" href="#p2p-2">p2p</a></h2>
 <p>Seed nodes</p>
@@ -601,14 +612,14 @@ mainnet addresses and token distribution</li>
   URL: &quot;https://github.com/noislabs/nois-contracts&quot;
   Version: v0.13.0
   Config:
-      drand: nois19w26q6n44xqepduudfz2xls4pc5lltpn6rxu34g0jshxu3rdujzsj7dgu8
-      manager: nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk
-      payment_code_id: 7
-      payment_initial_funds: null
-      price:
-        amount: &quot;50000000&quot;
-        denom: unois
-      sink: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
+    drand: nois19w26q6n44xqepduudfz2xls4pc5lltpn6rxu34g0jshxu3rdujzsj7dgu8
+    manager: nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk
+    payment_code_id: 7
+    payment_initial_funds: null
+    price:
+      amount: &quot;50000000&quot;
+      denom: unois
+    sink: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
 </code></pre>
 <h3 id="proxies-1"><a class="header" href="#proxies-1">Proxies</a></h3>
 <h4 id="juno-1"><a class="header" href="#juno-1">juno-1</a></h4>
@@ -630,10 +641,10 @@ mainnet addresses and token distribution</li>
     nois_beacon_price_updated: &quot;1682391456466934559&quot;
     payment: nois1k7a00gmhj450qa83xq2v3rlmfcp8nj8t2wc653maq9p5csv4q5jq5pwfm0
     prices:
-    - amount: &quot;1500000&quot;
-      denom: ujuno
-    - amount: &quot;50000000&quot;
-      denom: ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B
+      - amount: &quot;1500000&quot;
+        denom: ujuno
+      - amount: &quot;50000000&quot;
+        denom: ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B
     test_mode: false
 </code></pre>
 <h2 id="ibc-channels"><a class="header" href="#ibc-channels">IBC channels</a></h2>
