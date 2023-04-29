@@ -103,6 +103,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.11.0
 ```
+
 ---
 
 ### Proxies
@@ -128,8 +129,8 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
     nois_beacon_price_updated: "1682353695404898784"
     payment: nois1xgnpkzr86cl7d2mjwdhalyt9md3vyfk5d66r9j4lfvsgkjc6wthse2q53d
     prices:
-    - amount: "100"
-      denom: ujunox
+      - amount: "100"
+        denom: ujunox
     test_mode: false
 ```
 
@@ -154,10 +155,10 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
     nois_beacon_price_updated: "1682297627977789371"
     payment: nois1y9hngs5f2gzvwepz5gxhmsehlytaf6n045vnhmxh27rdq44cg56std3zde
     prices:
-    - amount: "100"
-      denom: inj
-    - amount: "1000000"
-      denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
+      - amount: "100"
+        denom: inj
+      - amount: "1000000"
+        denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
     test_mode: false
 ```
 
@@ -180,4 +181,3 @@ unois on:
   denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
   channel-id: channel-46
 ```
-

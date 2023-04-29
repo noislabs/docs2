@@ -35,19 +35,19 @@ Seed nodes
 
 An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
-| URL                                       | TLS | CORS | tx_index |
-| ----------------------------------------- | --- | ---- | -------- |
+| URL                                               | TLS | CORS | tx_index |
+| ------------------------------------------------- | --- | ---- | -------- |
 | https://rpc.cosmos.directory/nois (load balancer) |     |      |          |
-| https://rpc-nois.sr20de.xyz:443           | ✅  | ✅   | ✅       |
-| https://rpc.nois.hexnodes.co:443          | ✅  | ✅   | ✅       |
-| https://m-nois.rpc.utsa.tech:443          | ✅  | ✅   | ✅       |
-| https://rpc-nois.d-stake.xyz:443          | ✅  | ✅   | ✅       |
-| https://nois.rpc.cumulo.org.es:443        | ✅  | ✅   | ✅       |
-| https://nois-mainnet-rpc.itrocket.net:443 | ✅  | ✅   | ✅       |
-| https://nois-rpc.nysa.network:443         | ✅  | ❌   | ✅       |
-| https://rpc.nois.chaintools.tech/         | ✅  | ✅   | ❌       |
-| https://nois.rpc.m.stavr.tech:443         | ✅  | ✅   | ✅       |
-| https://nois.rpc.kjnodes.com:443          | ✅  | ✅   | ✅       |
+| https://rpc-nois.sr20de.xyz:443                   | ✅  | ✅   | ✅       |
+| https://rpc.nois.hexnodes.co:443                  | ✅  | ✅   | ✅       |
+| https://m-nois.rpc.utsa.tech:443                  | ✅  | ✅   | ✅       |
+| https://rpc-nois.d-stake.xyz:443                  | ✅  | ✅   | ✅       |
+| https://nois.rpc.cumulo.org.es:443                | ✅  | ✅   | ✅       |
+| https://nois-mainnet-rpc.itrocket.net:443         | ✅  | ✅   | ✅       |
+| https://nois-rpc.nysa.network:443                 | ✅  | ❌   | ✅       |
+| https://rpc.nois.chaintools.tech/                 | ✅  | ✅   | ❌       |
+| https://nois.rpc.m.stavr.tech:443                 | ✅  | ✅   | ✅       |
+| https://nois.rpc.kjnodes.com:443                  | ✅  | ✅   | ✅       |
 
 ## Contracts
 
@@ -104,14 +104,14 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.13.0
   Config:
-      drand: nois19w26q6n44xqepduudfz2xls4pc5lltpn6rxu34g0jshxu3rdujzsj7dgu8
-      manager: nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk
-      payment_code_id: 7
-      payment_initial_funds: null
-      price:
-        amount: "50000000"
-        denom: unois
-      sink: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
+    drand: nois19w26q6n44xqepduudfz2xls4pc5lltpn6rxu34g0jshxu3rdujzsj7dgu8
+    manager: nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk
+    payment_code_id: 7
+    payment_initial_funds: null
+    price:
+      amount: "50000000"
+      denom: unois
+    sink: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
 ```
 
 ### Proxies
@@ -137,10 +137,10 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
     nois_beacon_price_updated: "1682391456466934559"
     payment: nois1k7a00gmhj450qa83xq2v3rlmfcp8nj8t2wc653maq9p5csv4q5jq5pwfm0
     prices:
-    - amount: "1500000"
-      denom: ujuno
-    - amount: "50000000"
-      denom: ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B
+      - amount: "1500000"
+        denom: ujuno
+      - amount: "50000000"
+        denom: ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B
     test_mode: false
 ```
 
