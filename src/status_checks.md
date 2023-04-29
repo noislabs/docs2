@@ -10,7 +10,14 @@ On this page you find various ways to check the status of your node.
    `curl -sS http://localhost:26657/net_info | jq .result.n_peers`
 3. Ensure you have a mix of outbound and inbound peers (i.e. both outgoing and
    incoming connections work:\
-   `curl -sS http://localhost:26657/net_info | jq | grep is_outbound`
+
+   ```sh
+   # Outbound peers
+   curl -sS http://localhost:26657/net_info | jq '.result.peers | map(select(.is_outbound == true)) | length'
+
+   # Inbound peers
+   curl -sS http://localhost:26657/net_info | jq '.result.peers | map(select(.is_outbound == false)) | length'
+   ```
 
 ## Sync
 
