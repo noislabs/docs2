@@ -14,3 +14,6 @@ At Nois we have two kind of relaying:
 You can check the current IBC clients, connections and channels on
 [mainnet dashboard](https://ibc.nois.network/connections) or on the
 [testnet dashboard](https://testnet.ibc.nois.network/)
+
+The list of supported channels to relay on testnet is [testnet channels](https://docs.nois.network/node_operators/testnet_005.html#ibc-channels)
+The list of supported channels to relay on mainnet is [mainnet channels](https://docs.nois.network/node_operators/mainnet.html#ibc-channels)
