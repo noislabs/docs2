@@ -161,7 +161,9 @@ software let us know on discord</p>
 <p>Setting up ts-relayer</p>
 <p>Install docker from this <a href="https://docs.docker.com/engine/install/ubuntu/">link</a></p>
 <h4 id="example-uni-6--nois-testnet-005-relay"><a class="header" href="#example-uni-6--nois-testnet-005-relay">Example uni-6 =&gt; nois-testnet-005 relay</a></h4>
-<pre><code class="language-shell">export MNEMONIC='&lt;YOUR_MNEMONICS_HERE&gt;'
+<pre><code class="language-sh"># The mnemonic used for both chains
+export RELAYER_MNEMONIC='&lt;YOUR_MNEMONIC_HERE&gt;'
+# The consumer chain using Nois
 export CHAIN_ID=uni-6
 
 #Check #deployment discord channel for this value
@@ -169,7 +171,7 @@ export NOIS_PROXY=&lt;NOIS_PROXY_ADDR_ON_CONSUMER_CHAIN&gt;
 #example:
 #export NOIS_PROXY=juno162vdumcg626zxumvuh9u6vxcakr3rrn804dxfex8qfxnhrldl68ss0lrdn
 
-docker run -d -e &quot;MNEMONIC=$MNEMONIC&quot; \
+docker run -d -e &quot;RELAYER_MNEMONIC=$RELAYER_MNEMONIC&quot; \
             noislabs/nois-relayer:$CHAIN_ID-$NOIS_PROXY-prd
 </code></pre>
 

@@ -153,7 +153,14 @@
                         <h1 id="history-settings"><a class="header" href="#history-settings">History settings</a></h1>
 <p>There are a few things you might want to set in yout node. Different settings
 are required for different use cases, so don't consider them recommendations.</p>
-<h2 id="1-dont-store-old-state"><a class="header" href="#1-dont-store-old-state">1. Don't store old state</a></h2>
+<h2 id="relayer-friendly-node"><a class="header" href="#relayer-friendly-node">Relayer-friendly node</a></h2>
+<p>Keep state snapshots of the last 24 hours:</p>
+<pre><code class="language-sh">sed -i 's/pruning =.*$/pruning = &quot;custom&quot;/' $HOME/.noisd/config/app.toml \
+  &amp;&amp; sed -i 's/pruning-keep-recent =.*$/pruning-keep-recent = &quot;34560&quot;/' $HOME/.noisd/config/app.toml \
+  &amp;&amp; sed -i 's/pruning-keep-every =.*$/pruning-keep-every = &quot;0&quot;/' $HOME/.noisd/config/app.toml \
+  &amp;&amp; sed -i 's/pruning-interval =.*$/pruning-interval = &quot;100&quot;/' $HOME/.noisd/config/app.toml
+</code></pre>
+<h2 id="dont-store-old-state"><a class="header" href="#dont-store-old-state">Don't store old state</a></h2>
 <p>In order to avoid storing snapshots of the state, in
 <code>$HOME/.noisd/config/app.toml</code> you can set <code>pruning = &quot;everything&quot;</code>:</p>
 <pre><code class="language-sh">sed -i 's/pruning =.*$/pruning = &quot;everything&quot;/' $HOME/.noisd/config/app.toml

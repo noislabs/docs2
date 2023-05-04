@@ -1226,7 +1226,14 @@ curl -sS http://localhost:26657/net_info | jq '.result.peers | map(select(.is_ou
 <div style="break-before: page; page-break-before: always;"></div><h1 id="history-settings"><a class="header" href="#history-settings">History settings</a></h1>
 <p>There are a few things you might want to set in yout node. Different settings
 are required for different use cases, so don't consider them recommendations.</p>
-<h2 id="1-dont-store-old-state"><a class="header" href="#1-dont-store-old-state">1. Don't store old state</a></h2>
+<h2 id="relayer-friendly-node"><a class="header" href="#relayer-friendly-node">Relayer-friendly node</a></h2>
+<p>Keep state snapshots of the last 24 hours:</p>
+<pre><code class="language-sh">sed -i 's/pruning =.*$/pruning = &quot;custom&quot;/' $HOME/.noisd/config/app.toml \
+  &amp;&amp; sed -i 's/pruning-keep-recent =.*$/pruning-keep-recent = &quot;34560&quot;/' $HOME/.noisd/config/app.toml \
+  &amp;&amp; sed -i 's/pruning-keep-every =.*$/pruning-keep-every = &quot;0&quot;/' $HOME/.noisd/config/app.toml \
+  &amp;&amp; sed -i 's/pruning-interval =.*$/pruning-interval = &quot;100&quot;/' $HOME/.noisd/config/app.toml
+</code></pre>
+<h2 id="dont-store-old-state"><a class="header" href="#dont-store-old-state">Don't store old state</a></h2>
 <p>In order to avoid storing snapshots of the state, in
 <code>$HOME/.noisd/config/app.toml</code> you can set <code>pruning = &quot;everything&quot;</code>:</p>
 <pre><code class="language-sh">sed -i 's/pruning =.*$/pruning = &quot;everything&quot;/' $HOME/.noisd/config/app.toml
@@ -1346,7 +1353,9 @@ software let us know on discord</p>
 <p>Setting up ts-relayer</p>
 <p>Install docker from this <a href="https://docs.docker.com/engine/install/ubuntu/">link</a></p>
 <h4 id="example-uni-6--nois-testnet-005-relay"><a class="header" href="#example-uni-6--nois-testnet-005-relay">Example uni-6 =&gt; nois-testnet-005 relay</a></h4>
-<pre><code class="language-shell">export MNEMONIC='&lt;YOUR_MNEMONICS_HERE&gt;'
+<pre><code class="language-sh"># The mnemonic used for both chains
+export RELAYER_MNEMONIC='&lt;YOUR_MNEMONIC_HERE&gt;'
+# The consumer chain using Nois
 export CHAIN_ID=uni-6
 
 #Check #deployment discord channel for this value
@@ -1354,7 +1363,7 @@ export NOIS_PROXY=&lt;NOIS_PROXY_ADDR_ON_CONSUMER_CHAIN&gt;
 #example:
 #export NOIS_PROXY=juno162vdumcg626zxumvuh9u6vxcakr3rrn804dxfex8qfxnhrldl68ss0lrdn
 
-docker run -d -e &quot;MNEMONIC=$MNEMONIC&quot; \
+docker run -d -e &quot;RELAYER_MNEMONIC=$RELAYER_MNEMONIC&quot; \
             noislabs/nois-relayer:$CHAIN_ID-$NOIS_PROXY-prd
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ibc-ics20-relayer"><a class="header" href="#ibc-ics20-relayer">IBC ICS20 relayer</a></h1>
