@@ -13,8 +13,10 @@ Install docker from this [link](https://docs.docker.com/engine/install/ubuntu/)
 
 #### Example uni-6 => nois-testnet-005 relay
 
-```shell
-export MNEMONIC='<YOUR_MNEMONICS_HERE>'
+```sh
+# The mnemonic used for both chains
+export RELAYER_MNEMONIC='<YOUR_MNEMONIC_HERE>'
+# The consumer chain using Nois
 export CHAIN_ID=uni-6
 
 #Check #deployment discord channel for this value
@@ -22,6 +24,6 @@ export NOIS_PROXY=<NOIS_PROXY_ADDR_ON_CONSUMER_CHAIN>
 #example:
 #export NOIS_PROXY=juno162vdumcg626zxumvuh9u6vxcakr3rrn804dxfex8qfxnhrldl68ss0lrdn
 
-docker run -d -e "MNEMONIC=$MNEMONIC" \
+docker run -d -e "RELAYER_MNEMONIC=$RELAYER_MNEMONIC" \
             noislabs/nois-relayer:$CHAIN_ID-$NOIS_PROXY-prd
 ```
