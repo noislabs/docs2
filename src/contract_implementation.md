@@ -1,7 +1,8 @@
 # Contract implementation
 
-Double dice game example
-[​https://github.com/noislabs/nois-dapp-examples](​https://github.com/noislabs/nois-dapp-examples)
+Double dice game example:
+
+[https://github.com/noislabs/nois-dapp-examples](https://github.com/noislabs/nois-dapp-examples)
 
 ---
 
