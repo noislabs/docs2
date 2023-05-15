@@ -26,6 +26,7 @@ Seed nodes
 - `da81dd66bca4bba509163dbd06b4a6b2e05c2e12@nois-testnet-seed.itrocket.net:21656`
 - `ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:17356`
 - `6b2af739ac032a96e1e568b1871a1ca6e80ab08e@185.196.21.43:22656`
+- `3f472746f46493309650e5a033076689996c8881@nois-testnet.rpc.kjnodes.com:15159`
 
 ## RPCs
 
