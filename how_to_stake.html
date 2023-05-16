@@ -159,12 +159,25 @@ subject to some ubonding time period where you wait for your tokens to be
 unstaked (21 days at the time of writing). During this period no rewards are
 distributed.</p>
 <h3 id="how-and-where-to-stake"><a class="header" href="#how-and-where-to-stake">How and where to stake</a></h3>
-<p>You can use one of these websites to stake NOIS</p>
+<p>You can use one of these web tools to stake NOIS:</p>
 <ul>
 <li><a href="https://restake.app/nois">Restake</a></li>
 <li><a href="https://quickstake.io/nois-1/staking">QuickStake</a></li>
 <li><a href="https://nois-stake.d-stake.xyz/stake">nois-stake.d-stake.xyz</a></li>
 </ul>
+<h3 id="staking-with-the-cli"><a class="header" href="#staking-with-the-cli">Staking with the CLI</a></h3>
+<p>If you are familiar with CLI tools in the Cosmos ecosystem, you can use noisd
+like any other chain to delegate, redelegate and unbond. However, please note
+that this is only recommended for experienced users. Getting the parameters
+wrong may have unintended consequences.</p>
+<pre><code class="language-sh">noisd tx staking delegate {VALIDATOR_ADDRESS} {AMOUN_IN_UNOIS}unois \
+  --node &quot;https://rpc.noismain.mcbnode.online:443&quot; \
+  --chain-id nois-1 \
+  --gas auto --gas-adjustment 1.3 --gas-prices 0.05unois \
+  --from {KEY_NAME} \
+  --sign-mode amino-json --ledger \
+  --broadcast-mode block
+</code></pre>
 
                     </main>
 

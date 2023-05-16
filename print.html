@@ -300,12 +300,25 @@ subject to some ubonding time period where you wait for your tokens to be
 unstaked (21 days at the time of writing). During this period no rewards are
 distributed.</p>
 <h3 id="how-and-where-to-stake"><a class="header" href="#how-and-where-to-stake">How and where to stake</a></h3>
-<p>You can use one of these websites to stake NOIS</p>
+<p>You can use one of these web tools to stake NOIS:</p>
 <ul>
 <li><a href="https://restake.app/nois">Restake</a></li>
 <li><a href="https://quickstake.io/nois-1/staking">QuickStake</a></li>
 <li><a href="https://nois-stake.d-stake.xyz/stake">nois-stake.d-stake.xyz</a></li>
 </ul>
+<h3 id="staking-with-the-cli"><a class="header" href="#staking-with-the-cli">Staking with the CLI</a></h3>
+<p>If you are familiar with CLI tools in the Cosmos ecosystem, you can use noisd
+like any other chain to delegate, redelegate and unbond. However, please note
+that this is only recommended for experienced users. Getting the parameters
+wrong may have unintended consequences.</p>
+<pre><code class="language-sh">noisd tx staking delegate {VALIDATOR_ADDRESS} {AMOUN_IN_UNOIS}unois \
+  --node &quot;https://rpc.noismain.mcbnode.online:443&quot; \
+  --chain-id nois-1 \
+  --gas auto --gas-adjustment 1.3 --gas-prices 0.05unois \
+  --from {KEY_NAME} \
+  --sign-mode amino-json --ledger \
+  --broadcast-mode block
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="use-nois-randomness-beacon---for-dapp-developers"><a class="header" href="#use-nois-randomness-beacon---for-dapp-developers">Use Nois Randomness Beacon - For DAPP Developers</a></h1>
 <blockquote>
 <p>ℹ️ This section is intended for developers who are building applications that
@@ -347,9 +360,9 @@ dependencies.</p>
 [dependencies]
 nois = &quot;0.7.0&quot;
 <span class="boring">}</span></code></pre></pre>
-<p>Note that Rust editions prior to &quot;2021&quot; may require the addition of the 
-following option to the <code>package</code> section of your Cargo.toml for a 
-successful build:</p>
+<p>Note that Rust editions prior to &quot;2021&quot; may require the addition of the
+following option to the <code>package</code> section of your Cargo.toml for a successful
+build:</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>[package]
@@ -753,11 +766,21 @@ differences are documented here.</p>
 in an attempt to gather some good knowledge</p>
 <h3 id="payment-related-questions"><a class="header" href="#payment-related-questions">Payment related questions</a></h3>
 <hr />
-<p>- &quot;I have funds in NOIS. I am about to deploy a nois-proxy on my chain, How does the payment work? When we instantiate the proxy, should I send you the &quot;manager&quot; or contract address? How will the proxy know to debit our account on the Nois side, if that makes sense?&quot;</p>
-<p>- So as soon as you open a channel between your proxy and the gateway, the gateway will instantiate a nois-payment contract for your proxy. the proxy will know by itself from IBC its nois-payment address. because it receives a welcome packet from the gateway that will update it with the nois price and the nois-payment contract that the gateway has instantiated for it.</p>
+<p>- &quot;I have funds in NOIS. I am about to deploy a nois-proxy on my chain, How
+does the payment work? When we instantiate the proxy, should I send you the
+&quot;manager&quot; or contract address? How will the proxy know to debit our account on
+the Nois side, if that makes sense?&quot;</p>
+<p>- So as soon as you open a channel between your proxy and the gateway, the
+gateway will instantiate a nois-payment contract for your proxy. the proxy will
+know by itself from IBC its nois-payment address. because it receives a welcome
+packet from the gateway that will update it with the nois price and the
+nois-payment contract that the gateway has instantiated for it.</p>
 <hr />
-<p>- &quot;If I instantiate the proxy with the prices parameter [1.5juno,50nois], it would mean that each GetNextRandomness call would cost this much?&quot;</p>
-<p>- Yes! it will cost this OR that not a combination. So it will cost whether 1.5juno or 50 NOIS. But it will cost the Dapp to pay the proxy. So the proxy gets those funds. You are the manager of the proxy so those are your funds.</p>
+<p>- &quot;If I instantiate the proxy with the prices parameter [1.5juno,50nois], it
+would mean that each GetNextRandomness call would cost this much?&quot;</p>
+<p>- Yes! it will cost this OR that not a combination. So it will cost whether
+1.5juno or 50 NOIS. But it will cost the Dapp to pay the proxy. So the proxy
+gets those funds. You are the manager of the proxy so those are your funds.</p>
 <hr />
 <div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <p>Active networks:</p>
@@ -1336,15 +1359,18 @@ randomness and tokens between Nois chain and the consumer chains</p>
 <hr />
 <p>At Nois we have two kind of relaying:</p>
 <ul>
-<li>ICS20 relaying: This is for token transfer between chains. (Relayers don't recevice incentives here yet)</li>
+<li>ICS20 relaying: This is for token transfer between chains. (Relayers don't
+recevice incentives here yet)</li>
 <li>wasm relaying: This is where the randomness beacon gets requested and sent to
 consumer chains. Relayers will get incentives by relaying this traffic.</li>
 </ul>
 <p>You can check the current IBC clients, connections and channels on
 <a href="https://ibc.nois.network/connections">mainnet dashboard</a> or on the
 <a href="https://testnet.ibc.nois.network/">testnet dashboard</a></p>
-<p>The list of supported channels to relay on testnet is <a href="https://docs.nois.network/node_operators/testnet_005.html#ibc-channels">testnet channels</a></p>
-<p>The list of supported channels to relay on mainnet is <a href="https://docs.nois.network/node_operators/mainnet.html#ibc-channels">mainnet channels</a></p>
+<p>The list of supported channels to relay on testnet is
+<a href="https://docs.nois.network/node_operators/testnet_005.html#ibc-channels">testnet channels</a></p>
+<p>The list of supported channels to relay on mainnet is
+<a href="https://docs.nois.network/node_operators/mainnet.html#ibc-channels">mainnet channels</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ibc-wasm-relayer"><a class="header" href="#ibc-wasm-relayer">IBC wasm relayer</a></h1>
 <blockquote>
 <p>In this tutorial we are using the ts-relayer by confio as a relayer software.
@@ -1506,8 +1532,9 @@ end up consuming you $NOIS tokens at the other side (from you nois-payment
 contract on Nois chain) You are the manager of your proxy so you can at any
 point in time withdraw part or all the funds that your proxy has accumulated.
 You can make your proxy part of governance and withdraw the funds to the
-community pool if you wish.
-Proxies that use Nois frequently will get in version 0.14.0 discounts. This is not deployed yet but when it will. proxy operators can make money out of the proxying business.</p>
+community pool if you wish. Proxies that use Nois frequently will get in version
+0.14.0 discounts. This is not deployed yet but when it will. proxy operators can
+make money out of the proxying business.</p>
 <p><img src="img/nois-proxy.png" alt="Proxy" /></p>
 <h5 id="connect-your-chain-to-nois"><a class="header" href="#connect-your-chain-to-nois">Connect your chain to Nois</a></h5>
 <p>By the end of this step you should have an IBC transfer channel between your
