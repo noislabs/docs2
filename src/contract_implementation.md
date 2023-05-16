@@ -17,9 +17,9 @@ dependencies.
 nois = "0.7.0"
 ```
 
-Note that Rust editions prior to "2021" may require the addition of the 
-following option to the `package` section of your Cargo.toml for a 
-successful build:
+Note that Rust editions prior to "2021" may require the addition of the
+following option to the `package` section of your Cargo.toml for a successful
+build:
 
 ```rust
 [package]

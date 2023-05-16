@@ -23,8 +23,9 @@ end up consuming you $NOIS tokens at the other side (from you nois-payment
 contract on Nois chain) You are the manager of your proxy so you can at any
 point in time withdraw part or all the funds that your proxy has accumulated.
 You can make your proxy part of governance and withdraw the funds to the
-community pool if you wish.
-Proxies that use Nois frequently will get in version 0.14.0 discounts. This is not deployed yet but when it will. proxy operators can make money out of the proxying business.
+community pool if you wish. Proxies that use Nois frequently will get in version
+0.14.0 discounts. This is not deployed yet but when it will. proxy operators can
+make money out of the proxying business.
 
 ![Proxy](img/nois-proxy.png)
 
