@@ -1534,7 +1534,8 @@ point in time withdraw part or all the funds that your proxy has accumulated.
 You can make your proxy part of governance and withdraw the funds to the
 community pool if you wish. Proxies that use Nois frequently will get in version
 0.14.0 discounts. This is not deployed yet but when it will. proxy operators can
-make money out of the proxying business.</p>
+make money out of the proxying business.
+This <a href="https://scripta.network/@noislabs/ccc968a7-991a-4eef-a603-725c814fe6c7">article</a> can help you better understand how the traffic between nois and a consumer chain work</p>
 <p><img src="img/nois-proxy.png" alt="Proxy" /></p>
 <h5 id="connect-your-chain-to-nois"><a class="header" href="#connect-your-chain-to-nois">Connect your chain to Nois</a></h5>
 <p>By the end of this step you should have an IBC transfer channel between your
@@ -1631,6 +1632,9 @@ does not run out of $NOIS.</li>
 <a href="https://ibc.nois.network/connections">mainnet dashboard</a> or
 <a href="https://testnet.ibc.nois.network/">testnet dashboard</a></li>
 <li>Run the relayer and ask others to run their relayers aswell.</li>
+<li>If the proxy mode is on IbcPay make sure to fill the proxy with IBCed NOIS tokens. (every beacon request will consume $50 NOIS).
+else if the proxy is on Funded mode then make sure the payment contract is filled with NOIS tokens.</li>
+<li>For performance reasons when using IbcPay mode, it is a good idea to have some initial 50 $NOISon the payment, this allows to gateway to process the beacon even when the ibc token transfer is slower than the beacon request wasm packet.</li>
 <li>Congrats 🎉 you can use the proxy on your Dapp to get randomness. You can
 follow <em>use_nois_randomness</em> page for more details.</li>
 </ul>
