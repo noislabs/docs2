@@ -36,7 +36,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 | ----------------------------------------- | --- | ---- | -------- |
 | https://nois-testnet-rpc.polkachu.com:443 | ✅  | ✅   | ✅       |
 | https://nois-testnet.rpc.kjnodes.com:443  | ✅  | ?    | ?        |
-| https://rpc.nois.mcbnode.online:443       | ✅  | ✅   | ✅        |
+| https://rpc.nois.mcbnode.online:443       | ✅  | ✅   | ✅       |
 | http://185.198.27.109:26657               | No  | ?    | ?        |
 | https://nois-testnet-rpc.itrocket.net:443 | ✅  | ✅   | ✅       |
 

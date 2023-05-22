@@ -1,8 +1,11 @@
 ## How to stake
 
 ### Prerequisites
-  - Have a Keprl wallet or similar ([+info](https://medium.com/cumulo-pro/how-to-staking-in-nois-network-217238bd3fe9#ce31))
-  - Have an address in the Nois network ([+info](https://medium.com/cumulo-pro/how-to-staking-in-nois-network-217238bd3fe9#d384))
+
+- Have a Keprl wallet or similar
+  ([+info](https://medium.com/cumulo-pro/how-to-staking-in-nois-network-217238bd3fe9#ce31))
+- Have an address in the Nois network
+  ([+info](https://medium.com/cumulo-pro/how-to-staking-in-nois-network-217238bd3fe9#d384))
 
 ### Why staking
 
@@ -38,5 +41,6 @@ noisd tx staking delegate {VALIDATOR_ADDRESS} {AMOUN_IN_UNOIS}unois \
   --broadcast-mode block
 ```
 
-
-Access the [complete step-by-step guide](https://medium.com/cumulo-pro/how-to-staking-in-nois-network-217238bd3fe9#d384) to staking on the Nois network
+Access the
+[complete step-by-step guide](https://medium.com/cumulo-pro/how-to-staking-in-nois-network-217238bd3fe9#d384)
+to staking on the Nois network.
