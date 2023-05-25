@@ -6,7 +6,8 @@ only a random subset that will earn a larger portion of airdrop.
 
 This randdrop aproach is used by Nois to airdrop NOIS tokens to other IBC
 blockchains but also any other protocol wishing to make a randdrop using Nois
-instead of a standard airdrop can follow this guide.
+instead of a standard airdrop can follow this guide to randrop their tokens to
+some community.
 
 ## How it works
 
