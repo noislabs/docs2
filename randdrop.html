@@ -231,6 +231,11 @@ to communicate and merkelise</p>
 <pre><code class="language-sh"> merkle-airdrop-cli generateRoot --file juno-randdrop.json
 </code></pre>
 <p>Ouptut: 73d8ae84dddb8f99f08ecf141d0fb7d65fe8af7a2e4aeb7d6714f985d945851f</p>
+<h3 id="make-sure-nois-is-connected-tou-your-chain"><a class="header" href="#make-sure-nois-is-connected-tou-your-chain">Make sure Nois is connected tou your chain</a></h3>
+<p>Check if there is a nois-proxy already on your chain to use it for the
+randomness. If there is no proxy you can create one yourself by following the
+#integrate_nois_to_your_chain_section in these docs. If you have a nois-proxy
+you can go ahead and move to the next step</p>
 <h3 id="compile-store-and-instantiate-the-randdrop-contract"><a class="header" href="#compile-store-and-instantiate-the-randdrop-contract">compile, store and instantiate the randdrop contract</a></h3>
 <pre><code class="language-sh"># This repo contains nois contracts including the randdrop contract
  git clone https://github.com/noislabs/nois-contracts
