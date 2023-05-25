@@ -107,6 +107,13 @@ to communicate and merkelise
 
 Ouptut: 73d8ae84dddb8f99f08ecf141d0fb7d65fe8af7a2e4aeb7d6714f985d945851f
 
+### Make sure Nois is connected tou your chain
+
+Check if there is a nois-proxy already on your chain to use it for the
+randomness. If there is no proxy you can create one yourself by following the
+#integrate_nois_to_your_chain_section in these docs. If you have a nois-proxy
+you can go ahead and move to the next step
+
 ### compile, store and instantiate the randdrop contract
 
 ```sh
