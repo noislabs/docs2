@@ -29,4 +29,4 @@ receives from Nois. Example of randomness:
 ba17f71e631b9c3f6ad32ab44f6031ef885f2c3021c58edaa853b539f0225ea3
 ```
 
-![use_nois_randomness](img/use_nois_randomness_img.jpeg)
+![use_nois_randomness](../img/use_nois_randomness_img.jpeg)
