@@ -214,7 +214,8 @@ list of artifacts/assets then click and download <strong>nois_proxy.wasm</strong
        --broadcast-mode=block \
        --node=https://rpc.uni.juno.deuslabs.fi:443 -y
 </code></pre>
-<h5 id="instantiate-the-nois-proxy-contract-code"><a class="header" href="#instantiate-the-nois-proxy-contract-code">instantiate the nois-proxy contract code</a></h5>
+<h5 id="instantiate-the-nois-proxy-contract-on-your-chain"><a class="header" href="#instantiate-the-nois-proxy-contract-on-your-chain">instantiate the nois-proxy contract on your chain</a></h5>
+<p>The Proxy contract is what will send requests for randomness to Nois Chain via IBC. It will be the central source of randomness that dapps on your chain can send requests to.</p>
 <p>instantiation paramaters description:</p>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Description</th><th>Type</th></tr></thead><tbody>
 <tr><td>manager</td><td>You can put your address here. <br>It will allow you to set the proxy config parameters and withdraw any funds held/made by the proxy</td><td>String</td></tr>
