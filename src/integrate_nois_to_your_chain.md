@@ -78,7 +78,8 @@ junod tx wasm store \
        --node=https://rpc.uni.juno.deuslabs.fi:443 -y
 ```
 
-##### instantiate the nois-proxy contract code
+##### instantiate the nois-proxy contract on your chain
+The Proxy contract is what will send requests for randomness to Nois Chain via IBC. It will be the central source of randomness that dapps on your chain can send requests to.
 
 instantiation paramaters description:
 
