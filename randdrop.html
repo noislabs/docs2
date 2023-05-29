@@ -299,10 +299,10 @@ you can go ahead and move to the next step</p>
    --node=https://rpc.uni.junonetwork.io:443
 </code></pre>
 <h3 id="request-a-randomness-beacon-from-nois"><a class="header" href="#request-a-randomness-beacon-from-nois">Request a randomness beacon from Nois</a></h3>
-<p>The timestamp needs to be in microseconds</p>
+<p>The timestamp needs to be in nanoseconds since epoch</p>
 <pre><code class="language-sh">junod tx wasm execute juno14tfzmpl6kw2e6lyqzsvjgcqu7a9jhsneu0u4nvdv6znulps6xufqwlw2xf \
- '{&quot;rand_drop&quot;:{&quot;random_beacon_after&quot;:1685188901000000000}}' \
- --amount 100ujunox \
+  '{&quot;rand_drop&quot;:{&quot;random_beacon_after&quot;:&quot;1685188901000000000&quot;}}' \
+  --amount 100ujunox \
   --from deployment-key \
   --chain-id uni-6 \
   --gas=auto --gas-adjustment 1.4 --gas-prices=0.025ujunox \
