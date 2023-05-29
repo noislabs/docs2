@@ -197,12 +197,12 @@ junod tx wasm execute juno14tfzmpl6kw2e6lyqzsvjgcqu7a9jhsneu0u4nvdv6znulps6xufqw
 
 ### Request a randomness beacon from Nois
 
-The timestamp needs to be in microseconds
+The timestamp needs to be in nanoseconds since epoch
 
 ```sh
 junod tx wasm execute juno14tfzmpl6kw2e6lyqzsvjgcqu7a9jhsneu0u4nvdv6znulps6xufqwlw2xf \
- '{"rand_drop":{"random_beacon_after":1685188901000000000}}' \
- --amount 100ujunox \
+  '{"rand_drop":{"random_beacon_after":"1685188901000000000"}}' \
+  --amount 100ujunox \
   --from deployment-key \
   --chain-id uni-6 \
   --gas=auto --gas-adjustment 1.4 --gas-prices=0.025ujunox \
