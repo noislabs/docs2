@@ -48,6 +48,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 | https://rpc.nois.chaintools.tech/                 | ✅  | ✅   | ❌       |
 | https://nois.rpc.m.stavr.tech:443                 | ✅  | ✅   | ✅       |
 | https://nois.rpc.kjnodes.com:443                  | ✅  | ✅   | ✅       |
+| https://nois.nodejumper.io:443                    | ✅  | ✅   | ✅       |
 
 ## Contracts
 
