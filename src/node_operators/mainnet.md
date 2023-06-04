@@ -148,13 +148,13 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 Right now the following IBC channels are supported:
 
-|  Protocol | Other chain           | Channel (nois-1) | Channel (other chain) | Description         |
-| --------- | --------------------- | ---------------- | --------------------- | ------------------- |
-| ICS-20    | Stargaze (stargaze-1) | [channel-0]      | channel-137           | stars-nois transfer |
-| ICS-20    | Juno (juno-1)         | [channel-1]      | channel-225           | juno-nois transfer  |
-| ICS-20    | Aura (xstaxy-1)       | [channel-16]     | channel-3             | aura-nois transfer  |
-| nois-v7   | Juno (juno-1)         | [channel-2]      | channel-243           | Public proxy        |
-| nois-v7   | Juno (juno-1)         | [channel-11]     | channel-248           | Gelotto             |
+| Protocol | Other chain           | Channel (nois-1) | Channel (other chain) | Description         |
+| -------- | --------------------- | ---------------- | --------------------- | ------------------- |
+| ICS-20   | Stargaze (stargaze-1) | [channel-0]      | channel-137           | stars-nois transfer |
+| ICS-20   | Juno (juno-1)         | [channel-1]      | channel-225           | juno-nois transfer  |
+| ICS-20   | Aura (xstaxy-1)       | [channel-16]     | channel-3             | aura-nois transfer  |
+| nois-v7  | Juno (juno-1)         | [channel-2]      | channel-243           | Public proxy        |
+| nois-v7  | Juno (juno-1)         | [channel-11]     | channel-248           | Gelotto             |
 
 [channel-0]:
   https://ibc.nois.network/connections/connection-0/channels/transfer:channel-0
