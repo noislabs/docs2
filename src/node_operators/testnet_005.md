@@ -79,11 +79,11 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 ```yaml
 - Name: nois-gateway
   Address: nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc
-  Code ID: "44"
+  Code ID: "59"
   Git Asset Name: nois_gateway
   Instantiation Message: '{"manager":"nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve","price":{"denom":"unois","amount":"50000000"},"payment_code_id":57,"sink":"nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty"}'
   URL: "https://github.com/noislabs/nois-contracts"
-  Version: v0.13.0
+  Version: v0.13.5
   Config:
     drand: nois14xef285hz5cx5q9hh32p9nztu3cct4g44sxjgx3dmftt2tj2rweqkjextk
     manager: nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve
@@ -119,7 +119,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   Git Asset Name: nois_proxy
   Instantiation Message: '{"prices":[{"denom":"ujunox","amount":"100"}],"manager":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-175","denom":"ibc/717352A5277F3DE916E8FD6B87F4CA6A51F2FBA9CF04ABCFF2DF7202F8A8BC50"}}}}'
   URL: "https://github.com/noislabs/nois-contracts"
-  Version: v0.13.0
+  Version: v0.13.5
   Config:
     callback_gas_limit: 500000
     manager: juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2
