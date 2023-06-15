@@ -142,8 +142,8 @@ you can go ahead and move to the next step
 ### compile, store and instantiate the randdrop contract
 
 ```sh
-# This repo contains nois contracts including the randdrop contract
- git clone https://github.com/noislabs/nois-contracts
+# This repo contains nois example contracts including the randdrop contract
+ git clone https://github.com/noislabs/nois-dapp-examples
  cd nois-contracts
 ```
 
