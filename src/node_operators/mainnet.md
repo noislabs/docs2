@@ -156,6 +156,7 @@ Right now the following IBC channels are supported:
 | ICS-20   | Injective (injective-1) | [channel-17]     | channel-138           | injective-nois transfer  |
 | nois-v7  | Juno (juno-1)           | [channel-2]      | channel-243           | Public proxy             |
 | nois-v7  | Juno (juno-1)           | [channel-11]     | channel-248           | Gelotto                  |
+| nois-v7  | Injective (injective-1) | [channel-20]     | channel-140           | Injective governance     |
 
 [channel-0]:
   https://ibc.nois.network/connections/connection-0/channels/transfer:channel-0
@@ -169,6 +170,8 @@ Right now the following IBC channels are supported:
   https://ibc.nois.network/connections/connection-4/channels/transfer:channel-16
 [channel-17]:
   https://ibc.nois.network/connections/connection-6/channels/transfer:channel-17
+[channel-20]:
+  https://ibc.nois.network/connections/connection-6/channels/wasm.nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp:channel-20
 
 ## IBC denoms
 
