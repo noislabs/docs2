@@ -83,7 +83,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   Git Asset Name: nois_gateway
   Instantiation Message: '{"manager":"nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve","price":{"denom":"unois","amount":"50000000"},"payment_code_id":57,"sink":"nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty"}'
   URL: "https://github.com/noislabs/nois-contracts"
-  Version: v0.13.5
+  Version: v0.13.6
   Config:
     drand: nois14xef285hz5cx5q9hh32p9nztu3cct4g44sxjgx3dmftt2tj2rweqkjextk
     manager: nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve
