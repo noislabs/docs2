@@ -226,9 +226,9 @@
     drand: nois14xef285hz5cx5q9hh32p9nztu3cct4g44sxjgx3dmftt2tj2rweqkjextk
     manager: nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve
     payment_code_id: 58
-    payment_initial_funds: null
+    payment_initial_funds: &quot;2000000unois&quot;
     price:
-      amount: &quot;50000000&quot;
+      amount: &quot;1000000unois&quot;
       denom: unois
     sink: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
 </code></pre>
@@ -273,22 +273,25 @@
   Instantiation Message: '{&quot;prices&quot;:[{&quot;denom&quot;:&quot;inj&quot;,&quot;amount&quot;:&quot;100&quot;},{&quot;denom&quot;:&quot;ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B&quot;,&quot;amount&quot;:&quot;50000000&quot;}],&quot;manager&quot;:&quot;inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t&quot;,&quot;callback_gas_limit&quot;:10000,&quot;test_mode&quot;:false,&quot;mode&quot;:{&quot;ibc_pay&quot;:{&quot;unois_denom&quot;:{&quot;ics20_channel&quot;:&quot;channel-46&quot;,&quot;denom&quot;:&quot;ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B&quot;}}}}'
   URL: &quot;https://github.com/noislabs/nois-contracts&quot;
   Version: v0.13.0
-  Config:
+  config:
+    allowlist_enabled: false
     callback_gas_limit: 500000
     manager: inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t
+    max_after: &quot;2003505450748953972&quot;
+    min_after: &quot;1688145450748953972&quot;
     mode:
       ibc_pay:
         unois_denom:
-          denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
+          denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
           ics20_channel: channel-46
-    nois_beacon_price: &quot;50000000&quot;
-    nois_beacon_price_updated: &quot;1682297627977789371&quot;
-    payment: nois1y9hngs5f2gzvwepz5gxhmsehlytaf6n045vnhmxh27rdq44cg56std3zde
+    nois_beacon_price: &quot;1000000&quot;
+    nois_beacon_price_updated: &quot;1688145748393860168&quot;
+    payment: nois1umkkrl2c7wfyjtlvy4vun7rrq25v0vx3kmfmyc9x0763z049sr4se2pd4s
     prices:
-      - amount: &quot;100&quot;
-        denom: inj
-      - amount: &quot;1000000&quot;
-        denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
+    - amount: &quot;100&quot;
+      denom: inj
+    - amount: &quot;1000000&quot;
+      denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
     test_mode: false
 </code></pre>
 <h2 id="ibc-channels"><a class="header" href="#ibc-channels">IBC channels</a></h2>
