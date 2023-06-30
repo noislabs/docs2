@@ -88,9 +88,9 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
     drand: nois14xef285hz5cx5q9hh32p9nztu3cct4g44sxjgx3dmftt2tj2rweqkjextk
     manager: nois1tfg9ptr84t9zshxxf5lkvrd6ej7gxjh75lztve
     payment_code_id: 58
-    payment_initial_funds: null
+    payment_initial_funds: "2000000unois"
     price:
-      amount: "50000000"
+      amount: "1000000unois"
       denom: unois
     sink: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
 ```
@@ -146,22 +146,25 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   Instantiation Message: '{"prices":[{"denom":"inj","amount":"100"},{"denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B","amount":"50000000"}],"manager":"inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t","callback_gas_limit":10000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-46","denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B"}}}}'
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.13.0
-  Config:
+  config:
+    allowlist_enabled: false
     callback_gas_limit: 500000
     manager: inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t
+    max_after: "2003505450748953972"
+    min_after: "1688145450748953972"
     mode:
       ibc_pay:
         unois_denom:
-          denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
+          denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
           ics20_channel: channel-46
-    nois_beacon_price: "50000000"
-    nois_beacon_price_updated: "1682297627977789371"
-    payment: nois1y9hngs5f2gzvwepz5gxhmsehlytaf6n045vnhmxh27rdq44cg56std3zde
+    nois_beacon_price: "1000000"
+    nois_beacon_price_updated: "1688145748393860168"
+    payment: nois1umkkrl2c7wfyjtlvy4vun7rrq25v0vx3kmfmyc9x0763z049sr4se2pd4s
     prices:
-      - amount: "100"
-        denom: inj
-      - amount: "1000000"
-        denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
+    - amount: "100"
+      denom: inj
+    - amount: "1000000"
+      denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
     test_mode: false
 ```
 
