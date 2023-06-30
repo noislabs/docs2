@@ -171,7 +171,7 @@ Right now the following IBC channels are supported:
 
 | Protocol | Other chain               | Channel (nois-testnet-005) | Channel (other chain)                                                                                                                                              | Description         |
 | -------- | ------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
-| ICS-20   | Injective (injective-888) | channel-7                  | [channel-46](https://testnet.ibc.nois.network/connections/connection-3/channels/transfer:channel-7)                                                                | inj-nois transfer   |
+| ICS-20   | Injective (injective-888) | channel-33                  | [channel-74]   | inj-nois transfer   |
 | ICS-20   | Juno (uni-6)              | channel-3                  | [channel-175 ](https://testnet.ibc.nois.network/connections/connection-4/channels/transfer:channel-3)                                                              | junox-nois transfer |
 | nois-v7  | Juno (uni-6)              | channel-17                 | [channel-198 ](https://testnet.ibc.nois.network/connections/connection-5/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-17) | Public proxy        |
 | nois-v7  | Injective (injective-888) | channel-16                 | [channel-51](https://testnet.ibc.nois.network/connections/connection-6/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-16)   | Public proxy        |
@@ -192,6 +192,6 @@ unois on:
   denom: ibc/70D9353E4D43D860BF051ECE427C427687EDED77E61EFEF2CFF2839D28E6AE43
   channel-id: [channel-61](https://testnet.ibc.nois.network/connections/connection-2/channels/transfer:channel-8)
 - chain-id: injective-888
-  denom: ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B
-  channel-id: [channel-46](https://testnet.ibc.nois.network/connections/connection-3/channels/transfer:channel-7)
+  denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
+  channel-id: [channel-74](https://testnet.ibc.nois.network/connections/connection-13/channels/transfer:channel-33)
 ```
