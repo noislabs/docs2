@@ -141,7 +141,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 ```yaml
 - Chain-id: injective-888
-  Address: inj1492g0dmg4l7dm6nppsy5zhuwh8q350j2wfrxrd
+  Address: inj1v4dtmgnytwkf7pjxquvk9rwantwrkse04etj0l
   Git Asset Name: nois_proxy
   Instantiation Message: '{"prices":[{"denom":"inj","amount":"100"},{"denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B","amount":"50000000"}],"manager":"inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t","callback_gas_limit":10000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-46","denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B"}}}}'
   URL: "https://github.com/noislabs/nois-contracts"
@@ -174,10 +174,10 @@ Right now the following IBC channels are supported:
 
 | Protocol | Other chain               | Channel (nois-testnet-005) | Channel (other chain)                                                                                                                                              | Description         |
 | -------- | ------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
-| ICS-20   | Injective (injective-888) | channel-33                  | [channel-74]   | inj-nois transfer   |
-| ICS-20   | Juno (uni-6)              | channel-3                  | [channel-175 ](https://testnet.ibc.nois.network/connections/connection-4/channels/transfer:channel-3)                                                              | junox-nois transfer |
-| nois-v7  | Juno (uni-6)              | channel-17                 | [channel-198 ](https://testnet.ibc.nois.network/connections/connection-5/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-17) | Public proxy        |
-| nois-v7  | Injective (injective-888) | channel-16                 | [channel-51](https://testnet.ibc.nois.network/connections/connection-6/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-16)   | Public proxy        |
+| ICS-20   | Injective (injective-888) | channel-33                 | channel-74   | inj-nois transfer   |
+| ICS-20   | Juno (uni-6)              | channel-3                  | channel-175  | junox-nois transfer |
+| nois-v7  | Juno (uni-6)              | channel-17                 | channel-198  | Public proxy        |
+| nois-v7  | Injective (injective-888) | channel-35                 | channel-76   | Public proxy        |
 
 ---
 
