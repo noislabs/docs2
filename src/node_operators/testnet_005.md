@@ -141,9 +141,9 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 ```yaml
 - Chain-id: injective-888
-  Address: inj1v4dtmgnytwkf7pjxquvk9rwantwrkse04etj0l
+  Address: inj14nendtsz0c40n7xtzwkjmdc8dkuz835jdydxhn
   Git Asset Name: nois_proxy
-  Instantiation Message: '{"prices":[{"denom":"inj","amount":"100"},{"denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B","amount":"50000000"}],"manager":"inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t","callback_gas_limit":10000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-46","denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B"}}}}'
+  Instantiation Message: '{"prices":[{"denom":"inj","amount":"100"},{"denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B","amount":"1000000"}],"manager":"inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t","callback_gas_limit":10000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-46","denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B"}}}}'
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.13.0
   config:
@@ -177,7 +177,7 @@ Right now the following IBC channels are supported:
 | ICS-20   | Injective (injective-888) | channel-33                 | channel-74   | inj-nois transfer   |
 | ICS-20   | Juno (uni-6)              | channel-3                  | channel-175  | junox-nois transfer |
 | nois-v7  | Juno (uni-6)              | channel-17                 | channel-198  | Public proxy        |
-| nois-v7  | Injective (injective-888) | channel-35                 | channel-76   | Public proxy        |
+| nois-v7  | Injective (injective-888) | channel-36                 | channel-77   | Public proxy        |
 
 ---
 
