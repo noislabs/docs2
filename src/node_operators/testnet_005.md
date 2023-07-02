@@ -172,12 +172,21 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 Right now the following IBC channels are supported:
 
-| Protocol | Other chain               | Channel (nois-testnet-005) | Channel (other chain)                                                                                                                                              | Description         |
-| -------- | ------------------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
-| ICS-20   | Injective (injective-888) | channel-33                 | channel-74   | inj-nois transfer   |
-| ICS-20   | Juno (uni-6)              | channel-3                  | channel-175  | junox-nois transfer |
-| nois-v7  | Juno (uni-6)              | channel-17                 | channel-198  | Public proxy        |
-| nois-v7  | Injective (injective-888) | channel-36                 | channel-77   | Public proxy        |
+| Protocol | Other chain               | Channel (nois-testnet-005) | Channel (other chain)    | Description         |
+| -------- | ------------------------- | -------------------------- | ------------------------ | ------------------- |
+| ICS-20   | Injective (injective-888) | [channel-33]               | channel-74               | inj-nois transfer   |
+| ICS-20   | Juno (uni-6)              | [channel-3]                | channel-175              | junox-nois transfer |
+| nois-v7  | Juno (uni-6)              | [channel-17]               | channel-198              | Public proxy        |
+| nois-v7  | Injective (injective-888) | [channel-36]               | channel-77               | Public proxy        |
+
+[channel-33]:
+  https://testnet.ibc.nois.network/connections/connection-13/channels/transfer:channel-33
+[channel-3]:
+  https://testnet.ibc.nois.network/connections/connection-4/channels/transfer:channel-3
+[channel-17]:
+  https://testnet.ibc.nois.network/connections/connection-5/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-17
+[channel-36]:
+  https://testnet.ibc.nois.network/connections/connection-13/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-36
 
 ---
 
