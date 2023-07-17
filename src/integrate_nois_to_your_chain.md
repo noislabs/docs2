@@ -158,5 +158,6 @@ junod tx wasm instantiate <CODE_ID>
   initial 50 $NOIS on the payment, this allows to gateway to process the beacon
   even when the ibc token transfer is slower than the beacon request wasm
   packet.
+- If you need some NOIS tokens for your payment contract you can contact us on discord and describe your usecase so that we give you a NOIS grant
 - Congrats 🎉 you can use the proxy on your Dapp to get randomness. You can
   follow _use_nois_randomness_ page for more details.
