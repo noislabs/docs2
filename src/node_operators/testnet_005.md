@@ -176,17 +176,23 @@ Right now the following IBC channels are supported:
 | -------- | ------------------------- | -------------------------- | ------------------------ | ------------------- |
 | ICS-20   | Injective (injective-888) | [channel-33]               | channel-74               | inj-nois transfer   |
 | ICS-20   | Juno (uni-6)              | [channel-3]                | channel-175              | junox-nois transfer |
+| ICS-20   | Neutron (pion-1)          | [channel-40]               | channel-133              | ntrn-nois transfer  |
 | nois-v7  | Juno (uni-6)              | [channel-17]               | channel-198              | Public proxy        |
 | nois-v7  | Injective (injective-888) | [channel-36]               | channel-77               | Public proxy        |
+| nois-v7  | Neutron (pion-1)          | [channel-42]               | channel-135              | Public proxy        |
 
 [channel-33]:
   https://testnet.ibc.nois.network/connections/connection-13/channels/transfer:channel-33
+[channel-40]:
+  https://testnet.ibc.nois.network/connections/connection-17/channels/transfer:channel-40
 [channel-3]:
   https://testnet.ibc.nois.network/connections/connection-4/channels/transfer:channel-3
 [channel-17]:
   https://testnet.ibc.nois.network/connections/connection-5/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-17
 [channel-36]:
   https://testnet.ibc.nois.network/connections/connection-13/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-36
+[channel-36]:
+  https://testnet.ibc.nois.network/connections/connection-17/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-42
 
 ---
 
@@ -206,4 +212,6 @@ unois on:
 - chain-id: injective-888
   denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
   channel-id: [channel-74](https://testnet.ibc.nois.network/connections/connection-13/channels/transfer:channel-33)
+- chain-id: pion-1
+  denom: ibc/26139E488F510BDA8DDE5614D358A38502BDA061954B8D10ADEFC4EAA58552FF
 ```
