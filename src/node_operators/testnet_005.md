@@ -181,7 +181,7 @@ Right now the following IBC channels are supported:
 | nois-v7  | Juno (uni-6)              | [channel-17]               | channel-198              | Public proxy        |
 | nois-v7  | Injective (injective-888) | [channel-36]               | channel-77               | Public proxy        |
 | nois-v7  | Neutron (pion-1)          | [channel-42]               | channel-135              | Public proxy        |
-| nois-v7  | Stargaze (elgafar-1)      | [channel-48]               | channel-486              | Public proxy        |
+| nois-v7  | Stargaze (elgafar-1)      | [channel-49]               | channel-486              | Public proxy        |
 
 [channel-33]:
   https://testnet.ibc.nois.network/connections/connection-13/channels/transfer:channel-33
