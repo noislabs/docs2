@@ -177,6 +177,7 @@ Right now the following IBC channels are supported:
 | ICS-20   | Injective (injective-888) | [channel-33]               | channel-74               | inj-nois transfer   |
 | ICS-20   | Juno (uni-6)              | [channel-3]                | channel-175              | junox-nois transfer |
 | ICS-20   | Neutron (pion-1)          | [channel-40]               | channel-133              | ntrn-nois transfer  |
+| ICS-20   | Stargaze (elgafar-1)      | [channel-48]               | channel-485              | stars-nois transfer |
 | nois-v7  | Juno (uni-6)              | [channel-17]               | channel-198              | Public proxy        |
 | nois-v7  | Injective (injective-888) | [channel-36]               | channel-77               | Public proxy        |
 | nois-v7  | Neutron (pion-1)          | [channel-42]               | channel-135              | Public proxy        |
@@ -191,8 +192,10 @@ Right now the following IBC channels are supported:
   https://testnet.ibc.nois.network/connections/connection-5/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-17
 [channel-36]:
   https://testnet.ibc.nois.network/connections/connection-13/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-36
-[channel-36]:
+[channel-42]:
   https://testnet.ibc.nois.network/connections/connection-17/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-42
+[channel-48]:
+https://testnet.ibc.nois.network/connections/connection-23/channels/transfer:channel-48
 
 ---
 
@@ -214,4 +217,6 @@ unois on:
   channel-id: [channel-74](https://testnet.ibc.nois.network/connections/connection-13/channels/transfer:channel-33)
 - chain-id: pion-1
   denom: ibc/26139E488F510BDA8DDE5614D358A38502BDA061954B8D10ADEFC4EAA58552FF
+- chain-id: elgafar-1
+  denom: ibc/ACCAF790E082E772691A20B0208FB972AD3A01C2DE0D7E8C479CCABF6C9F39B1
 ```
