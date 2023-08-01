@@ -9,4 +9,4 @@
 - Safer and more efficient Interactive zk proofs
 - [Fair gouvernment Taxation](https://scripta.network/@noislabs/a6830759-722f-4524-ae19-ec483cdf0140)
 - Fair random controls
-- [DAO, governane and elections](https://scripta.network/@noislabs/2db067bc-f9af-43eb-9818-5497760fd179)https://scripta.network/@noislabs/2db067bc-f9af-43eb-9818-5497760fd179
+- [DAO, governane and elections](https://scripta.network/@noislabs/2db067bc-f9af-43eb-9818-5497760fd179)
