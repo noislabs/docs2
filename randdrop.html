@@ -168,14 +168,14 @@ Then you merkelise the file(a tree of cryptographic hashes), and feed the merkle
 root to the randdrop contract. Then the operator (person who is in charge of
 managing the airdrop) communicates the file to the community (twitter for
 example) and then communicates a time in the future for the unpredictable random
-number to be published.  Users can participate for a chance to win 
-by checking the public json file containing what addresses are pre-eligible,
-compute their merkle proof (the webapp UI does that for them) and sends the
-proof to the randdrop contract which request a random beacon from Nois.
-Upon reception of the randomness, an account has 1/3 som probability(in this case 1/3)
-to receive the randdrop. This is interesting because it allows protocols to target with their airdrop a bigger
-number of communities/networks without diluting as much the airdrop amount per
-account.</p>
+number to be published. Users can participate for a chance to win by checking
+the public json file containing what addresses are pre-eligible, compute their
+merkle proof (the webapp UI does that for them) and sends the proof to the
+randdrop contract which request a random beacon from Nois. Upon reception of the
+randomness, an account has 1/3 som probability(in this case 1/3) to receive the
+randdrop. This is interesting because it allows protocols to target with their
+airdrop a bigger number of communities/networks without diluting as much the
+airdrop amount per account.</p>
 <h3 id="why-merkle-trees"><a class="header" href="#why-merkle-trees">Why Merkle trees</a></h3>
 <p>We aimed for a merkle randdrop because it is more elegant, cost efficient, safer
 and not spammy. When doing merkle randdrop you don't send tokens to all wallets,
@@ -336,7 +336,8 @@ want to claim the randdrop</p>
     --broadcast-mode=block \
     --node=https://rpc.uni.junonetwork.io:443
 </code></pre>
-<p>As soon as the randomness is published the relayer will trigger the contract and give the winner participant their airdrop</p>
+<p>As soon as the randomness is published the relayer will trigger the contract and
+give the winner participant their airdrop</p>
 <h4 id="claim-from-the-ui"><a class="header" href="#claim-from-the-ui">Claim from the UI</a></h4>
 <p>We can't expect every user to use the cli to claim their randdrop so you can
 just use a UI like <a href="https://github.com/noislabs/randdrop-ui">Nois randdrop UI</a>

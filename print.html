@@ -195,7 +195,7 @@ can visit the drand website <a href="https://drand.love/">https://drand.love/</a
 <li>Gambling</li>
 <li>Gaming</li>
 <li><a href="https://scripta.network/@noislabs/d9bdb593-f843-4a39-9bf7-ce018dbc961d">Random asset distribution</a></li>
-<li><a href="https://www.youtube.com/watch?time_continue=5453&amp;v=9RhjJpiWY7M&amp;embeds_referring_euri=https%3A%2F%2Fblog.cosmwasmdev.com%2F&amp;feature=emb_title">Randomized bidding end time</a> </li>
+<li><a href="https://www.youtube.com/watch?time_continue=5453&amp;v=9RhjJpiWY7M&amp;embeds_referring_euri=https%3A%2F%2Fblog.cosmwasmdev.com%2F&amp;feature=emb_title">Randomized bidding end time</a></li>
 <li>NFT minting</li>
 <li>Safer and more efficient Interactive zk proofs</li>
 <li><a href="https://scripta.network/@noislabs/a6830759-722f-4524-ae19-ec483cdf0140">Fair gouvernment Taxation</a></li>
@@ -1000,7 +1000,6 @@ mainnet addresses and token distribution</li>
 <h2 id="p2p-1"><a class="header" href="#p2p-1">p2p</a></h2>
 <p>Seed nodes</p>
 <ul>
-<li><code>bf07906c7cf0f23606c83be15624be2c67b3929c@139.59.154.47:17356</code></li>
 <li><code>da81dd66bca4bba509163dbd06b4a6b2e05c2e12@nois-testnet-seed.itrocket.net:21656</code></li>
 <li><code>ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:17356</code></li>
 <li><code>6b2af739ac032a96e1e568b1871a1ca6e80ab08e@185.196.21.43:22656</code></li>
@@ -1116,10 +1115,10 @@ mainnet addresses and token distribution</li>
     nois_beacon_price_updated: &quot;1688145748393860168&quot;
     payment: nois1umkkrl2c7wfyjtlvy4vun7rrq25v0vx3kmfmyc9x0763z049sr4se2pd4s
     prices:
-    - amount: &quot;100&quot;
-      denom: inj
-    - amount: &quot;1000000&quot;
-      denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
+      - amount: &quot;100&quot;
+        denom: inj
+      - amount: &quot;1000000&quot;
+        denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
     test_mode: false
 </code></pre>
 <h2 id="ibc-channels-1"><a class="header" href="#ibc-channels-1">IBC channels</a></h2>
@@ -1633,13 +1632,27 @@ send requests to.</p>
 <div class="table-wrapper"><table><thead><tr><th>Parameter</th><th>Description</th><th>Type</th></tr></thead><tbody>
 <tr><td>manager</td><td>You can put your address here. <br>It will allow you to set the proxy config parameters and withdraw any funds held/made by the proxy</td><td>String</td></tr>
 <tr><td>prices</td><td>This field will determine how much Dapps need to pay your Proxy Contract when they request randomness. You can set this to whatever denom and amount you like. For example, if you're using a Payment Mode of mode::IbcPay, you might want to do something like this:</td><td></td></tr>
-<tr><td>Set Prices to 55 NOIS vec![coin(&quot;unois&quot;, 55_000_000u32)]</td><td></td><td></td></tr>
-<tr><td>For each request a Dapp sends to your Proxy Contract, your Proxy Contract sends 50 NOIS to the gateway for Nois fees, and you profit 5 NOIS for your service!.<br>Setting this to an empty list will not make the proxy price free but will stop the contract from accepting incoming beacon requests. It can be a way to stop the proxy from serving randomness <br>Please note that these are not the funds that will be sent over to Nois but only the proxy for the fee.</td><td>Vec&lt;Coin&gt;</td><td></td></tr>
-<tr><td>test_mode</td><td>Just set this to false. This is only set to true for integration testing</td><td>Boolean</td></tr>
-<tr><td>callback_gas_limit</td><td>The amount of gas that the callback to the dapp can consume. <br>500000 is a good value if you are not sure.</td><td>number</td></tr>
-<tr><td>mode</td><td>This defines the operational mode of the proxy:<br>two modes are available: <br> - <strong>Funded</strong>: In this mode you will need to manually make sure that the Nois Payment contract (on Nois Chain) always has enough NOIS tokens to process requests. (Each request costs 50 NOIS). You can think of your Payment Contract as your &quot;Balance Sheet&quot; or like a &quot;Prepaid Nois Gift Card&quot;.<br> - <strong>IbcPay</strong>: In this mode the proxy contract sends IBCed NOIS to the gateway for each beacon request. You need to whether prefill this contract with NOIS or make sure you set the Nois fee on the prices field so that DAPPs will send the fee upon request.</td><td>Enum</td></tr>
 </tbody></table>
 </div>
+<p>Set Prices to 55 NOIS vec![coin(&quot;unois&quot;, 55_000_000u32)] For each request a Dapp
+sends to your Proxy Contract, your Proxy Contract sends 50 NOIS to the gateway
+for Nois fees, and you profit 5 NOIS for your service!.<br>Setting this to an
+empty list will not make the proxy price free but will stop the contract from
+accepting incoming beacon requests. It can be a way to stop the proxy from
+serving randomness <br>Please note that these are not the funds that will be
+sent over to Nois but only the proxy for the fee. | Vec&lt;Coin&gt; | | test_mode |
+Just set this to false. This is only set to true for integration testing |
+Boolean | | callback_gas_limit | The amount of gas that the callback to the dapp
+can consume. <br>500000 is a good value if you are not sure. | number | | mode |
+This defines the operational mode of the proxy:<br>two modes are available:
+<br> - <strong>Funded</strong>: In this mode you will need to manually make sure that the
+Nois Payment contract (on Nois Chain) always has enough NOIS tokens to process
+requests. (Each request costs 50 NOIS). You can think of your Payment Contract
+as your &quot;Balance Sheet&quot; or like a &quot;Prepaid Nois Gift Card&quot;.<br> - <strong>IbcPay</strong>: In
+this mode the proxy contract sends IBCed NOIS to the gateway for each beacon
+request. You need to whether prefill this contract with NOIS or make sure you
+set the Nois fee on the prices field so that DAPPs will send the fee upon
+request. | Enum |</p>
 <h4 id="nois-proxy-modes-explained"><a class="header" href="#nois-proxy-modes-explained">Nois-proxy modes explained</a></h4>
 <ul>
 <li>Funded <img src="img/proxy-funded.png" alt="Funded" /></li>
@@ -1701,7 +1714,8 @@ Funded mode then make sure the payment contract is filled with NOIS tokens.</li>
 initial 50 $NOIS on the payment, this allows to gateway to process the beacon
 even when the ibc token transfer is slower than the beacon request wasm
 packet.</li>
-<li>If you need some NOIS tokens for your payment contract you can contact us on discord and describe your usecase so that we give you a NOIS grant</li>
+<li>If you need some NOIS tokens for your payment contract you can contact us on
+discord and describe your usecase so that we give you a NOIS grant</li>
 <li>Congrats 🎉 you can use the proxy on your Dapp to get randomness. You can
 follow <em>use_nois_randomness</em> page for more details.</li>
 </ul>
@@ -1723,14 +1737,14 @@ Then you merkelise the file(a tree of cryptographic hashes), and feed the merkle
 root to the randdrop contract. Then the operator (person who is in charge of
 managing the airdrop) communicates the file to the community (twitter for
 example) and then communicates a time in the future for the unpredictable random
-number to be published.  Users can participate for a chance to win 
-by checking the public json file containing what addresses are pre-eligible,
-compute their merkle proof (the webapp UI does that for them) and sends the
-proof to the randdrop contract which request a random beacon from Nois.
-Upon reception of the randomness, an account has 1/3 som probability(in this case 1/3)
-to receive the randdrop. This is interesting because it allows protocols to target with their airdrop a bigger
-number of communities/networks without diluting as much the airdrop amount per
-account.</p>
+number to be published. Users can participate for a chance to win by checking
+the public json file containing what addresses are pre-eligible, compute their
+merkle proof (the webapp UI does that for them) and sends the proof to the
+randdrop contract which request a random beacon from Nois. Upon reception of the
+randomness, an account has 1/3 som probability(in this case 1/3) to receive the
+randdrop. This is interesting because it allows protocols to target with their
+airdrop a bigger number of communities/networks without diluting as much the
+airdrop amount per account.</p>
 <h3 id="why-merkle-trees"><a class="header" href="#why-merkle-trees">Why Merkle trees</a></h3>
 <p>We aimed for a merkle randdrop because it is more elegant, cost efficient, safer
 and not spammy. When doing merkle randdrop you don't send tokens to all wallets,
@@ -1891,7 +1905,8 @@ want to claim the randdrop</p>
     --broadcast-mode=block \
     --node=https://rpc.uni.junonetwork.io:443
 </code></pre>
-<p>As soon as the randomness is published the relayer will trigger the contract and give the winner participant their airdrop</p>
+<p>As soon as the randomness is published the relayer will trigger the contract and
+give the winner participant their airdrop</p>
 <h4 id="claim-from-the-ui"><a class="header" href="#claim-from-the-ui">Claim from the UI</a></h4>
 <p>We can't expect every user to use the cli to claim their randdrop so you can
 just use a UI like <a href="https://github.com/noislabs/randdrop-ui">Nois randdrop UI</a>
