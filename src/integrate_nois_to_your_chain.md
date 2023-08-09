@@ -88,15 +88,30 @@ send requests to.
 
 instantiation paramaters description:
 
-| Parameter          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Type       |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| manager            | You can put your address here. <br>It will allow you to set the proxy config parameters and withdraw any funds held/made by the proxy                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | String     |
-| prices             | This field will determine how much Dapps need to pay your Proxy Contract when they request randomness. You can set this to whatever denom and amount you like. For example, if you're using a Payment Mode of mode::IbcPay, you might want to do something like this:
-Set Prices to 55 NOIS vec![coin("unois", 55_000_000u32)]
-For each request a Dapp sends to your Proxy Contract, your Proxy Contract sends 50 NOIS to the gateway for Nois fees, and you profit 5 NOIS for your service!.<br>Setting this to an empty list will not make the proxy price free but will stop the contract from accepting incoming beacon requests. It can be a way to stop the proxy from serving randomness <br>Please note that these are not the funds that will be sent over to Nois but only the proxy for the fee.                                                                                                       | Vec\<Coin> |
-| test_mode          | Just set this to false. This is only set to true for integration testing                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Boolean    |
-| callback_gas_limit | The amount of gas that the callback to the dapp can consume. <br>500000 is a good value if you are not sure.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | number     |
-| mode               | This defines the operational mode of the proxy:<br>two modes are available: <br> - **Funded**: In this mode you will need to manually make sure that the Nois Payment contract (on Nois Chain) always has enough NOIS tokens to process requests. (Each request costs 50 NOIS). You can think of your Payment Contract as your "Balance Sheet" or like a "Prepaid Nois Gift Card".<br> - **IbcPay**: In this mode the proxy contract sends IBCed NOIS to the gateway for each beacon request. You need to whether prefill this contract with NOIS or make sure you set the Nois fee on the prices field so that DAPPs will send the fee upon request. | Enum       |
+| Parameter | Description                                                                                                                                                                                                                                                           | Type   |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| manager   | You can put your address here. <br>It will allow you to set the proxy config parameters and withdraw any funds held/made by the proxy                                                                                                                                 | String |
+| prices    | This field will determine how much Dapps need to pay your Proxy Contract when they request randomness. You can set this to whatever denom and amount you like. For example, if you're using a Payment Mode of mode::IbcPay, you might want to do something like this: |
+
+Set Prices to 55 NOIS vec![coin("unois", 55_000_000u32)] For each request a Dapp
+sends to your Proxy Contract, your Proxy Contract sends 50 NOIS to the gateway
+for Nois fees, and you profit 5 NOIS for your service!.<br>Setting this to an
+empty list will not make the proxy price free but will stop the contract from
+accepting incoming beacon requests. It can be a way to stop the proxy from
+serving randomness <br>Please note that these are not the funds that will be
+sent over to Nois but only the proxy for the fee. | Vec\<Coin> | | test_mode |
+Just set this to false. This is only set to true for integration testing |
+Boolean | | callback_gas_limit | The amount of gas that the callback to the dapp
+can consume. <br>500000 is a good value if you are not sure. | number | | mode |
+This defines the operational mode of the proxy:<br>two modes are available:
+<br> - **Funded**: In this mode you will need to manually make sure that the
+Nois Payment contract (on Nois Chain) always has enough NOIS tokens to process
+requests. (Each request costs 50 NOIS). You can think of your Payment Contract
+as your "Balance Sheet" or like a "Prepaid Nois Gift Card".<br> - **IbcPay**: In
+this mode the proxy contract sends IBCed NOIS to the gateway for each beacon
+request. You need to whether prefill this contract with NOIS or make sure you
+set the Nois fee on the prices field so that DAPPs will send the fee upon
+request. | Enum |
 
 #### Nois-proxy modes explained
 
@@ -158,6 +173,7 @@ junod tx wasm instantiate <CODE_ID>
   initial 50 $NOIS on the payment, this allows to gateway to process the beacon
   even when the ibc token transfer is slower than the beacon request wasm
   packet.
-- If you need some NOIS tokens for your payment contract you can contact us on discord and describe your usecase so that we give you a NOIS grant
+- If you need some NOIS tokens for your payment contract you can contact us on
+  discord and describe your usecase so that we give you a NOIS grant
 - Congrats 🎉 you can use the proxy on your Dapp to get randomness. You can
   follow _use_nois_randomness_ page for more details.

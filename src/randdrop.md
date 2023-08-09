@@ -20,14 +20,14 @@ Then you merkelise the file(a tree of cryptographic hashes), and feed the merkle
 root to the randdrop contract. Then the operator (person who is in charge of
 managing the airdrop) communicates the file to the community (twitter for
 example) and then communicates a time in the future for the unpredictable random
-number to be published.  Users can participate for a chance to win 
-by checking the public json file containing what addresses are pre-eligible,
-compute their merkle proof (the webapp UI does that for them) and sends the
-proof to the randdrop contract which request a random beacon from Nois.
-Upon reception of the randomness, an account has 1/3 som probability(in this case 1/3)
-to receive the randdrop. This is interesting because it allows protocols to target with their airdrop a bigger
-number of communities/networks without diluting as much the airdrop amount per
-account.
+number to be published. Users can participate for a chance to win by checking
+the public json file containing what addresses are pre-eligible, compute their
+merkle proof (the webapp UI does that for them) and sends the proof to the
+randdrop contract which request a random beacon from Nois. Upon reception of the
+randomness, an account has 1/3 som probability(in this case 1/3) to receive the
+randdrop. This is interesting because it allows protocols to target with their
+airdrop a bigger number of communities/networks without diluting as much the
+airdrop amount per account.
 
 ### Why Merkle trees
 
@@ -182,15 +182,11 @@ junod tx wasm instantiate2 1935 \
 --broadcast-mode=block --node=https://rpc.uni.junonetwork.io:443
 ```
 
-
-
-
 ### Send the tokens to airdrop to the contract
 
 The before the claiming can start you need to send the tokens to airdrop to the
 contract. Otherwise the contract won't be able to give the tokens to users that
 want to claim the randdrop
-
 
 ### Claiming phase
 
@@ -246,7 +242,8 @@ junod tx wasm execute juno14tfzmpl6kw2e6lyqzsvjgcqu7a9jhsneu0u4nvdv6znulps6xufqw
     --node=https://rpc.uni.junonetwork.io:443
 ```
 
-As soon as the randomness is published the relayer will trigger the contract and give the winner participant their airdrop
+As soon as the randomness is published the relayer will trigger the contract and
+give the winner participant their airdrop
 
 #### Claim from the UI
 
