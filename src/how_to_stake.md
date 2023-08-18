@@ -23,6 +23,7 @@ You can use one of these web tools to stake NOIS:
 - [Restake](https://restake.app/nois)
 - [QuickStake](https://quickstake.io/nois-1/staking)
 - [nois-stake.d-stake.xyz](https://nois-stake.d-stake.xyz/stake)
+- [Yieldmos](https://www.yieldmos.com/chain/nois/)
 
 ### Staking with the CLI
 
@@ -41,6 +42,7 @@ noisd tx staking delegate {VALIDATOR_ADDRESS} {AMOUN_IN_UNOIS}unois \
   --broadcast-mode block
 ```
 
-Access the
+- Access the
 [complete step-by-step guide](https://medium.com/cumulo-pro/how-to-staking-in-nois-network-217238bd3fe9#d384)
 to staking on the Nois network.
+- [How to Stake and Auto-compund of NOIS with Yieldmos](https://medium.com/cumulo-pro/how-to-stake-and-auto-compund-of-nois-with-yieldmos-8473ebcebefe)
