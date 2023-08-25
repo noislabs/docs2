@@ -154,9 +154,11 @@ Right now the following IBC channels are supported:
 | ICS-20   | Juno (juno-1)           | [channel-1]      | channel-225           | juno-nois transfer      |
 | ICS-20   | Aura (xstaxy-1)         | [channel-16]     | channel-3             | aura-nois transfer      |
 | ICS-20   | Injective (injective-1) | [channel-17]     | channel-138           | injective-nois transfer |
+| ICS-20   | Archway (archway-1)     | [channel-21]     | channel-17            | archway-nois transfer   |
 | nois-v7  | Juno (juno-1)           | [channel-2]      | channel-243           | Public proxy            |
 | nois-v7  | Juno (juno-1)           | [channel-11]     | channel-248           | Gelotto                 |
 | nois-v7  | Injective (injective-1) | [channel-20]     | channel-140           | Injective governance    |
+| nois-v7  | Archway (archway-1)     | [channel-22]     | channel-19            | Architech proxy         |
 
 [channel-0]:
   https://ibc.nois.network/connections/connection-0/channels/transfer:channel-0
@@ -172,6 +174,10 @@ Right now the following IBC channels are supported:
   https://ibc.nois.network/connections/connection-6/channels/transfer:channel-17
 [channel-20]:
   https://ibc.nois.network/connections/connection-6/channels/wasm.nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp:channel-20
+[channel-21]:
+  https://ibc.nois.network/connections/connection-9/channels/transfer:channel-21
+[channel-22]:
+  https://ibc.nois.network/connections/connection-9/channels/wasm.nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp:channel-22
 
 ## IBC denoms
 
@@ -179,6 +185,7 @@ On Nois:
 
 - ustars: `ibc/49BAE4CD2172833F14000627DA87ED8024AD46A38D6ED33F6239F22B5832F958`
 - ujuno: `ibc/EFF323CC632EC4F747C61BCE238A758EFDB7699C3226565F7C20DA06509D59A5`
+- aarch: `ibc/3A8BF65AFC8F1AC2998A80C5D78C355D058C8C755882E85A9BEC75D4E9F09739`
 
 unois on:
 
