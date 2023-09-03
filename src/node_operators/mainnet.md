@@ -56,11 +56,11 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 ```yaml
 - Name: nois-drand
   Address: nois19w26q6n44xqepduudfz2xls4pc5lltpn6rxu34g0jshxu3rdujzsj7dgu8
-  Code ID: "4"
+  Code ID: "15"
   Git Asset Name: nois_drand
   Instantiation Message: '{"incentive_point_price":"3000","incentive_denom":"unois","min_round":808287,"manager":"nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk"}'
   URL: "https://github.com/noislabs/nois-contracts"
-  Version: v0.13.8
+  Version: v0.14.0
   Config:
     gateway: nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp
     incentive_denom: unois
