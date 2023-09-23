@@ -17,7 +17,7 @@
   - [Nois Toolbox](./dapp_devs/nois_toolbox.md)
     - [Toolbox in Rust](./dapp_devs/toolbox_in_rust.md)
     - [Toolbox in js](./dapp_devs/toolbox_in_js.md)
-    - [Video Tutorial](./dapp_devs/video_tutorial.md)
+  - [Video Tutorial](./dapp_devs/video_tutorial.md)
   - [Developer Questions](./dapp_devs/dev_faq.md)
 - [For Node operators](./node_operators/index.md)
   - [Networks](./node_operators/networks.md)

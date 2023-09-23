@@ -4,6 +4,9 @@ Double dice game example:
 
 [https://github.com/noislabs/nois-dapp-examples](https://github.com/noislabs/nois-dapp-examples)
 
+If you prefer video tutorial format you can check this
+[link](https://docs.nois.network/dapp_devs/video_tutorial.html)
+
 ---
 
 #### Import the nois packages
