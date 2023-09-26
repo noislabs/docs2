@@ -1462,10 +1462,11 @@ info check this
 <h3 id="introduction"><a class="header" href="#introduction">Introduction</a></h3>
 <p>Bots bring randomness from drand to the Nois blockchain. That's the only thing
 the bot does. Once that randomness is on chain, it will be offered to Dapps
-across the Cosmos.</p>
+across IBC.
+Bots earn incentives from bringing drand rounds that have been requested by consumer dapps.</p>
 <blockquote>
-<p><strong>ℹ️ Drand-bots do not and cannot generate randomness. The simply relay it
-from drand to nois chains.</strong></p>
+<p><strong>ℹ️ Drand-bots do not and cannot generate randomness nor can they bias it. They simply relay it
+from drand to the Nois chain.</strong></p>
 </blockquote>
 <blockquote>
 <p><strong>ℹ️ Drand-bots are never slashed and do not need to put any collateral simply
@@ -1474,54 +1475,11 @@ because they cannot cheat.</strong></p>
 <blockquote>
 <p><strong>⚠️ Although drand-bots cannot impact the outcome of the randomness, they can
 impact the availability of the randomness by stopping to work or by failing to
-submit to the nois chain. This is why they are incentivised and constitute a
-critical piece of Nois.</strong></p>
+submit to the Nois chain. The chain needs at least one bot to function. This is
+why bot operators are incentivised and constitute a critical piece of Nois.</strong></p>
 </blockquote>
 <h3 id="running-a-drand-bot"><a class="header" href="#running-a-drand-bot">Running a Drand Bot</a></h3>
-<p>There are two available tools available</p>
-<h4 id="drand-bot-1"><a class="header" href="#drand-bot-1">drand-bot-1</a></h4>
-<h5 id="running-using-a-docker-image"><a class="header" href="#running-using-a-docker-image">Running using a Docker image.</a></h5>
-<p>The Docker image is probably the most convenient way to run the bot. Install
-Docker as explained <a href="https://docs.docker.com/engine/install/ubuntu/">here</a>.
-Download the latest version of the bot image:</p>
-<pre><code class="language-sh">docker pull noislabs/nois-bot:latest
-</code></pre>
-<p>Run the bot as follows:</p>
-<pre><code class="language-sh"># Make sure you have tokens in your wallet
-export MNEMONIC='&lt;YOUR_MNEMONICS_HERE&gt;'
-
-
-#check Networks -&gt; contract in these docs for NOIS_DRAND_CONTRACT_ADDR
-export NOIS_CONTRACT=&lt;NOIS_DRAND_CONTRAC_ADDR&gt;
-#example export NOIS_CONTRACT=nois16peq3sftghumkja7nu32ztjy0ew4vsnshxfhcv6sxq573ta08gwsgldepm
-export ENDPOINT=https://nois.rpc.bccnodes.com:443
-export MONIKER=your-beautiful-name
-#Many RPCs are available. For more info check discord #validator channel
-#https://nois.rpc.bccnodes.com/
-
-#edit above values before running the docker
-docker run \
-       -e MONIKER=$MONIKER \
-       -e &quot;MNEMONIC=$MNEMONIC&quot; \
-       -e PREFIX=nois \
-       -e DENOM=unois \
-       -e NOIS_CONTRACT=$NOIS_CONTRACT \
-       -e ENDPOINT=$ENDPOINT \
-       -e GAS_PRICE=0.05unois \
-       noislabs/nois-bot:latest
-</code></pre>
-<h5 id="upgrading-docker-image"><a class="header" href="#upgrading-docker-image">Upgrading Docker image</a></h5>
-<p>Run</p>
-<pre><code>docker pull noislabs/nois-bot:latest
-</code></pre>
-<p>and re-start the bot as shown above.</p>
-<h5 id="using-a-plain-nodejs-script"><a class="header" href="#using-a-plain-nodejs-script">Using a plain Node.js script</a></h5>
-<p>The bot can also be run without containerization. This requires some Node.js
-knowledge and is more manual work. But it gives operators more control and is
-especially useful for debugging. Instructions are maintained
-<a href="https://github.com/noislabs/nois-bot/blob/main/RUN_ON_SERVER.md">here</a>.</p>
-<h4 id="drand-bot-2"><a class="header" href="#drand-bot-2">drand-bot-2</a></h4>
-<p>[TODO]</p>
+<p>You can run the drand bot whether on the host or in docker. The setup instructions are in the README of this <a href="https://github.com/noislabs/bot2/tree/main">repository</a>.</p>
 <h3 id="performance-factors-of-drand-bots"><a class="header" href="#performance-factors-of-drand-bots">Performance Factors of Drand Bots</a></h3>
 <p>the main criteria in running a fast drand-bot is being able to broadcast your tx
 as fast as possible in order to reach the proposer's node asap before the other
