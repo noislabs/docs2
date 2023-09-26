@@ -4,82 +4,23 @@
 
 Bots bring randomness from drand to the Nois blockchain. That's the only thing
 the bot does. Once that randomness is on chain, it will be offered to Dapps
-across the Cosmos.
+across IBC.
+Bots earn incentives from bringing drand rounds that have been requested by consumer dapps.
 
-> **ℹ️ Drand-bots do not and cannot generate randomness. The simply relay it
-> from drand to nois chains.**
+> **ℹ️ Drand-bots do not and cannot generate randomness nor can they bias it. They simply relay it
+> from drand to the Nois chain.**
 
 > **ℹ️ Drand-bots are never slashed and do not need to put any collateral simply
 > because they cannot cheat.**
 
 > **⚠️ Although drand-bots cannot impact the outcome of the randomness, they can
 > impact the availability of the randomness by stopping to work or by failing to
-> submit to the nois chain. This is why they are incentivised and constitute a
-> critical piece of Nois.**
+> submit to the Nois chain. The chain needs at least one bot to function. This is
+> why bot operators are incentivised and constitute a critical piece of Nois.**
 
 ### Running a Drand Bot
 
-There are two available tools available
-
-#### drand-bot-1
-
-##### Running using a Docker image.
-
-The Docker image is probably the most convenient way to run the bot. Install
-Docker as explained [here](https://docs.docker.com/engine/install/ubuntu/).
-Download the latest version of the bot image:
-
-```sh
-docker pull noislabs/nois-bot:latest
-```
-
-Run the bot as follows:
-
-```sh
-# Make sure you have tokens in your wallet
-export MNEMONIC='<YOUR_MNEMONICS_HERE>'
-
-
-#check Networks -> contract in these docs for NOIS_DRAND_CONTRACT_ADDR
-export NOIS_CONTRACT=<NOIS_DRAND_CONTRAC_ADDR>
-#example export NOIS_CONTRACT=nois16peq3sftghumkja7nu32ztjy0ew4vsnshxfhcv6sxq573ta08gwsgldepm
-export ENDPOINT=https://nois.rpc.bccnodes.com:443
-export MONIKER=your-beautiful-name
-#Many RPCs are available. For more info check discord #validator channel
-#https://nois.rpc.bccnodes.com/
-
-#edit above values before running the docker
-docker run \
-       -e MONIKER=$MONIKER \
-       -e "MNEMONIC=$MNEMONIC" \
-       -e PREFIX=nois \
-       -e DENOM=unois \
-       -e NOIS_CONTRACT=$NOIS_CONTRACT \
-       -e ENDPOINT=$ENDPOINT \
-       -e GAS_PRICE=0.05unois \
-       noislabs/nois-bot:latest
-```
-
-##### Upgrading Docker image
-
-Run
-
-```
-docker pull noislabs/nois-bot:latest
-```
-
-and re-start the bot as shown above.
-
-##### Using a plain Node.js script
-
-The bot can also be run without containerization. This requires some Node.js
-knowledge and is more manual work. But it gives operators more control and is
-especially useful for debugging. Instructions are maintained
-[here](https://github.com/noislabs/nois-bot/blob/main/RUN_ON_SERVER.md).
-
-#### drand-bot-2
-
-[TODO]
+You can run the drand bot whether on the host or in docker. The setup instructions are in the README of this [repository](https://github.com/noislabs/bot2/tree/main).
 
 ### Performance Factors of Drand Bots
 
