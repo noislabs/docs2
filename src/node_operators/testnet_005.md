@@ -178,6 +178,7 @@ Right now the following IBC channels are supported:
 | ICS-20   | Juno (uni-6)              | [channel-3]                | channel-175           | junox-nois transfer |
 | ICS-20   | Neutron (pion-1)          | [channel-40]               | channel-133           | ntrn-nois transfer  |
 | ICS-20   | Stargaze (elgafar-1)      | [channel-48]               | channel-485           | stars-nois transfer |
+| ICS-20   | Aura (euphoria-2)         | [channel-53]               | channel-81            | aura-nois transfer  |
 | nois-v7  | Juno (uni-6)              | [channel-17]               | channel-198           | Public proxy        |
 | nois-v7  | Injective (injective-888) | [channel-36]               | channel-77            | Public proxy        |
 | nois-v7  | Neutron (pion-1)          | [channel-42]               | channel-135           | Public proxy        |
@@ -213,8 +214,8 @@ unois on:
   denom: ibc/717352A5277F3DE916E8FD6B87F4CA6A51F2FBA9CF04ABCFF2DF7202F8A8BC50
   channel-id: channel-175
 - chain-id: euphoria-2
-  denom: ibc/70D9353E4D43D860BF051ECE427C427687EDED77E61EFEF2CFF2839D28E6AE43
-  channel-id: [channel-61](https://testnet.ibc.nois.network/connections/connection-2/channels/transfer:channel-8)
+  denom: ibc/A68FBCB1DF149AB04D6DF89AD3474CB1CFC8B47549EE2C9924BFA1CA5ADF8E1B
+  channel-id: [channel-81](https://testnet.ibc.nois.network/connections/connection-28/channels/transfer:channel-53)
 - chain-id: injective-888
   denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
   channel-id: [channel-74](https://testnet.ibc.nois.network/connections/connection-13/channels/transfer:channel-33)
