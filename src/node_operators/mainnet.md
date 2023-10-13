@@ -60,7 +60,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
   Git Asset Name: nois_drand
   Instantiation Message: '{"incentive_point_price":"3000","incentive_denom":"unois","min_round":808287,"manager":"nois1p9tw323xdjp5q3yzuecfahmgrpufmm89z93wpk"}'
   URL: "https://github.com/noislabs/nois-contracts"
-  Version: v0.14.0
+  Version: v0.15.1
   Config:
     gateway: nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp
     incentive_denom: unois
@@ -109,7 +109,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
     payment_code_id: 7
     payment_initial_funds: null
     price:
-      amount: "50000000"
+      amount: "1000000"
       denom: unois
     sink: nois10c0ppz0n57hqrmfp7g7lqs6k4xk9rxhvcfkqt83r8mars2lc57mq0f6cty
 ```
