@@ -11,6 +11,7 @@
   - [Links](./links.md)
 - [For token holders and investors](./for_token_holders_and_investors.md)
   - [How to stake](./how_to_stake.md)
+  - [Tokenomics](./tokenomics.md)
 - [For Dapp developers](./dapp_devs/use_nois_randomness.md)
   - [Contract Implementation](./dapp_devs/contract_implementation.md)
   - [Interacting with a Dapp](./dapp_devs/interacting_with_a_dapp.md)
