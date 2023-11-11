@@ -159,6 +159,7 @@ Right now the following IBC channels are supported:
 | nois-v7  | Juno (juno-1)           | [channel-11]     | channel-248           | Gelotto                 |
 | nois-v7  | Injective (injective-1) | [channel-20]     | channel-140           | Injective governance    |
 | nois-v7  | Archway (archway-1)     | [channel-22]     | channel-19            | Architech proxy         |
+| nois-v7  | Stargaze (archway-1)    | [channel-38]     | channel-238           | Stargaze governance     |
 
 [channel-0]:
   https://ibc.nois.network/connections/connection-0/channels/transfer:channel-0
@@ -178,6 +179,8 @@ Right now the following IBC channels are supported:
   https://ibc.nois.network/connections/connection-9/channels/transfer:channel-21
 [channel-22]:
   https://ibc.nois.network/connections/connection-9/channels/wasm.nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp:channel-22
+[channel-38]:
+  https://ibc.nois.network/connections/connection-0/channels/wasm.nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp:channel-38
 
 ## IBC denoms
 
