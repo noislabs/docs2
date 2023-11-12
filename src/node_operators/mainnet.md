@@ -150,10 +150,11 @@ Right now the following IBC channels are supported:
 
 | Protocol | Other chain             | Channel (nois-1) | Channel (other chain) | Description             |
 | -------- | ----------------------- | ---------------- | --------------------- | ----------------------- |
-| ICS-20   | Stargaze (stargaze-1)   | [channel-0]      | channel-137           | stars-nois transfer     |
-| ICS-20   | Juno (juno-1)           | [channel-1]      | channel-225           | juno-nois transfer      |
 | ICS-20   | Aura (xstaxy-1)         | [channel-16]     | channel-3             | aura-nois transfer      |
 | ICS-20   | Injective (injective-1) | [channel-17]     | channel-138           | injective-nois transfer |
+| ICS-20   | Juno (juno-1)           | [channel-1]      | channel-225           | juno-nois transfer      |
+| ICS-20   | Osmosis (osmosis-1)     | [channel-37]     | channel-8277          | osmosis-nois transfer   |
+| ICS-20   | Stargaze (stargaze-1)   | [channel-0]      | channel-137           | stars-nois transfer     |
 | ICS-20   | Archway (archway-1)     | [channel-21]     | channel-17            | archway-nois transfer   |
 | nois-v7  | Juno (juno-1)           | [channel-2]      | channel-243           | Public proxy            |
 | nois-v7  | Juno (juno-1)           | [channel-11]     | channel-248           | Gelotto                 |
@@ -181,6 +182,8 @@ Right now the following IBC channels are supported:
   https://ibc.nois.network/connections/connection-9/channels/wasm.nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp:channel-22
 [channel-38]:
   https://ibc.nois.network/connections/connection-0/channels/wasm.nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp:channel-38
+[channel-37]:
+  https://ibc.nois.network/connections/connection-10/channels/transfer:channel-37
 
 ## IBC denoms
 
