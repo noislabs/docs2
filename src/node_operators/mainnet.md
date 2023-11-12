@@ -156,7 +156,7 @@ Right now the following IBC channels are supported:
 | ICS-20   | Osmosis (osmosis-1)     | [channel-37]     | channel-8277          | osmosis-nois transfer   |
 | ICS-20   | Stargaze (stargaze-1)   | [channel-0]      | channel-137           | stars-nois transfer     |
 | ICS-20   | Archway (archway-1)     | [channel-21]     | channel-17            | archway-nois transfer   |
-| nois-v7  | Aura (xtaxy)            | [channel-35]     | channel-8             | Aura team managed       |
+| nois-v7  | Aura (xstaxy-1)            | [channel-35]     | channel-8             | Aura team managed       |
 | nois-v7  | Juno (juno-1)           | [channel-2]      | channel-243           | Public proxy            |
 | nois-v7  | Juno (juno-1)           | [channel-11]     | channel-248           | Gelotto                 |
 | nois-v7  | Injective (injective-1) | [channel-20]     | channel-140           | Injective governance    |
