@@ -19,12 +19,11 @@ snapshot is pretty much a json file like this
 Then you merkelise the file(a tree of cryptographic hashes), and feed the merkle
 root to the randdrop contract. Then the operator (person who is in charge of
 managing the airdrop) communicates the file to the community (twitter for
-example) and then communicates a time in the future for the unpredictable random
-number to be published. Users can participate for a chance to win by checking
+example). Users can participate for a chance to win by checking
 the public json file containing what addresses are pre-eligible, compute their
-merkle proof (the webapp UI does that for them) and sends the proof to the
+merkle proof (the webapp UI does that for them) and send the proof to the
 randdrop contract which request a random beacon from Nois. Upon reception of the
-randomness, an account has 1/3 som probability(in this case 1/3) to receive the
+randomness, an account has 1/3 of probability to receive the
 randdrop. This is interesting because it allows protocols to target with their
 airdrop a bigger number of communities/networks without diluting as much the
 airdrop amount per account.
@@ -34,11 +33,11 @@ airdrop amount per account.
 We aimed for a merkle randdrop because it is more elegant, cost efficient, safer
 and not spammy. When doing merkle randdrop you don't send tokens to all wallets,
 instead users who are interested will come to claim your token. This is good
-formany reasons:
+for many reasons:
 
-- Legals: Companies incertain countries don't have to justify this token that
-  they didn'teven want to claim.
-- Gas fees: Users will claim their tokens so the operator doesn'thave to spend a
+- Legals: Companies in certain countries don't have to justify this token that
+  they didn't even want to claim.
+- Gas fees: Users will claim their tokens so the operator doesn't have to spend a
   big amount to airdrop to all these users
 - performance and efficiency: The computation is done offchain on the browser of
   the user to calculate the merkle proof, and the contract doens't have to hold
@@ -77,6 +76,7 @@ the state. Let's filter it out to get only the juno stakers.
 ### Process the snapshot
 
 Get the stakers list
+Make sure you have the jq cli installed.
 
 ```sh
 cat juno-8372000.json \
@@ -150,13 +150,13 @@ Compile
 
 ```sh
 # This command will generate wasm files
- devtools/build_integration_wasm.sh
+ RUSTFLAGS='-C link-arg=-s' cargo build --release --target wasm32-unknown-unknown --locked
 ```
 
 Make sure that you have now a wasm file in this path
 
 ```sh
-ls target/wasm32-unknown-unknown/release/nois_airdrop.wasm
+ls target/wasm32-unknown-unknown/release/randdrop.wasm
 ```
 
 Store
@@ -172,6 +172,10 @@ junod tx wasm store target/wasm32-unknown-unknown/release/randdrop.wasm   \
 
 Instantiate
 
+In this step you need to check a couple things.
+- The address of the nois-proxy you are going to use
+- query the config of that proxy to check the prices. i.e How much you need to pay the proxy to retrieve the beacon
+
 ```sh
 junod tx wasm instantiate2 1935 \
 '{"manager":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2", "nois_proxy_address":"juno1pjpntyvkxeuxd709jlupuea3xzxlzsfq574kqefv77fr2kcg4mcqvwqedq","nois_proxy_denom":"ibc/717352A5277F3DE916E8FD6B87F4CA6A51F2FBA9CF04ABCFF2DF7202F8A8BC50","nois_proxy_amount":"50000000","randdrop_denom":"ibc/717352A5277F3DE916E8FD6B87F4CA6A51F2FBA9CF04ABCFF2DF7202F8A8BC50","merkle_root":"73d8ae84dddb8f99f08ecf141d0fb7d65fe8af7a2e4aeb7d6714f985d945851f", "test_mode":true}' 01 \
@@ -184,9 +188,9 @@ junod tx wasm instantiate2 1935 \
 
 ### Send the tokens to airdrop to the contract
 
-The before the claiming can start you need to send the tokens to airdrop to the
+Before the claiming can start you need to send the tokens to airdrop to the
 contract. Otherwise the contract won't be able to give the tokens to users that
-want to claim the randdrop
+win the randdrop
 
 ### Claiming phase
 
