@@ -38,5 +38,5 @@
   - [Drand Bots](./drand_bots.md)
 - [Bring Nois to your Chain](./integrate_nois_to_your_chain.md)
 - [Make a random airdrop for your project](./randdrop.md)
-  - [Snapshot](./snapshot)
-  - [Deployment](./deployment)
+  - [Snapshot](./snapshot.md)
+  - [Deployment](./deployment.md)
