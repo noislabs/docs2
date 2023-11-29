@@ -56,6 +56,13 @@ want to give on your airdrop token per ujuno.
 In this case, we want to airdrop 2,6M NOIS to juno chain. This means we want to
 airdrop **0.07340892389** unois per ujuno
 
+To calculate the conversion rate you might want to check the total amount of the staked token
+```sh
+cat juno-8372000-stakers-between-8-and-80K.json | jq '[.[].amount] | add'
+```
+
+Once you figure out what conversion rate to apply you can extract the final json file in the token  you want to randdrop
+
 ```sh
  export CONVERSION_RATE=0.07340892389
  cat juno-8372000-stakers-between-8-and-80K.json \
