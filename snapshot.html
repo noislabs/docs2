@@ -195,6 +195,8 @@ airdrop <strong>0.07340892389</strong> unois per ujuno</p>
 <p>To calculate the conversion rate you might want to check the total amount of the staked token</p>
 <pre><code class="language-sh">cat juno-8372000-stakers-between-8-and-80K.json | jq '[.[].amount] | add'
 </code></pre>
+<p>Then divide the total amount you want to randdrop by the total amount staked.
+Let's say the total juno staked amount was 35M and we want to distribute 2.6M, CONVERSION_RATE=2.6M/35M</p>
 <p>Once you figure out what conversion rate to apply you can extract the final json file in the token  you want to randdrop</p>
 <pre><code class="language-sh"> export CONVERSION_RATE=0.07340892389
  cat juno-8372000-stakers-between-8-and-80K.json \
