@@ -670,6 +670,8 @@ provides</p>
 <tr><td>int_in_range</td><td>Provides one integer between two numbers. Can be used for a single dice</td></tr>
 <tr><td>shuffle</td><td>Shuffles a vector using the Fisher-Yates algorithm. Can be used for an NFT hero creation with many objects/items/skills to randomly shuffle</td></tr>
 <tr><td>sub_randomness</td><td>Generates more more random numbers out of a single round of drand round. This can be needed if for example you want to run many lotteries in parallel using the same randomness round without sacrificing the high entropy.</td></tr>
+<tr><td>pick</td><td>Picks <code>n</code> elements from a given list. in a uniform distribution</td></tr>
+<tr><td>select_from_weighted</td><td>Selects one element from a given weighted list. This is useful if for example you want to mint an NFT hat with 30% chances to be red, 25% to be blue and 45% to be pink</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="using-the-nois-toolbox-in-a-cosmwasm-smart-contract"><a class="header" href="#using-the-nois-toolbox-in-a-cosmwasm-smart-contract">Using the Nois Toolbox in a CosmWasm smart-contract</a></h1>
 <h4 id="coinflip"><a class="header" href="#coinflip">coinflip</a></h4>
