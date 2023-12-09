@@ -117,7 +117,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 - Chain-id: uni-6
   Address: juno1pjpntyvkxeuxd709jlupuea3xzxlzsfq574kqefv77fr2kcg4mcqvwqedq
   Git Asset Name: nois_proxy
-  Instantiation Message: '{"prices":[{"denom":"ujunox","amount":"100"}],"manager":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-175","denom":"ibc/717352A5277F3DE916E8FD6B87F4CA6A51F2FBA9CF04ABCFF2DF7202F8A8BC50"}}}}'
+  Instantiation Message: '{"prices":[{"denom":"ujunox","amount":"100"}],"manager":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-175","denom":"ibc/035CF83FC7EA597082566DA414AA74E5D4EDAA07DA45DBBC5217EC161689FD9F"}}}}'
   URL: "https://github.com/noislabs/nois-contracts"
   Version: v0.13.5
   Config:
@@ -126,7 +126,7 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
     mode:
       ibc_pay:
         unois_denom:
-          denom: ibc/717352A5277F3DE916E8FD6B87F4CA6A51F2FBA9CF04ABCFF2DF7202F8A8BC50
+          denom: ibc/035CF83FC7EA597082566DA414AA74E5D4EDAA07DA45DBBC5217EC161689FD9F
           ics20_channel: channel-175
     nois_beacon_price: "50000000"
     nois_beacon_price_updated: "1682353695404898784"
@@ -175,7 +175,7 @@ Right now the following IBC channels are supported:
 | Protocol | Other chain               | Channel (nois-testnet-005) | Channel (other chain) | Description         |
 | -------- | ------------------------- | -------------------------- | --------------------- | ------------------- |
 | ICS-20   | Injective (injective-888) | [channel-33]               | channel-74            | inj-nois transfer   |
-| ICS-20   | Juno (uni-6)              | [channel-3]                | channel-175           | junox-nois transfer |
+| ICS-20   | Juno (uni-6)              | [channel-69]               | channel-877           | junox-nois transfer |
 | ICS-20   | Neutron (pion-1)          | [channel-40]               | channel-133           | ntrn-nois transfer  |
 | ICS-20   | Stargaze (elgafar-1)      | [channel-48]               | channel-485           | stars-nois transfer |
 | ICS-20   | Aura (euphoria-2)         | [channel-53]               | channel-81            | aura-nois transfer  |
@@ -188,8 +188,8 @@ Right now the following IBC channels are supported:
   https://testnet.ibc.nois.network/connections/connection-13/channels/transfer:channel-33
 [channel-40]:
   https://testnet.ibc.nois.network/connections/connection-17/channels/transfer:channel-40
-[channel-3]:
-  https://testnet.ibc.nois.network/connections/connection-4/channels/transfer:channel-3
+[channel-69]:
+  https://testnet.ibc.nois.network/connections/connection-5/channels/transfer:channel-69
 [channel-17]:
   https://testnet.ibc.nois.network/connections/connection-5/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-17
 [channel-36]:
@@ -211,8 +211,8 @@ unois on:
 
 ```yaml
 - chain-id: uni-6
-  denom: ibc/717352A5277F3DE916E8FD6B87F4CA6A51F2FBA9CF04ABCFF2DF7202F8A8BC50
-  channel-id: channel-175
+  denom: ibc/035CF83FC7EA597082566DA414AA74E5D4EDAA07DA45DBBC5217EC161689FD9F
+  channel-id: channel-877
 - chain-id: euphoria-2
   denom: ibc/A68FBCB1DF149AB04D6DF89AD3474CB1CFC8B47549EE2C9924BFA1CA5ADF8E1B
   channel-id: [channel-81](https://testnet.ibc.nois.network/connections/connection-28/channels/transfer:channel-53)
