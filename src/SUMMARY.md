@@ -7,6 +7,7 @@
   - [How it works](./how_it_works.md)
   - [Drand](./drand.md)
   - [Use-cases](./use_cases.md)
+  - [The team](./team.md)
   - [FAQ](./faq.md)
   - [Links](./links.md)
 - [For token holders and investors](./for_token_holders_and_investors.md)
