@@ -7,6 +7,6 @@
   Inventor of the drand protocol
 - Kais Baccour: DevOps - [linkedin](https://www.linkedin.com/in/kais-baccour/) -
   [Watch](https://www.youtube.com/watch?v=lpmDbtrKE9Y) them talk about Nois
-- @jhernandezb\_: Developer - Co-founder at Stargaze
-- @0xantcrypto: Developer - Co-founder at Loterra and Terrand
+- @jhernandezb\_: Developer - Cofounder at Stargaze
+- @0xantcrypto: Developer - Cofounder at Loterra and Terrand
 - @LeTurt\_: Developer
