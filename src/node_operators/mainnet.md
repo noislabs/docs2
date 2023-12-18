@@ -156,12 +156,13 @@ Right now the following IBC channels are supported:
 | ICS-20   | Osmosis (osmosis-1)     | [channel-37]     | channel-8277          | osmosis-nois transfer   |
 | ICS-20   | Stargaze (stargaze-1)   | [channel-0]      | channel-137           | stars-nois transfer     |
 | ICS-20   | Archway (archway-1)     | [channel-21]     | channel-17            | archway-nois transfer   |
-| nois-v7  | Aura (xstaxy-1)            | [channel-35]     | channel-8             | Aura team managed       |
+| nois-v7  | Aura (xstaxy-1)         | [channel-35]     | channel-8             | Aura team managed       |
 | nois-v7  | Juno (juno-1)           | [channel-2]      | channel-243           | Public proxy            |
 | nois-v7  | Juno (juno-1)           | [channel-11]     | channel-248           | Gelotto                 |
 | nois-v7  | Injective (injective-1) | [channel-20]     | channel-140           | Injective governance    |
 | nois-v7  | Archway (archway-1)     | [channel-22]     | channel-19            | Architech proxy         |
-| nois-v7  | Stargaze (archway-1)    | [channel-38]     | channel-238           | Stargaze governance     |
+| nois-v7  | Stargaze (stargaze-1)   | [channel-38]     | channel-238           | Stargaze governance     |
+| nois-v7  | Osmosis (osmosis-1)     | [channel-41]     | channel-11319         | Public proxy           |
 
 [channel-0]:
   https://ibc.nois.network/connections/connection-0/channels/transfer:channel-0
@@ -187,6 +188,8 @@ Right now the following IBC channels are supported:
   https://ibc.nois.network/connections/connection-10/channels/transfer:channel-37
 [channel-38]:
   https://ibc.nois.network/connections/connection-0/channels/wasm.nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp:channel-38
+[channel-41]:
+  https://ibc.nois.network/connections/connection-10/channels/wasm.nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp:channel-41
 
 ## IBC denoms
 
