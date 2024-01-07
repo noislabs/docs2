@@ -17,35 +17,32 @@ RUSTFLAGS="-C link-arg=-s" cargo build --release --target=wasm32-unknown-unknown
 Store the contract
 
 ```shell
-export CODE_ID=$(junod tx wasm store \
+junod tx wasm store \
        target/wasm32-unknown-unknown/release/double_dice_roll.wasm \
        --from <your-key> \
-       --chain-id uni-5 \
+       --chain-id uni-6 \
        --gas=auto \
        --gas-adjustment 1.4  \
        --gas-prices 0.025ujunox \
        --broadcast-mode=block \
-       --node=https://rpc.uni.juno.deuslabs.fi:443 -y \
-       |yq -r ".logs[0].events[1].attributes[1].value" )
+       --node=https://rpc.uni.juno.deuslabs.fi:443 -y 
 ```
 
 Instantiate the contract
 
 ```shell
 export NOIS_PROXY=juno1tquqqdvlv3fwu5u6evpt7e4ss47zczug8tq4czjucgx8dulkhjxsegfuds
-export DOUBLE_DICE_ROLL_CONTRACT=$(junod \
-       tx wasm instantiate $CODE_ID \
+junod tx wasm instantiate CODE_ID_FROM_PREVIOUS_STEP \
        '{"nois_proxy": "'"$NOIS_PROXY"'"}' \
        --label=double-dice \
        --no-admin \
        --from <your-key> \
-       --chain-id uni-3 \
+       --chain-id uni-6 \
        --gas=auto \
        --gas-adjustment 1.4 \
        --fees=1000000ujunox \
        --broadcast-mode=block \
-       --node=https://rpc.uni.juno.deuslabs.fi:443 -y \
-       |yq -r '.logs[0].events[0].attributes[0].value' )
+       --node=https://rpc.uni.juno.deuslabs.fi:443 -y 
 ```
 
 Request randomness (ie. roll the dice)
