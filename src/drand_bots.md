@@ -73,4 +73,10 @@ rewards if they are registered and allow-listed.
 
 ### Incentive System
 
-[TODO]
+Drand bots earn incentives by submitting randomness to Nois.
+A bot gets an incentive if and only if
+They are among the fastest
+AND
+they are allowlisted
+AND
+The randomness round has been requested by a dapp
