@@ -40,8 +40,8 @@ Chain and Nois, so that you can pay for randomness with NOIS.
 - Configure your relayer software (hermes, go-relayer, ts-relayer) to have Nois
   and your chain (Check the
   [chain-registry](https://github.com/cosmos/chain-registry/tree/master/nois)
-  for the details)
-- Create a Client, a connection, and a transfer channel between both chains.
+  for the details) Tutorial [here](https://docs.nois.network/node_operators/operate_relayer.html)
+- Create a Client, a connection, and a transfer channel between both chains like [this](https://docs.nois.network/node_operators/operate_relayer.html#set-up-a-new--client-connection-and-channels).
 - Check that the channel has been created. You can do so in this IBC
   [mainnet dashboard](https://ibc.nois.network/connections) or
   [testnet dashboard](https://testnet.ibc.nois.network/)
