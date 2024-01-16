@@ -111,62 +111,12 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 ### Proxies
 
-#### uni-6
-
-```yaml
-- Chain-id: uni-6
-  Address: juno1pjpntyvkxeuxd709jlupuea3xzxlzsfq574kqefv77fr2kcg4mcqvwqedq
-  Git Asset Name: nois_proxy
-  Instantiation Message: '{"prices":[{"denom":"ujunox","amount":"100"}],"manager":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-175","denom":"ibc/035CF83FC7EA597082566DA414AA74E5D4EDAA07DA45DBBC5217EC161689FD9F"}}}}'
-  URL: "https://github.com/noislabs/nois-contracts"
-  Version: v0.13.5
-  Config:
-    callback_gas_limit: 500000
-    manager: juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2
-    mode:
-      ibc_pay:
-        unois_denom:
-          denom: ibc/035CF83FC7EA597082566DA414AA74E5D4EDAA07DA45DBBC5217EC161689FD9F
-          ics20_channel: channel-175
-    nois_beacon_price: "50000000"
-    nois_beacon_price_updated: "1682353695404898784"
-    payment: nois1xgnpkzr86cl7d2mjwdhalyt9md3vyfk5d66r9j4lfvsgkjc6wthse2q53d
-    prices:
-      - amount: "100"
-        denom: ujunox
-    test_mode: false
-```
-
-#### injective-888
-
-```yaml
-- Chain-id: injective-888
-  Address: inj14nendtsz0c40n7xtzwkjmdc8dkuz835jdydxhn
-  Git Asset Name: nois_proxy
-  Instantiation Message: '{"prices":[{"denom":"inj","amount":"100"},{"denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B","amount":"1000000"}],"manager":"inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t","callback_gas_limit":10000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-46","denom":"ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B"}}}}'
-  URL: "https://github.com/noislabs/nois-contracts"
-  Version: v0.13.0
-  config:
-    allowlist_enabled: false
-    callback_gas_limit: 500000
-    manager: inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t
-    max_after: "2003505450748953972"
-    min_after: "1688145450748953972"
-    mode:
-      ibc_pay:
-        unois_denom:
-          denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
-          ics20_channel: channel-46
-    nois_beacon_price: "1000000"
-    nois_beacon_price_updated: "1688145748393860168"
-    payment: nois1umkkrl2c7wfyjtlvy4vun7rrq25v0vx3kmfmyc9x0763z049sr4se2pd4s
-    prices:
-      - amount: "100"
-        denom: inj
-      - amount: "1000000"
-        denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
-    test_mode: false
-```
+| Chain                    | proxy address                                                      | manager/owner        | 
+| -------------------------| -------------------------------------------------------------------| -------------------- | 
+| Juno                     | juno1pjpntyvkxeuxd709jlupuea3xzxlzsfq574kqefv77fr2kcg4mcqvwqedq    | Nois team            | 
+| Injective                | inj14nendtsz0c40n7xtzwkjmdc8dkuz835jdydxhn                         | Nois team            | 
+| Neutron                  | neutron1tw9sg9e4l09l5rjglf4qfvcft470ljk5grdq3luagysyk83nzfusw2sxgq | Nois team (expired)  | 
+| Stargaze                 | stars1h99p7u2tvz79jppjwdddmkplvcpnsh0pmatl7dqkmdhnkgx59y2q6s0x9s   | Nois team            | 
 
 ## IBC channels
 
