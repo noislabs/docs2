@@ -118,13 +118,13 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 | Chain                    | proxy address                                                      | manager/owner        | 
 | -------------------------| -------------------------------------------------------------------| -------------------- | 
-| Aura (xstaxy-1)          | aura1r3zgdsn3dcze07a4r60rxxx7ppvkxfshn9np0pwtkgarrld0786s72jtjt    |  Aura team           | 
-| Juno (juno-1)            | juno1qr84ktm57q5t02u04ddk5r8s79axdzglad6tfdd9g2xgt4hkh6jsgeq9x2    | Nois team            | 
-| Juno (juno-1)            | juno1avjq06m3l03pl2k8ecvpdhkzrld8s3x48qvhp8merhfjh753vvdskqqs74    | Gelotto              | 
-| Injective (injective-1)  | inj1w9g3sk7lk8k0pdtctygupt6f3te7x4thvzz57a                         | Injective Governance | 
-| Archway (archway-1)      | archway10f3aasgsnpv84ymjyld50jayc4ecu267sdpjamauwm8nvxlzex9qj4dkwr | Architech            | 
-| Stargaze (stargaze-1)    | stars1mw5y55f53mnara7g3pn2pylxl8dpauscyn83c68442hz9nwktzrq8tjzyf   | Stargaze Governance  | 
-| Osmosis (osmosis-1)      | osmo1tvzr8ur0ynjhqftxpkl4qwel8ly7erhy6cu6ks426xmzf92vk6eqfp9wcl    | Nois team            | 
+| Aura                     | aura1r3zgdsn3dcze07a4r60rxxx7ppvkxfshn9np0pwtkgarrld0786s72jtjt    |  Aura team           | 
+| Juno                     | juno1qr84ktm57q5t02u04ddk5r8s79axdzglad6tfdd9g2xgt4hkh6jsgeq9x2    | Nois team            | 
+| Juno                     | juno1avjq06m3l03pl2k8ecvpdhkzrld8s3x48qvhp8merhfjh753vvdskqqs74    | Gelotto              | 
+| Injective                | inj1w9g3sk7lk8k0pdtctygupt6f3te7x4thvzz57a                         | Injective Governance | 
+| Archway                  | archway10f3aasgsnpv84ymjyld50jayc4ecu267sdpjamauwm8nvxlzex9qj4dkwr | Architech            | 
+| Stargaze                 | stars1mw5y55f53mnara7g3pn2pylxl8dpauscyn83c68442hz9nwktzrq8tjzyf   | Stargaze Governance  | 
+| Osmosis                  | osmo1tvzr8ur0ynjhqftxpkl4qwel8ly7erhy6cu6ks426xmzf92vk6eqfp9wcl    | Nois team            | 
 
 ## IBC channels
 
