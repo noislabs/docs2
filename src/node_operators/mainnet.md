@@ -116,33 +116,15 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 ### Proxies
 
-#### juno-1
-
-```yaml
-- Chain-id: juno-1
-  Address: juno1qr84ktm57q5t02u04ddk5r8s79axdzglad6tfdd9g2xgt4hkh6jsgeq9x2
-  Git Asset Name: nois_proxy
-  Instantiation Message: '{"prices":[{"denom":"ujuno","amount":"1500000"},{"denom":"ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B","amount":"50000000"}],"manager":"juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2","callback_gas_limit":500000,"test_mode":false,"mode":{"ibc_pay":{"unois_denom":{"ics20_channel":"channel-225","denom":"ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B"}}}}'
-  URL: "https://github.com/noislabs/nois-contracts"
-  Version: v0.13.1
-  Config:
-    callback_gas_limit: 500000
-    manager: juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2
-    mode:
-      ibc_pay:
-        unois_denom:
-          denom: ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B
-          ics20_channel: channel-225
-    nois_beacon_price: "50000000"
-    nois_beacon_price_updated: "1682391456466934559"
-    payment: nois1k7a00gmhj450qa83xq2v3rlmfcp8nj8t2wc653maq9p5csv4q5jq5pwfm0
-    prices:
-      - amount: "1500000"
-        denom: ujuno
-      - amount: "50000000"
-        denom: ibc/1D9E14A1F00613ED39E4B8A8763A20C9BE5B5EA0198F2FE47EAE43CD91A0137B
-    test_mode: false
-```
+| Chain                    | proxy address                                                      | manager/owner        | 
+| -------------------------| -------------------------------------------------------------------| -------------------- | 
+| Aura (xstaxy-1)          | aura1r3zgdsn3dcze07a4r60rxxx7ppvkxfshn9np0pwtkgarrld0786s72jtjt    |  Aura team           | 
+| Juno (juno-1)            | juno1qr84ktm57q5t02u04ddk5r8s79axdzglad6tfdd9g2xgt4hkh6jsgeq9x2    | Nois team            | 
+| Juno (juno-1)            | juno1avjq06m3l03pl2k8ecvpdhkzrld8s3x48qvhp8merhfjh753vvdskqqs74    | Gelotto              | 
+| Injective (injective-1)  | inj1w9g3sk7lk8k0pdtctygupt6f3te7x4thvzz57a                         | Injective Governance | 
+| Archway (archway-1)      | archway10f3aasgsnpv84ymjyld50jayc4ecu267sdpjamauwm8nvxlzex9qj4dkwr | Architech            | 
+| Stargaze (stargaze-1)    | stars1mw5y55f53mnara7g3pn2pylxl8dpauscyn83c68442hz9nwktzrq8tjzyf   | Stargaze Governance  | 
+| Osmosis (osmosis-1)      | osmo1tvzr8ur0ynjhqftxpkl4qwel8ly7erhy6cu6ks426xmzf92vk6eqfp9wcl    | Nois team            | 
 
 ## IBC channels
 
