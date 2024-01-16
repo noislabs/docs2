@@ -243,57 +243,13 @@
 </code></pre>
 <hr />
 <h3 id="proxies"><a class="header" href="#proxies">Proxies</a></h3>
-<h4 id="uni-6"><a class="header" href="#uni-6">uni-6</a></h4>
-<pre><code class="language-yaml">- Chain-id: uni-6
-  Address: juno1pjpntyvkxeuxd709jlupuea3xzxlzsfq574kqefv77fr2kcg4mcqvwqedq
-  Git Asset Name: nois_proxy
-  Instantiation Message: '{&quot;prices&quot;:[{&quot;denom&quot;:&quot;ujunox&quot;,&quot;amount&quot;:&quot;100&quot;}],&quot;manager&quot;:&quot;juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2&quot;,&quot;callback_gas_limit&quot;:500000,&quot;test_mode&quot;:false,&quot;mode&quot;:{&quot;ibc_pay&quot;:{&quot;unois_denom&quot;:{&quot;ics20_channel&quot;:&quot;channel-175&quot;,&quot;denom&quot;:&quot;ibc/035CF83FC7EA597082566DA414AA74E5D4EDAA07DA45DBBC5217EC161689FD9F&quot;}}}}'
-  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
-  Version: v0.13.5
-  Config:
-    callback_gas_limit: 500000
-    manager: juno1q6yvx8lxpheqflkcl0qf89czej4akrsfzc6xs2
-    mode:
-      ibc_pay:
-        unois_denom:
-          denom: ibc/035CF83FC7EA597082566DA414AA74E5D4EDAA07DA45DBBC5217EC161689FD9F
-          ics20_channel: channel-175
-    nois_beacon_price: &quot;50000000&quot;
-    nois_beacon_price_updated: &quot;1682353695404898784&quot;
-    payment: nois1xgnpkzr86cl7d2mjwdhalyt9md3vyfk5d66r9j4lfvsgkjc6wthse2q53d
-    prices:
-      - amount: &quot;100&quot;
-        denom: ujunox
-    test_mode: false
-</code></pre>
-<h4 id="injective-888"><a class="header" href="#injective-888">injective-888</a></h4>
-<pre><code class="language-yaml">- Chain-id: injective-888
-  Address: inj14nendtsz0c40n7xtzwkjmdc8dkuz835jdydxhn
-  Git Asset Name: nois_proxy
-  Instantiation Message: '{&quot;prices&quot;:[{&quot;denom&quot;:&quot;inj&quot;,&quot;amount&quot;:&quot;100&quot;},{&quot;denom&quot;:&quot;ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B&quot;,&quot;amount&quot;:&quot;1000000&quot;}],&quot;manager&quot;:&quot;inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t&quot;,&quot;callback_gas_limit&quot;:10000,&quot;test_mode&quot;:false,&quot;mode&quot;:{&quot;ibc_pay&quot;:{&quot;unois_denom&quot;:{&quot;ics20_channel&quot;:&quot;channel-46&quot;,&quot;denom&quot;:&quot;ibc/B0D9A85855FFB4C6472AD514B48C91275453B2AFC501472EE29895C400463E6B&quot;}}}}'
-  URL: &quot;https://github.com/noislabs/nois-contracts&quot;
-  Version: v0.13.0
-  config:
-    allowlist_enabled: false
-    callback_gas_limit: 500000
-    manager: inj1decjtp0szudj4flvfa57wvkqenkeuk5pt28j7t
-    max_after: &quot;2003505450748953972&quot;
-    min_after: &quot;1688145450748953972&quot;
-    mode:
-      ibc_pay:
-        unois_denom:
-          denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
-          ics20_channel: channel-46
-    nois_beacon_price: &quot;1000000&quot;
-    nois_beacon_price_updated: &quot;1688145748393860168&quot;
-    payment: nois1umkkrl2c7wfyjtlvy4vun7rrq25v0vx3kmfmyc9x0763z049sr4se2pd4s
-    prices:
-      - amount: &quot;100&quot;
-        denom: inj
-      - amount: &quot;1000000&quot;
-        denom: ibc/A190CF3FC762D25A46A49E7CB0E998F4A494C7F64A356DA17C25A2D8B0069D3B
-    test_mode: false
-</code></pre>
+<div class="table-wrapper"><table><thead><tr><th>Chain</th><th>proxy address</th><th>manager/owner</th></tr></thead><tbody>
+<tr><td>Juno</td><td>juno1pjpntyvkxeuxd709jlupuea3xzxlzsfq574kqefv77fr2kcg4mcqvwqedq</td><td>Nois team</td></tr>
+<tr><td>Injective</td><td>inj14nendtsz0c40n7xtzwkjmdc8dkuz835jdydxhn</td><td>Nois team</td></tr>
+<tr><td>Neutron</td><td>neutron1tw9sg9e4l09l5rjglf4qfvcft470ljk5grdq3luagysyk83nzfusw2sxgq</td><td>Nois team (expired)</td></tr>
+<tr><td>Stargaze</td><td>stars1h99p7u2tvz79jppjwdddmkplvcpnsh0pmatl7dqkmdhnkgx59y2q6s0x9s</td><td>Nois team</td></tr>
+</tbody></table>
+</div>
 <h2 id="ibc-channels"><a class="header" href="#ibc-channels">IBC channels</a></h2>
 <p>Right now the following IBC channels are supported:</p>
 <div class="table-wrapper"><table><thead><tr><th>Protocol</th><th>Other chain</th><th>Channel (nois-testnet-005)</th><th>Channel (other chain)</th><th>Description</th></tr></thead><tbody>
