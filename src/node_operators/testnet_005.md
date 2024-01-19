@@ -113,10 +113,11 @@ An incomplete and unchecked list of community provided TendermintRPC endpoints:
 
 | Chain                    | proxy address                                                      | manager/owner        | 
 | -------------------------| -------------------------------------------------------------------| -------------------- | 
-| Juno                     | juno1pjpntyvkxeuxd709jlupuea3xzxlzsfq574kqefv77fr2kcg4mcqvwqedq    | Nois team            | 
+| Juno                     | juno1pjpntyvkxeuxd709jlupuea3xzxlzsfq574kqefv77fr2kcg4mcqvwqedq    | Nois team (expired)  | 
 | Injective                | inj14nendtsz0c40n7xtzwkjmdc8dkuz835jdydxhn                         | Nois team            | 
 | Neutron                  | neutron1tw9sg9e4l09l5rjglf4qfvcft470ljk5grdq3luagysyk83nzfusw2sxgq | Nois team (expired)  | 
 | Stargaze                 | stars1h99p7u2tvz79jppjwdddmkplvcpnsh0pmatl7dqkmdhnkgx59y2q6s0x9s   | Nois team            | 
+| Sei                      | sei1vxlzhn6qvf95syha2tgr0ct23sk5359s2vqzylgthuyy7kd7ql5qcxa4r0     | Matthew Parker       | 
 
 ## IBC channels
 
@@ -129,10 +130,12 @@ Right now the following IBC channels are supported:
 | ICS-20   | Neutron (pion-1)          | [channel-40]               | channel-133           | ntrn-nois transfer  |
 | ICS-20   | Stargaze (elgafar-1)      | [channel-48]               | channel-485           | stars-nois transfer |
 | ICS-20   | Aura (euphoria-2)         | [channel-53]               | channel-81            | aura-nois transfer  |
+| ICS-20   | Sei (atlantic-2)          | [channel-74]               | channel-77            | nois-sei  transfer  |
 | nois-v7  | Juno (uni-6)              | [channel-17]               | channel-198           | Public proxy        |
 | nois-v7  | Injective (injective-888) | [channel-36]               | channel-77            | Public proxy        |
 | nois-v7  | Neutron (pion-1)          | [channel-42]               | channel-135           | Public proxy        |
 | nois-v7  | Stargaze (elgafar-1)      | [channel-49]               | channel-486           | Public proxy        |
+| nois-v7  | Sei (atlantic-2)          | [channel-75]               | channel-89            | Public proxy        |
 
 [channel-33]:
   https://testnet.ibc.nois.network/connections/connection-13/channels/transfer:channel-33
@@ -150,7 +153,10 @@ Right now the following IBC channels are supported:
   https://testnet.ibc.nois.network/connections/connection-23/channels/transfer:channel-48
 [channel-49]:
   https://testnet.ibc.nois.network/connections/connection-23/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-49
-
+[channel-74]:
+  https://testnet.ibc.nois.network/connections/connection-66/channels/transfer:channel-74
+[channel-75]:
+  https://testnet.ibc.nois.network/connections/connection-66/channels/wasm.nois1xwde9rzqk5u36fke0r9ddmtwvh43n4fv53c5vc462wz8xlnqjhls6d90xc:channel-75
 ---
 
 ## IBC denoms
