@@ -16,38 +16,13 @@
 ## Binary
 
 - Build `noisd` from <https://github.com/noislabs/noisd>
-- Tag: v1.0.2
+- Tag: v1.0.5
 - `noisd version` should show 1.0.2
+Running a node is similar to most other cosmos-sdk chains. but you can follow this tutorial made by one of Nois validators [here](https://github.com/obajay/StateSync-snapshots/tree/main/Projects/Nois)
 
-## p2p
+## Explorers, p2p, RPCs, Rest and GRPC endpoints
 
-Seed nodes
-
-- `b3e3bd436ee34c39055a4c9946a02feec232988c@seeds.cros-nest.com:56656`
-- `babc3f3f7804933265ec9c40ad94f4da8e9e0017@seed.rhinostake.com:17356`
-- `ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:17356`
-- `72cd4222818d25da5206092c3efc2c0dd0ec34fe@161.97.96.91:36656` (AM Solutions)
-- `20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:17356`
-- `c8db99691545545402a1c45fa897f3cb1a05aea6@nois-mainnet-seed.itrocket.net:36656`
-- `400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@nois.rpc.kjnodes.com:51659`
-
-## RPCs
-
-An incomplete and unchecked list of community provided TendermintRPC endpoints:
-
-| URL                                               | TLS | CORS | tx_index |
-| ------------------------------------------------- | --- | ---- | -------- |
-| https://rpc.cosmos.directory/nois (load balancer) |     |      |          |
-| https://rpc-nois.sr20de.xyz:443                   | ✅  | ✅   | ✅       |
-| https://rpc.nois.hexnodes.co:443                  | ✅  | ✅   | ✅       |
-| https://m-nois.rpc.utsa.tech:443                  | ✅  | ✅   | ✅       |
-| https://rpc-nois.d-stake.xyz:443                  | ✅  | ✅   | ✅       |
-| https://nois.rpc.cumulo.org.es:443                | ✅  | ✅   | ✅       |
-| https://nois-mainnet-rpc.itrocket.net:443         | ✅  | ✅   | ✅       |
-| https://nois-rpc.nysa.network:443                 | ✅  | ❌   | ✅       |
-| https://rpc.nois.chaintools.tech/                 | ✅  | ✅   | ❌       |
-| https://nois.rpc.m.stavr.tech:443                 | ✅  | ✅   | ✅       |
-| https://nois.rpc.kjnodes.com:443                  | ✅  | ✅   | ✅       |
+Check the list in chain registry [here](https://github.com/cosmos/chain-registry/blob/master/nois/chain.json) 
 
 ## Contracts
 
