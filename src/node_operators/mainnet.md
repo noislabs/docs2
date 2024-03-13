@@ -114,7 +114,8 @@ Right now the following IBC channels are supported:
 | ICS-20   | Osmosis (osmosis-1)     | [channel-37]     | channel-8277          | osmosis-nois transfer   |
 | ICS-20   | Stargaze (stargaze-1)   | [channel-0]      | channel-137           | stars-nois transfer     |
 | ICS-20   | Archway (archway-1)     | [channel-21]     | channel-17            | archway-nois transfer   |
-| ICS-20   | Sei (pacific-1)         | [channel-43]     | channel-58            | sei-nois transfer       |
+| ICS-20   | Sei (pacific-1)         | [channel-47]     | channel-722           | neutron-nois transfer    |
+| ICS-20   | Neutron (neutron-1)     | [channel-43]     | channel-58            | sei-nois transfer       |
 | nois-v7  | Aura (xstaxy-1)         | [channel-35]     | channel-8             | Aura team managed       |
 | nois-v7  | Juno (juno-1)           | [channel-2]      | channel-243           | Public proxy            |
 | nois-v7  | Juno (juno-1)           | [channel-11]     | channel-248           | Gelotto                 |
@@ -154,6 +155,8 @@ Right now the following IBC channels are supported:
   https://ibc.nois.network/connections/connection-11/channels/transfer:channel-43
 [channel-44]:
   https://ibc.nois.network/connections/connection-11/channels/wasm.nois1acyc05v6fgcdgj88nmz2t40aex9nlnptqpwp5hf8hwg7rhce9uuqgqz5wp:channel-44
+[channel-47]:
+  https://ibc.nois.network/connections/connection-13/channels/transfer:channel-47
 
 ## IBC denoms
 
@@ -175,3 +178,5 @@ unois on:
   `ibc/1FD48481DAA1B05575FE6D3E35929264437B8424A73243B207BCB67401C7F1FD`
 - Osmosis
   `ibc/6928AFA9EA721938FED13B051F9DBF1272B16393D20C49EA5E4901BB76D94A90`
+- Neutron
+  `ibc/D03F341CAA5D24B43ABE27C11A214EA3589DDEA125A2E6A76C7C37F2F3C59692`
